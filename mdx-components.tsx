@@ -1,25 +1,22 @@
-//import type { MDXComponents } from 'mdx/types'
+import type { MDXComponents } from 'mdx/types'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-//import { MDXProvider } from '@mdx-js/react';
+import type { MDXRemoteProps } from 'next-mdx-remote/rsc' // Import the MDXRemoteProps type
 import { highlight } from 'sugar-high'
 import React from 'react'
 import UniChart from './app/blog/chart/unichart'
-//import type { MDXRemoteProps } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
-//import remarkRehype from 'remark-rehype'
 import rehypeKatex from 'rehype-katex'
-//import createMDX from '@next/mdx'
 import { Tabs } from 'app/mdx-components/tabs'
 
 
 function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
+  const headers = data.headers.map((header, index) => (
     <th key={index}>{header}</th>
   ))
-  let rows = data.rows.map((row, index) => (
+  const rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
         <td key={cellIndex}>{cell}</td>
@@ -38,7 +35,7 @@ function Table({ data }) {
 }
 
 function CustomLink(props) {
-  let href = props.href
+  const href = props.href
 
   if (href.startsWith('/')) {
     return (
@@ -60,7 +57,7 @@ function RoundedImage(props) {
 }
 
 function Code({ children, ...props }) {
-  let codeHTML = highlight(children)
+  const codeHTML = highlight(children)
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
@@ -68,16 +65,16 @@ function slugify(str) {
   return str
     .toString()
     .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/&/g, '-and-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
 }
 
 function createHeading(level) {
   const Heading = ({ children }) => {
-    let slug = slugify(children)
+    const slug = slugify(children)
     return React.createElement(
       `h${level}`,
       { id: slug },
@@ -109,7 +106,7 @@ export const Highlight = ({children, color}) => (
   </span>
 );
 
-let components = {
+const components: MDXComponents = { // Explicitly type the components object
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
@@ -125,32 +122,20 @@ let components = {
   Tabs,
 }
 
-
 const options = {
-	mdxOptions: {
-		remarkPlugins: [remarkMath, remarkGfm],
-		rehypePlugins: [rehypeKatex],
-	}
+  mdxOptions: {
+    remarkPlugins: [remarkMath, remarkGfm],
+    rehypePlugins: [rehypeKatex],
+  }
 }
 
-
-
-export function CustomMDX(props:any) {
+// Corrected function signature and component rendering
+export function CustomMDX({ source, ...props }: MDXRemoteProps) {
   return (
     <MDXRemote
-      {...props}
+      source={source} // Pass the source prop explicitly
       components={{ ...components, ...(props.components || {}) }}
       options={options}
     />
   )
 }
-
- 
-// export function useMDXComponents(components: MDXComponents): MDXComponents {
-//   return {
-//     ...components,
-//   }
-// }
-
-
-

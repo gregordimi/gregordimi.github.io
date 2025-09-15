@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import yaml from 'js-yaml' // 👈 Import js-yaml
 
 type Metadata = {
   title: string
@@ -9,36 +10,37 @@ type Metadata = {
   author?: string
   category: string
   showInList?: string
+  relatedPosts?: string[] // 👈 Add relatedPosts to the type
 }
 
 function parseFrontmatter(fileContent: string) {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/
   const match = frontmatterRegex.exec(fileContent)
-  const frontMatterBlock = match![1]
+  
+  // Throw an error if no frontmatter is found
+  if (!match) {
+    throw new Error('No frontmatter found in the file.')
+  }
+
+  const frontMatterBlock = match[1]
   const content = fileContent.replace(frontmatterRegex, '').trim()
-  const frontMatterLines = frontMatterBlock.trim().split('\n')
-  const metadata: Partial<Metadata> = {}
+  
+  // Use js-yaml to parse the frontmatter block
+  const metadata = yaml.load(frontMatterBlock) as Metadata
 
-  frontMatterLines.forEach((line) => {
-    const [key, ...valueArr] = line.split(': ')
-    let value = valueArr.join(': ').trim()
-    value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
-  })
-
-  return { metadata: metadata as Metadata, content }
+  return { metadata, content }
 }
 
-function getMDXFiles(dir) {
+function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
 }
 
-function readMDXFile(filePath) {
+function readMDXFile(filePath: string) {
   const rawContent = fs.readFileSync(filePath, 'utf-8')
   return parseFrontmatter(rawContent)
 }
 
-function getMDXData(dir) {
+function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
     const { metadata, content } = readMDXFile(path.join(dir, file))
@@ -58,7 +60,7 @@ export function getBlogPosts() {
   )
 }
 
-export function formatDate(date: string, includeRelative = false, resumeFormat:boolean = false) {
+export function formatDate(date: string, includeRelative = false, resumeFormat: boolean = false) {
   const currentDate = new Date()
   if (!date.includes('T')) {
     date = `${date}T00:00:00`
@@ -93,11 +95,9 @@ export function formatDate(date: string, includeRelative = false, resumeFormat:b
   })
 
   if (!includeRelative) {
-
     if (!resumeFormat) {
       return fullDate
     }
-
     if (resumeFormat) {
       return resumeDate
     }

@@ -56,11 +56,17 @@ export function generateMetadata({ params }) {
 }
 
 export default function Blog({ params }) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug)
+  const allPosts = getBlogPosts();
+  const post = allPosts.find((post) => post.slug === params.slug)
 
   if (!post) {
     notFound()
   }
+  
+  // Find related posts based on slugs in frontmatter
+  const relatedPosts = allPosts.filter((otherPost) =>
+      post.metadata.relatedPosts?.includes(otherPost.slug)
+  );
 
   return (
     <section>
@@ -89,7 +95,7 @@ export default function Blog({ params }) {
       />
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
-      </h1 >
+      </h1>
       <hr className='border-neutral-300 dark:border-neutral-700'/>
       <p className="text-lg text-neutral-700 dark:text-neutral-300 mt-2">
         {post.metadata.summary}
@@ -109,6 +115,28 @@ export default function Blog({ params }) {
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
+
+      {/* 👇 Related Posts Section */}
+      {relatedPosts.length > 0 && (
+        <div className="mt-12">
+          <h2 className="text-xl font-bold mb-4">Related Posts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {relatedPosts.map((relatedPost) => (
+              <Link
+                key={relatedPost.slug}
+                href={`/blog/${relatedPost.slug}`}
+                className="block p-4 border border-neutral-300 dark:border-neutral-700 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              >
+                <h3 className="font-semibold">{relatedPost.metadata.title}</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
+                  {relatedPost.metadata.summary}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       <footer className="mt-8">
         <div className="flex items-center justify-center mt-8">
           <hr className="w-1/2 border-neutral-300 dark:border-neutral-700" />
@@ -119,7 +147,6 @@ export default function Blog({ params }) {
               height={60}
               alt="Avatar"
               className="absolute top-0 left-0 w-full h-full rounded-full object-cover aspect-square"
-
             />
           </div>
           <hr className="w-1/2 border-neutral-300 dark:border-neutral-700" />

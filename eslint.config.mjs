@@ -15,4 +15,9 @@ const compat = new FlatCompat({
 export default defineConfig([{
     extends: compat.extends("next/core-web-vitals", "next/typescript"),
 }],
-[globalIgnores(["**/dist/**", "**/node_modules/**", "**/.next/**", "**/out/**"])]);
+[globalIgnores([
+    "**/dist/**", 
+    "**/node_modules/**", 
+    "**/.next/**", "**/out/**",
+    "**/app/blog/chart/**",
+    "**/public/assets/js/**"])]);

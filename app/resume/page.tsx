@@ -41,7 +41,7 @@ export default async function Resume() {
         <ul>
           {resumeData.projects.map((proj, index) => (
             <li key={index} className='mb-3'>
-              <div className="w-full flex-row space-x-0 space-x-2">
+              <div className="w-full flex-row space-x-2">
               <p className="text-neutral-600 dark:text-neutral-400 w-[600px] tabular-nums">
                 {formatDate(proj.startDate, false, true)} - {formatDate(proj.endDate, false, true) } / {proj.location}
                 {/* {formatDate(proj.startDate, false)} - {formatDate(proj.endDate, false) } */}
@@ -69,7 +69,7 @@ export default async function Resume() {
         <ul>
           {resumeData.work.map((work, index) => (
             <li key={index} className='mb-3'>
-              <div className="w-full flex-row space-x-0 space-x-2">
+              <div className="w-full flex-row space-x-2">
               <p className="text-neutral-600 dark:text-neutral-400 w-[600px] tabular-nums">
                 {formatDate(work.startDate, false, true)} - {formatDate(work.endDate, false, true) } / {work.location}
                 {/* {formatDate(work.startDate, false)} - {formatDate(work.endDate, false) } */}
@@ -88,7 +88,7 @@ export default async function Resume() {
         <ul>
           {resumeData.education.map((edu, index) => (
             <li key={index} className='mb-3'>
-                            <div className="w-full flex-row space-x-0 space-x-2">
+                            <div className="w-full flex-row space-x-2">
               <p className="text-neutral-600 dark:text-neutral-400 w-[600px] tabular-nums">
                 {formatDate(edu.startDate, false, true)} - {formatDate(edu.endDate, false, true) } / {edu.location}
               </p>

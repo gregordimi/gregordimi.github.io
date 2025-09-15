@@ -25,6 +25,7 @@ export function generateMetadata({ params }) {
     summary: description,
     image,
     category,
+    author,
   } = post.metadata
   const ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
@@ -34,6 +35,8 @@ export function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
+      category,
+      author,
       type: 'article',
       publishedTime,
       url: `${baseUrl}/blog/${post.slug}`,
@@ -72,6 +75,7 @@ export default function Blog({ params }) {
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
+            articleSection: post.metadata.category,
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
@@ -85,15 +89,23 @@ export default function Blog({ params }) {
       />
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
-      </h1>
+      </h1 >
+      <hr className='border-neutral-300 dark:border-neutral-700'/>
+      <p className="text-lg text-neutral-700 dark:text-neutral-300 mt-2">
+        {post.metadata.summary}
+      </p>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {post.metadata.author}
+        </p>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {post.metadata.category}
         </p>
       </div>
+      <hr className='border-neutral-300 dark:border-neutral-700'/>
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>

@@ -34,9 +34,9 @@
                 "url": "https://www.facebook.com/grigor.dimitrov"
             },
             {
-                "network": "Twitter",
+                "network": "X",
                 "username": "gregordimi",
-                "url": "https://twitter.com/gregordimi"
+                "url": "https://twitter.com/gr1gi"
             }
         ]
     },
@@ -271,23 +271,31 @@
     "references": [],
     "projects": [
         {
+            "name": "Merim.org",
+            "startDate": "2025-06-01",
+            "endDate": "2025-07-01",
+            "description": "Merim.org is an app that allows users to track supermarkets' prices during the period of rapid price changes because of the ongoingEurozone accesion of Bulgaria. ",
+            "highlights": ["Research for social good.", "Mobile app development."],
+            "location": "Berlin-Sofia",
+            "url": "https://opnify.net/"
+        },
+        {
+            "name": "Opinify",
+            "startDate": "2024-09-01",
+            "endDate": "2025-12-01",
+            "description": "Opinify broadens the user case of \"Probah\" - And instead of focusing on fashion makes the platform industry agnostic. The platform is an analytical platform for research, analysis and reporting. Look up more at https://opnify.net/ . Under active development.",
+            "highlights": [],
+            "location": "Berlin-Sofia",
+            "url": "https://opnify.net/"
+        },
+        {
             "name": "Probah",
-            "startDate": "2024-01-01",
-            "endDate": "2025-01-01",
-            "description": "Analytical platform for research, analysis and reporting",
+            "startDate": "2022-09-01",
+            "endDate": "2023-12-01",
+            "description": "Analytical platform for research, analysis and reporting. The project aimed to aid companies and brands with fashion portfolio optimization problems. Look up more at https://probah.com/",
             "highlights": [],
             "location": "Berlin-Sofia",
             "url": "https://probah.com/"
-            
-        },
-        {
-            "name": "Index",
-            "startDate": "2024-01-01",
-            "endDate": "2025-01-01",
-            "description": "Media and news tracking platform",
-            "highlights": [],
-            "location": "Berlin-Sofia",
-            "url": "https://project.com/"
         }
     ],
     "meta": {

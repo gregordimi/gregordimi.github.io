@@ -1,0 +1,69 @@
+---
+title: 'Merim.bg - Technical Overview'
+publishedAt: '2025-07-01'
+summary: 'Under the Hood of merim.bg: A Technical Deep Dive'
+category: 'app development'
+author: 'Grigor Dimitrov'
+relatedPosts:
+  - 'merim.bg'
+---
+
+# Under the Hood of merim.bg: A Technical Deep Dive
+
+The merim.bg mobile application is a tool for Bulgarian consumers, offering price transparency through crowdsourced data. This post will take a deep dive into the technical architecture and the tech stack that powers this application.
+
+<Callout type="info">
+  This blog post is based on a technical analysis of the merim.bg source code.
+</Callout>
+
+## The Tech Stack
+
+The merim.bg app is built on a modern, robust, and scalable tech stack. Here's a breakdown of the key technologies used:
+
+### Frontend
+
+- **React Native & Expo**: The application is built using React Native, allowing for cross-platform development for both iOS and Android from a single codebase. Expo is used to streamline the development process, providing a rich set of tools and services for building and deploying the app.
+
+- **TypeScript**: The entire frontend codebase is written in TypeScript. This provides static typing, which helps in catching errors early, improving code quality, and making the codebase more maintainable and scalable.
+
+- **Expo Router**: For navigation, the app uses Expo Router, a file-based routing solution for React Native. This makes the routing logic intuitive and easy to manage, as the app's navigation structure is directly reflected in the file system.
+
+- **Nativewind & ReactNativeReusables**: For styling, the app leverages Nativewind, which brings the power and utility of Tailwind CSS to React Native. This allows for rapid UI development with a consistent design language. The app also uses React Native Reusables, a collection of reusable UI components similar to Shadcn UI, to build a modern and accessible user interface.
+
+- **TanStack Query (React Query)**: To manage server state, the app uses TanStack Query. It simplifies data fetching, caching, and synchronization with the backend, providing a seamless and responsive user experience.
+
+### Backend
+
+- **Supabase**: The backend of merim.bg is powered by Supabase, an open-source Firebase alternative. It provides a suite of tools that includes a PostgreSQL database, authentication, storage, and serverless functions.
+
+- **PostgreSQL**: The application's data is stored in a PostgreSQL database, managed by Supabase. The database schema is designed to efficiently store user data, product information, prices, and receipts.
+
+- **Deno & Edge Functions**: For server-side logic, the app uses Supabase Edge Functions, which are written in Deno (a modern runtime for JavaScript and TypeScript). These functions are used for various tasks, such as processing data from receipts, interacting with third-party APIs, and performing other backend operations.
+
+### AI & Machine Learning
+
+- **Google Gemini**: A key feature of merim.bg is its ability to extract information from receipts and price tags. This is achieved using Google's Gemini AI model. The app sends images of receipts and price tags to a Supabase Edge Function, which then calls the Gemini API to perform Optical Character Recognition (OCR) and extract the relevant data in a structured JSON format.
+
+## Architecture & Implementation Highlights
+
+### Monorepo Structure
+
+The merim.bg project is organized as a monorepo, with the frontend and backend code residing in the same repository. This simplifies development and deployment, as changes to both the frontend and backend can be managed in a single place.
+
+### Data Flow
+
+The data flow in the merim.bg app is designed to be efficient and scalable. Here's a simplified overview:
+
+1.  **Data Capture**: The user captures an image of a receipt or a price tag using the app's camera.
+2.  **Image Upload**: The image is uploaded to Supabase Storage.
+3.  **Data Extraction**: A Supabase Edge Function is triggered, which calls the Google Gemini API to extract data from the image.
+4.  **Data Storage**: The extracted data is stored in the Supabase PostgreSQL database.
+5.  **Data Display**: The frontend fetches the data from the database using TanStack Query and displays it to the user.
+
+### Authentication & Security
+
+The app uses Supabase Auth for user authentication, supporting both email/password and social login providers. Security is further enhanced by using PostgreSQL's Row Level Security (RLS) to ensure that users can only access their own data.
+
+## Conclusion
+
+The merim.bg application is a great example of how modern technologies can be used to build a powerful and socially impactful application. The choice of React Native and Expo for the frontend, combined with Supabase for the backend and Google Gemini for AI-powered data extraction, provides a solid foundation for a scalable, maintainable, and feature-rich platform.

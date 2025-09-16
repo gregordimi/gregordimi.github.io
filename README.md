@@ -1,6 +1,3 @@
-# Portfolio Blog Starter based on:
-
-https://portfolio-blog-starter.vercel.app
 
 
 This is a porfolio site template complete with a blog. Includes:
@@ -28,5 +25,3 @@ Currently meant to be served as a static website on github thus:
     unoptimized: true,
 },
 ```
-
-in `next.config.mjs` remove to serve on Vercel

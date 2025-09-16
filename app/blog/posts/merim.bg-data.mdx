@@ -1,0 +1,86 @@
+---
+title: 'Merim.bg - Data'
+publishedAt: '2025-07-01'
+summary: 'The Data Pipeline of merim.bg: From Receipt to Report. Exploring the Data Architecture of merim.bg'
+category: 'app development'
+author: 'Grigor Dimitrov'
+relatedPosts:
+  - 'merim.bg - introduction'
+  - 'merim.bg - technical overview'
+---
+
+
+
+<Callout type="info">
+The merim.bg application is built upon a foundation of user-contributed data. This post outlines the journey of a data point from its origin as a physical receipt or price tag to its final presentation as aggregated market information.
+</Callout>
+
+## Base Data
+
+ - List of shop information and retail chains (name, location, type) - Web crawler was designed to acquire about 17,000 shops in Bulgaria. The data has been enriched using the Open StreetMap API to include geographic coordinates and shop types and additional metadata.
+ - Product categories (name, category) - Web crawler was designed to acquire a comprehensive list of product categories available in popular Bulgarian retail shops.
+ - Products (name, category, brand, size, unit) - The data uses popular open source product databases to aquire product information upon barcode scans. The data has been enriched using the Open Food Facts database to include product categories, brands, sizes, and units.
+
+## Primary Data Sources
+
+The primary source of data for merim.bg is its user base. Consumers provide real-world pricing information by capturing images of two types of documents:
+
+* **Receipts**: These provide a detailed breakdown of products purchased, including their prices, quantities, and the retailer's information.
+* **Price Tags**: These offer a more focused view of the price of a single product at a specific retailer.
+
+## Data Entry by Consumers
+
+Consumers contribute data through the merim.bg mobile application. The process is initiated by using the app's built-in camera functionality to take a picture of a receipt or price tag. This image serves as the raw data input for the system.
+
+In addition to the image data the users also provide additional data points (when the data is missing) such as:
+
+- price of the item
+- point of purchase (shop)
+- shop sentiment and satisfaction rating
+- product sentiment and satisfaction rating
+
+### Base Data Contributions
+
+In case of missing shops, missing products users can contribute this information via the app interfrace. This data is then verified and added to the base data tables.
+
+## Data Processing via AI
+
+Once an image is captured and uploaded, it is processed using Google's Gemini AI model. This step involves:
+
+* **Optical Character Recognition (OCR)**: The AI model analyzes the image to identify and extract textual information.
+* **Data Structuring**: The extracted text is then structured into a JSON format, which separates the data into relevant fields such as product name, price, quantity, and retailer.
+
+This automated process allows for the efficient and scalable conversion of unstructured image data into a structured and usable format.
+
+## Data Storage
+
+The structured data extracted from the images is stored in a **Supabase PostgreSQL database**. The database is designed with a schema that accommodates the various data points, including:
+
+* User information
+* Product details
+* Pricing information, linked to specific retailers and locations
+* Receipt and price tag metadata
+
+## Data Aggregation
+
+The individual data points stored in the database are then aggregated to provide a broader view of the market. This involves combining data from multiple users and sources to calculate metrics such as:
+
+* Average price of a product across different retailers
+* Price distribution of a product in a specific region
+* Price evolution of a product over time
+
+## Reporting and Data Visualization
+
+The final step in the data pipeline is the presentation of the aggregated data to the user. The merim.bg app features a user interface that displays the information in a clear and understandable format. This includes:
+
+* **Price comparison pages**: These allow users to compare the price of a specific product at different retailers.
+* **Data dashboards**: These provide a more high-level overview of pricing trends and market dynamics.
+* **Charts and graphs**: These are used to visualize the data and make it easier to understand.
+
+## Charts
+
+<Flowchart />
+
+## Conclusion
+
+Merim.bg app uses combination of web crawling, user-contributed data, AI-driven processing, and robust data storage and aggregation techniques to provide valuable market insights. The data pipeline is designed to be efficient, scalable, and user-friendly, ensuring that consumers have access to accurate and up-to-date pricing information.

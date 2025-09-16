@@ -10,6 +10,12 @@ import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { Tabs } from 'app/mdx-components/tabs'
+import { Callout } from 'app/mdx-components/callout'
+import { DataPipelineFlowchart } from 'app/mdx-components/flowchart'
+
+function Flowchart() {
+  return <DataPipelineFlowchart />;
+}
 
 
 function Table({ data }) {
@@ -77,7 +83,7 @@ function createHeading(level) {
     const slug = slugify(children)
     return React.createElement(
       `h${level}`,
-      { id: slug },
+      { className: `hover:opacity-60 opacity-100 transition-opacity duration-200`, id: slug },
       [
         React.createElement('a', {
           href: `#${slug}`,
@@ -120,6 +126,8 @@ const components: MDXComponents = { // Explicitly type the components object
   UniChart,
   Highlight,
   Tabs,
+  Callout,
+  Flowchart
 }
 
 const options = {

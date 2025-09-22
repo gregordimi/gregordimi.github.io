@@ -51,11 +51,8 @@ export default async function Resume() {
               </p>
               <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
               {proj.highlights.map((hl, idx) => (
-                <span key={idx} className="inline-block bg-neutral-200 dark:bg-neutral-800 text-sm px-2 py-1 mr-2 rounded mb-1">{hl}</span>
+                <span key={idx} className="inline-block bg-neutral-200 dark:bg-neutral-800 text-xs px-2 py-1 mr-2 rounded mb-1">{hl}</span>
               ))}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-              {/* {proj.description} */}
               </p>
             </div>
             </li>

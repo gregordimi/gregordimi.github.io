@@ -272,20 +272,22 @@
     "projects": [
         {
             "name": "Merim.org",
-            "startDate": "2025-06-01",
-            "endDate": "2025-07-01",
-            "description": "Merim.org is an app that allows users to track supermarkets' prices during the period of rapid price changes because of the ongoingEurozone accesion of Bulgaria. ",
-            "highlights": ["Research for social good.", "Mobile app development."],
-            "location": "Berlin-Sofia",
-            "url": "https://opnify.net/"
+            "startDate": "2025-07-01",
+            "endDate": "2025-09-01",
+            "description": "Merim.org is an app that allows users to track supermarkets' prices during the period of rapid price changes because of the ongoing Eurozone accession of Bulgaria.",
+            "highlights": ["Pricing Market Research", "Mobile App Development"],
+            "keywords": ["React Native", "React", "PostgreSQL", "Supabase", "Dyno", "Expo", "Vercel", "Vite"],
+            "location": "Berlin, Germany - Sofia, Bulgaria",
+            "url": "https://merim.org/"
         },
         {
             "name": "Opinify",
             "startDate": "2024-09-01",
             "endDate": "2025-12-01",
             "description": "Opinify broadens the user case of \"Probah\" - And instead of focusing on fashion makes the platform industry agnostic. The platform is an analytical platform for research, analysis and reporting. Look up more at https://opnify.net/ . Under active development.",
-            "highlights": [],
-            "location": "Berlin-Sofia",
+            "highlights": ["SaaS Platform"],
+            "keywords": ["React Native", "React", "PostgreSQL", "Supabase", "Dyno", "Expo", "Vercel", "Next.js", "Echarts Apache"],
+            "location": "Berlin, Germany - Sofia, Bulgaria",
             "url": "https://opnify.net/"
         },
         {
@@ -293,8 +295,9 @@
             "startDate": "2022-09-01",
             "endDate": "2023-12-01",
             "description": "Analytical platform for research, analysis and reporting. The project aimed to aid companies and brands with fashion portfolio optimization problems. Look up more at https://probah.com/",
-            "highlights": [],
-            "location": "Berlin-Sofia",
+            "highlights": ["Portfolio Optimization", "Web App Development"],
+            "keywords": ["React", "PostgreSQL", "Supabase", "Dyno", "Expo", "Vercel", "Next.js", "Echarts Apache"],
+            "location": "Berlin, Germany - Sofia, Bulgaria",
             "url": "https://probah.com/"
         }
     ],

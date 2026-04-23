@@ -10,7 +10,7 @@
 <atom:link href="https://gregordimi.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Wed, 22 Apr 2026 21:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 23 Apr 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Социология парламентарни избори 2026</title>
   <link>https://gregordimi.com/posts/election-sociology-analysis-2026/</link>
@@ -3120,7 +3120,7 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
  ]]></description>
   <category>sociology</category>
   <guid>https://gregordimi.com/posts/election-sociology-analysis-2026/</guid>
-  <pubDate>Wed, 22 Apr 2026 21:00:00 GMT</pubDate>
+  <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>The mighty Rodopa mountain 2023</title>
@@ -3171,7 +3171,7 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
  ]]></description>
   <category>ultra</category>
   <guid>https://gregordimi.com/posts/persenk-2023/</guid>
-  <pubDate>Tue, 22 Aug 2023 21:00:00 GMT</pubDate>
+  <pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>The mighty Rodopa mountain 2022</title>
@@ -3264,7 +3264,7 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
  ]]></description>
   <category>ultra</category>
   <guid>https://gregordimi.com/posts/persenk-2022/</guid>
-  <pubDate>Mon, 22 Aug 2022 21:00:00 GMT</pubDate>
+  <pubDate>Tue, 23 Aug 2022 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Conjoint analysis - survey limitations</title>
@@ -3352,7 +3352,7 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
   <category>market research</category>
   <category>behavioral data</category>
   <guid>https://gregordimi.com/posts/conjoint-analysis-survey-limitations/</guid>
-  <pubDate>Mon, 28 Aug 2017 21:00:00 GMT</pubDate>
+  <pubDate>Tue, 29 Aug 2017 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Bayesian truth serum</title>
@@ -3460,7 +3460,71 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
   <category>marketing</category>
   <category>behavioral data</category>
   <guid>https://gregordimi.com/posts/bayesian-truth-serum/</guid>
-  <pubDate>Fri, 25 Aug 2017 21:00:00 GMT</pubDate>
+  <pubDate>Sat, 26 Aug 2017 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Conjoint analysis - review</title>
+  <dc:creator>Grigor Dimitrov</dc:creator>
+  <link>https://gregordimi.com/posts/conjoint-analysis-review/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p>Summary: In a nutshell, conjoint analysis is a research methodology that uses surveys to understand how people make choices. It relies heavily on subjective data (beliefs, opinions, expectations, etc.) to understand individuals’ behavior, attitude, intentions, and choices.</p>
+<p>In economics, often the decision-making process relies both on ‘soft factors’ and ‘hard numbers’ <sup>1</sup>. The hard numbers are objective quantitative measurements, while the soft factors refer to beliefs, opinions, expectations, etc. that are subjective. Subjective data is heavily used to understand individuals’ behavior, attitude, intentions and choices in many different domains, including governmental institutions and businesses <sup>2</sup>.</p>
+<p>One specific domain is opinion-taking for market research purposes, which again relies heavily on subjective data gathered through surveys from panels of respondents. However, subjective data reliability depends on “its quality at the source - the thought process of an individual respondent” <sup>3</sup>. To provide solid and credible recommendations to businesses, market researchers, who use surveys as a proxy of their decisions, crucially depend on respondents’ trustworthiness.</p>
+<p>One of the widely used “advanced” research methodologies for the past four decades is the conjoin methodology. It has been employed in many domains such as market research, policy making, exploring optimal pricing of products, new product development, segmentation, product positioning, etc. <sup>4</sup>. It is a broad methodology for presenting and analyzing products, services or policies. Using conjoint analysis researchers are able to elicit respondents’ utilities of different characteristics of a product, service or policy. Those utilities are estimated based on data from respondents’ simultaneous evaluation of components configurations across different attributes levels of a product, service or policy, also referred to as stimuli <sup>5</sup>; <sup>6</sup>. Essentially, respondents are making trade-offs within a given set of product characteristics and state their preferences for the different stimuli. In the estimation process researchers are able to elicit respondents’ utilities based on those trade-offs on an individual level as well as aggregating the utilities in the sample.</p>
+<section id="origins-of-conjoint-methodology-and-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="origins-of-conjoint-methodology-and-analysis">Origins of conjoint methodology and analysis</h3>
+<p>Conjoint analysis has been used for circa 44 years and it is still evolving. It was introduced to academia by <sup>7</sup> in their paper “Conjoint Measurement for Quantifying Judgmental Data”. Shortly afterward, it was adopted by practitioners in diverse areas such as new product development, pricing, segmentation, and positioning <sup>8</sup>. Initially, the theory was referred to as conjoint measurement, but once it was appreciated by practitioners and transformed to evolving research stream by scientists, the term conjoint analysis (hereafter “CA”) was adopted <sup>9</sup>. Nowadays, the term CA is used both as a reference to the theory behind measuring judgmental data as well as for different methods used for this purpose <sup>10</sup>. In the next sections, I will introduce a brief description of the theory behind CA followed by the introduction to CA design. As this paper will employ choice-based conjoint (hereafter “CBC”) the CA design section will be focused on CBC.</p>
+</section>
+<section id="multidimensional-scaling-judgmental-data-and-choice-data" class="level3">
+<h3 class="anchored" data-anchor-id="multidimensional-scaling-judgmental-data-and-choice-data">Multidimensional scaling, judgmental data, and choice data</h3>
+<p>CA originates from mathematical psychology <sup>11</sup> and it faces the mapping challenge of multidimensional scaling (MDS) to “translate a point from perceptual space into a corresponding point(s) of product feature space” <sup>12</sup>. More precisely, the mapping challenge emerged from psychometrics, explored by <sup>13</sup> in their influential book “Foundations of measurement”, where the authors investigated behavioral axioms that would make possible decomposition of an overall judgment.</p>
+<p><sup>14</sup> explains that essentially CA is a method for MDS and clustering applied to marketing questions. Paul Green uses MDS to decompose overall consumers’ preferences and perceptions toward a certain product into a partial contribution of the product’s features (also called “part-worths”). Quoting <sup>15</sup> seems the most appropriate to explain the name of this elegant theory “ … applications by psychometricians and consumer researchers have emphasized the scaling aspects - finding specific numerical scale values, assuming that a particular composition rule applies, possibly with some error. Accordingly, it now seems useful to adopt the name, conjoint analysis, to cover models and techniques that emphasize the transformation of subjective responses into estimated parameters”. <sup>16</sup> defines judgmental data measurement as respondents’ evaluation of a product profiles represented by a set of alternatives of products’ attributes. The data is usually in at least an ordinal scale resulting from rating or ranking the profiles. In the same paper, the author defines choice data as a respondent’s preference of a particular profile among a given set of profiles. Profiles are again represented by a composition of product attributes. According to <sup>17</sup>, the terms judgmental and choice data have been used as mutually replaceable. However, there is an important distinction between judgmental and choice data, namely, judgment data may not satisfy important assumptions that are needed to forecast choice behavior.</p>
+<p>Choice-based conjoint was proposed by <sup>18</sup> as an extension of the traditional conjoint analysis. The authors introduced CBC following the recent development in the choice behavior modeling, namely, the introduction of multinomial and conditional logit models by <sup>19</sup>. CBC constitutes a choice evaluation between profiles. It allows for interaction and cross effects between different attributes <sup>20</sup>. Moreover, with CBC it is possible to measure preferences at an individual level and it represents a realistic choice task in which respondents are required to make a certain trade-off.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p><em>The post has been originally published as part of my master thesis <a href="https://thesis.eur.nl/pub/39589/">Bayesian Truth Serum Fused Conjoint</a> on 29 August 2017</em></p>
+<p>Literature Reference List</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>2013 Subjective probability and Bayesian truth serum↩︎</p></li>
+<li id="fn2"><p>2004 A Bayesian truth serum for subjective data↩︎</p></li>
+<li id="fn3"><p>2004 A Bayesian truth serum for subjective data↩︎</p></li>
+<li id="fn4"><p>2005 Incentive-aligned conjoint analysis↩︎</p></li>
+<li id="fn5"><p>2001 Thirty years of conjoint analysis: Reflections and prospects↩︎</p></li>
+<li id="fn6"><p>1978 Conjoint analysis in consumer research: issues and outlook↩︎</p></li>
+<li id="fn7"><p>1971 Conjoint measurement for quantifying judgmental data↩︎</p></li>
+<li id="fn8"><p>2005 Incentive-aligned conjoint analysis↩︎</p></li>
+<li id="fn9"><p>2004 Conjoint analysis, related modeling, and applications↩︎</p></li>
+<li id="fn10"><p>1988 Conjoint analysis modelling of stated preferences: a review of theory, methods, recent developments and external validity↩︎</p></li>
+<li id="fn11"><p>1978 Conjoint analysis in consumer research: issues and outlook↩︎</p></li>
+<li id="fn12"><p>2004 Conjoint analysis, related modeling, and applications↩︎</p></li>
+<li id="fn13"><p>1971 Foundations of measurement↩︎</p></li>
+<li id="fn14"><p>2004 Conjoint analysis, related modeling, and applications↩︎</p></li>
+<li id="fn15"><p>1978 Conjoint analysis in consumer research: issues and outlook↩︎</p></li>
+<li id="fn16"><p>1988 Conjoint analysis modelling of stated preferences: a review of theory, methods, recent developments and external validity↩︎</p></li>
+<li id="fn17"><p>1988 Conjoint analysis modelling of stated preferences: a review of theory, methods, recent developments and external validity↩︎</p></li>
+<li id="fn18"><p>1983 Design and analysis of simulated consumer choice or allocation experiments: an approach based on aggregate data↩︎</p></li>
+<li id="fn19"><p>Conditional Logit Analysis of Qualitative Choice Behavior↩︎</p></li>
+<li id="fn20"><p>2000 An overview and comparison of design strategies for choice-based conjoint analysis↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>market research</category>
+  <category>behavioral data</category>
+  <guid>https://gregordimi.com/posts/conjoint-analysis-review/</guid>
+  <pubDate>Sat, 26 Aug 2017 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Conjoint analysis - design</title>
@@ -3691,71 +3755,7 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
 </section></div> ]]></description>
   <category>market research</category>
   <guid>https://gregordimi.com/posts/conjoint-analysis-design/</guid>
-  <pubDate>Fri, 25 Aug 2017 21:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Conjoint analysis - review</title>
-  <dc:creator>Grigor Dimitrov</dc:creator>
-  <link>https://gregordimi.com/posts/conjoint-analysis-review/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-
-<p>Summary: In a nutshell, conjoint analysis is a research methodology that uses surveys to understand how people make choices. It relies heavily on subjective data (beliefs, opinions, expectations, etc.) to understand individuals’ behavior, attitude, intentions, and choices.</p>
-<p>In economics, often the decision-making process relies both on ‘soft factors’ and ‘hard numbers’ <sup>1</sup>. The hard numbers are objective quantitative measurements, while the soft factors refer to beliefs, opinions, expectations, etc. that are subjective. Subjective data is heavily used to understand individuals’ behavior, attitude, intentions and choices in many different domains, including governmental institutions and businesses <sup>2</sup>.</p>
-<p>One specific domain is opinion-taking for market research purposes, which again relies heavily on subjective data gathered through surveys from panels of respondents. However, subjective data reliability depends on “its quality at the source - the thought process of an individual respondent” <sup>3</sup>. To provide solid and credible recommendations to businesses, market researchers, who use surveys as a proxy of their decisions, crucially depend on respondents’ trustworthiness.</p>
-<p>One of the widely used “advanced” research methodologies for the past four decades is the conjoin methodology. It has been employed in many domains such as market research, policy making, exploring optimal pricing of products, new product development, segmentation, product positioning, etc. <sup>4</sup>. It is a broad methodology for presenting and analyzing products, services or policies. Using conjoint analysis researchers are able to elicit respondents’ utilities of different characteristics of a product, service or policy. Those utilities are estimated based on data from respondents’ simultaneous evaluation of components configurations across different attributes levels of a product, service or policy, also referred to as stimuli <sup>5</sup>; <sup>6</sup>. Essentially, respondents are making trade-offs within a given set of product characteristics and state their preferences for the different stimuli. In the estimation process researchers are able to elicit respondents’ utilities based on those trade-offs on an individual level as well as aggregating the utilities in the sample.</p>
-<section id="origins-of-conjoint-methodology-and-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="origins-of-conjoint-methodology-and-analysis">Origins of conjoint methodology and analysis</h3>
-<p>Conjoint analysis has been used for circa 44 years and it is still evolving. It was introduced to academia by <sup>7</sup> in their paper “Conjoint Measurement for Quantifying Judgmental Data”. Shortly afterward, it was adopted by practitioners in diverse areas such as new product development, pricing, segmentation, and positioning <sup>8</sup>. Initially, the theory was referred to as conjoint measurement, but once it was appreciated by practitioners and transformed to evolving research stream by scientists, the term conjoint analysis (hereafter “CA”) was adopted <sup>9</sup>. Nowadays, the term CA is used both as a reference to the theory behind measuring judgmental data as well as for different methods used for this purpose <sup>10</sup>. In the next sections, I will introduce a brief description of the theory behind CA followed by the introduction to CA design. As this paper will employ choice-based conjoint (hereafter “CBC”) the CA design section will be focused on CBC.</p>
-</section>
-<section id="multidimensional-scaling-judgmental-data-and-choice-data" class="level3">
-<h3 class="anchored" data-anchor-id="multidimensional-scaling-judgmental-data-and-choice-data">Multidimensional scaling, judgmental data, and choice data</h3>
-<p>CA originates from mathematical psychology <sup>11</sup> and it faces the mapping challenge of multidimensional scaling (MDS) to “translate a point from perceptual space into a corresponding point(s) of product feature space” <sup>12</sup>. More precisely, the mapping challenge emerged from psychometrics, explored by <sup>13</sup> in their influential book “Foundations of measurement”, where the authors investigated behavioral axioms that would make possible decomposition of an overall judgment.</p>
-<p><sup>14</sup> explains that essentially CA is a method for MDS and clustering applied to marketing questions. Paul Green uses MDS to decompose overall consumers’ preferences and perceptions toward a certain product into a partial contribution of the product’s features (also called “part-worths”). Quoting <sup>15</sup> seems the most appropriate to explain the name of this elegant theory “ … applications by psychometricians and consumer researchers have emphasized the scaling aspects - finding specific numerical scale values, assuming that a particular composition rule applies, possibly with some error. Accordingly, it now seems useful to adopt the name, conjoint analysis, to cover models and techniques that emphasize the transformation of subjective responses into estimated parameters”. <sup>16</sup> defines judgmental data measurement as respondents’ evaluation of a product profiles represented by a set of alternatives of products’ attributes. The data is usually in at least an ordinal scale resulting from rating or ranking the profiles. In the same paper, the author defines choice data as a respondent’s preference of a particular profile among a given set of profiles. Profiles are again represented by a composition of product attributes. According to <sup>17</sup>, the terms judgmental and choice data have been used as mutually replaceable. However, there is an important distinction between judgmental and choice data, namely, judgment data may not satisfy important assumptions that are needed to forecast choice behavior.</p>
-<p>Choice-based conjoint was proposed by <sup>18</sup> as an extension of the traditional conjoint analysis. The authors introduced CBC following the recent development in the choice behavior modeling, namely, the introduction of multinomial and conditional logit models by <sup>19</sup>. CBC constitutes a choice evaluation between profiles. It allows for interaction and cross effects between different attributes <sup>20</sup>. Moreover, with CBC it is possible to measure preferences at an individual level and it represents a realistic choice task in which respondents are required to make a certain trade-off.</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p><em>The post has been originally published as part of my master thesis <a href="https://thesis.eur.nl/pub/39589/">Bayesian Truth Serum Fused Conjoint</a> on 29 August 2017</em></p>
-<p>Literature Reference List</p>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>2013 Subjective probability and Bayesian truth serum↩︎</p></li>
-<li id="fn2"><p>2004 A Bayesian truth serum for subjective data↩︎</p></li>
-<li id="fn3"><p>2004 A Bayesian truth serum for subjective data↩︎</p></li>
-<li id="fn4"><p>2005 Incentive-aligned conjoint analysis↩︎</p></li>
-<li id="fn5"><p>2001 Thirty years of conjoint analysis: Reflections and prospects↩︎</p></li>
-<li id="fn6"><p>1978 Conjoint analysis in consumer research: issues and outlook↩︎</p></li>
-<li id="fn7"><p>1971 Conjoint measurement for quantifying judgmental data↩︎</p></li>
-<li id="fn8"><p>2005 Incentive-aligned conjoint analysis↩︎</p></li>
-<li id="fn9"><p>2004 Conjoint analysis, related modeling, and applications↩︎</p></li>
-<li id="fn10"><p>1988 Conjoint analysis modelling of stated preferences: a review of theory, methods, recent developments and external validity↩︎</p></li>
-<li id="fn11"><p>1978 Conjoint analysis in consumer research: issues and outlook↩︎</p></li>
-<li id="fn12"><p>2004 Conjoint analysis, related modeling, and applications↩︎</p></li>
-<li id="fn13"><p>1971 Foundations of measurement↩︎</p></li>
-<li id="fn14"><p>2004 Conjoint analysis, related modeling, and applications↩︎</p></li>
-<li id="fn15"><p>1978 Conjoint analysis in consumer research: issues and outlook↩︎</p></li>
-<li id="fn16"><p>1988 Conjoint analysis modelling of stated preferences: a review of theory, methods, recent developments and external validity↩︎</p></li>
-<li id="fn17"><p>1988 Conjoint analysis modelling of stated preferences: a review of theory, methods, recent developments and external validity↩︎</p></li>
-<li id="fn18"><p>1983 Design and analysis of simulated consumer choice or allocation experiments: an approach based on aggregate data↩︎</p></li>
-<li id="fn19"><p>Conditional Logit Analysis of Qualitative Choice Behavior↩︎</p></li>
-<li id="fn20"><p>2000 An overview and comparison of design strategies for choice-based conjoint analysis↩︎</p></li>
-</ol>
-</section></div> ]]></description>
-  <category>market research</category>
-  <category>behavioral data</category>
-  <guid>https://gregordimi.com/posts/conjoint-analysis-review/</guid>
-  <pubDate>Fri, 25 Aug 2017 21:00:00 GMT</pubDate>
+  <pubDate>Sat, 26 Aug 2017 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Behavioral data part - mothers study</title>
@@ -3885,7 +3885,7 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
   <category>data</category>
   <category>behavioral data</category>
   <guid>https://gregordimi.com/posts/bahavioral-data-mothers-study/</guid>
-  <pubDate>Thu, 03 Nov 2016 22:00:00 GMT</pubDate>
+  <pubDate>Fri, 04 Nov 2016 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Behavioral data part - results</title>
@@ -4034,7 +4034,7 @@ Based on the behavioral data, a service provider can estimate the profile of the
   <category>data</category>
   <category>behavioral data</category>
   <guid>https://gregordimi.com/posts/bahavioral-data-results/</guid>
-  <pubDate>Thu, 15 Sep 2016 21:00:00 GMT</pubDate>
+  <pubDate>Fri, 16 Sep 2016 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Behavioral data part - data</title>
@@ -4117,7 +4117,7 @@ Based on the behavioral data, a service provider can estimate the profile of the
 </section></div> ]]></description>
   <category>behavioral data</category>
   <guid>https://gregordimi.com/posts/bahavioral-data-data/</guid>
-  <pubDate>Tue, 16 Aug 2016 21:00:00 GMT</pubDate>
+  <pubDate>Wed, 17 Aug 2016 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Behavioral data part - intro</title>
@@ -4177,7 +4177,7 @@ Based on the behavioral data, a service provider can estimate the profile of the
 </section></div> ]]></description>
   <category>behavioral data</category>
   <guid>https://gregordimi.com/posts/bahavioral-data-intro/</guid>
-  <pubDate>Wed, 03 Aug 2016 21:00:00 GMT</pubDate>
+  <pubDate>Thu, 04 Aug 2016 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

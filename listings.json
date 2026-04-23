@@ -1,17 +1,5 @@
 [
   {
-    "listing": "/posts/merim-branding/merim.bg-branding.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/merim-intro/merim.bg-intro.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/merim-data/merim.bg-data.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/posts/election-sociology-analysis-2026/index.html",
@@ -19,12 +7,24 @@
       "/posts/persenk-2022/index.html",
       "/posts/conjoint-analysis-survey-limitations/index.html",
       "/posts/bayesian-truth-serum/index.html",
-      "/posts/conjoint-analysis-design/index.html",
       "/posts/conjoint-analysis-review/index.html",
+      "/posts/conjoint-analysis-design/index.html",
       "/posts/bahavioral-data-mothers-study/index.html",
       "/posts/bahavioral-data-results/index.html",
       "/posts/bahavioral-data-data/index.html",
       "/posts/bahavioral-data-intro/index.html"
     ]
+  },
+  {
+    "listing": "/posts/merim-branding/merim.bg-branding.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/merim-data/merim.bg-data.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/merim-intro/merim.bg-intro.html",
+    "items": []
   }
 ]

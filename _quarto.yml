@@ -1,6 +1,9 @@
 project:
   type: website
 
+execute:
+  freeze: auto
+
 website:
   description: "A blog built with Quarto"
   site-url: https://gregordimi.com

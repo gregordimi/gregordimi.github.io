@@ -3,7 +3,7 @@ name: Quarto Publish
 on:
   push:
     branches:
-      - quarto  # Runs every time you push to your quarto branch
+      - quarto
 
 jobs:
   build-deploy:
@@ -14,12 +14,26 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      # --- NEW: Set up Python ---
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # --- NEW: Install dependencies ---
+      # We install jupyter/nbformat (for Quarto) + your analysis libraries
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyter nbformat nbclient
+          pip install pandas numpy matplotlib seaborn statsmodels qrcode[pil]
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          target: gh-pages  # This pushes the HTML to a branch called gh-pages
+          target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

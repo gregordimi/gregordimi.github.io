@@ -1,0 +1,77 @@
+---
+title: 'Behavioral data part - data'
+date: '2016-08-17'
+description: 'Behavioral data - data.'
+categories: 'behavioral data'
+---
+
+As announced [here](test), we will share more details on the execution of the study as well as on the results from the behavioral sampling.
+
+### Targeting the relevant sample for the survey
+
+To ensure a high relevance of the sample, we passively collected the panelists[^1] online behavior from one of our [continuously passively measured panels](https://wakoopa.com/get-data). We used the behavioral data to select and invite only research participants who have recently purchased a travel related product or service.
+
+[^1]: The research was conducted using sample from the Netherlands
+
+The data was analyzed towards website visits on purchase confirmation pages of 43 popular travel websites. This allowed us to filter out 1,039 panelists who recently [^2] conducted a purchase.
+
+[^2]: conducted during the last week of June 2016
+
+### Asking what can’t be observed with passive metering
+
+The selected sample was invited to complete a survey covering 3 areas:
+
+- Screening: The first section of the survey contained screening questions, such as questions about recent travel purchases, the role in decision making and the purpose of the trip.
+- Trip characteristics: The second part of the survey asked participants about their trip characteristics related to the latest purchase to collect information about the destination, the budget, the number of companions/children on the trip as well as offline information sources used.
+- Personality: The last section surveyed the unobservable personality related to the respondents attitude toward risk and uncertainty. We ran a factor analysis on the personality questions which helped us to separate risk from uncertainty attitudes.
+
+### The results from the fieldwork
+
+The targeted sample (n=1,039) resulted in a response rate of 84% (872 started the survey[^3] out of 1,039 invitation sent) and an incidence rate of 68% (495 completed, additional 233 screened out because they didn’t have a major role in the decision making or went to a business trip only). The expected incidence rate for our target sample provided by our panel supplier was 20%.
+
+[^3]: between March 1, 2016 to June 16, 2016
+
+<Image src="./funnel.png" alt="funnel" width="600" height="400"/>
+
+***Benefits of targeting your sample with behavioral data***
+
+- *Relevant surveys: Sending surveys with relevant content to your respondents yields a higher satisfaction rate and an increased response rate. Moreover, more relevant surveys can lead to more accurate findings because of a higher engagement of the respondents*.
+
+- *Lower costs: Choosing precisely the sample you want based on observed behavior can increase the incidence rate and lower the fieldwork costs.*
+
+------------------------------------------------------------------------
+
+### Data processing and data analysis
+
+As an additional quality check we cleaned the data on the following criteria: Respondents that were flatliners, speeding throughout the survey, attempted to participate in the survey more than once or had a low activity and insufficient observations (\<1,000 observation in the behavioral data), were filtered out.
+
+Thus, the final dataset for the analysis, consisted of 426 active participants on desktop, 109 active on mobile and 99 among them overlapping on both devices.
+
+> 22 million desktop observations
+>
+> 0.8 million mobile observations
+
+We analyzed the full online behavior of the selected survey participants over the previous six months and categorized 194,534 unique domains visited by the participants into 16 industry categories, including the travel industry.
+
+By using machine learning algorithms, the content of the websites was categorized, whether it was travel related or not. The results of the categorization showed 7,207 (3.7%) unique travel related websites.
+
+The mobile apps were categorized through a list of keywords to evaluate whether an app is travel related or not. Out of 1,574 unique apps, 45 (2.9%) were associated with travel.
+
+### Data fusion: Combining observed and declared data
+
+In order to merge the behavioral data streams from desktop and mobile with the survey data, we analyzed the data regarding different variables to understand the relationship between travel planning behavior and personality:
+
+- Time spent on travel related domains
+- Total pageviews on travel related domains
+- Number of travel related unique domains
+- Number of travel related micro-moments
+
+These variables were put into relation with a set of independent variables, including the personality traits and trip characteristics from the survey, in order to reveal the impact of each factor and uncover the different consumer journeys.
+
+### Stay tuned for the results
+
+We will share interesting insights on the relationship between consumers' travel planning behavior and their personality as well as learnings from this research approach in the third part.
+
+### Reference
+
+*The post has been originally published as a marketing at Wakoopa's blog [How behavioral data sheds light on real consumers' travel planning behavior – Part II](https://blog.wakoopa.com/how-behavioral-data-sheds-light-on-real-consumers-travel-planning-behavior-part-ii/) on 17 August 2016*

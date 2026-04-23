@@ -1,0 +1,117 @@
+---
+title: 'Conjoint analysis - survey limitations'
+date: '2017-08-29'
+author: 'Grigor Dimitrov'
+description: 'Limitations of survey opinion taking.'
+categories: ['market research','behavioral data']
+---
+
+Summary: When people are asked questions in surveys, they sometimes give untrue answers. This happens because they might not be motivated to answer truthfully, or they might not be paying attention to the questions. survey designers have come up with ways to try to get people to answer truthfully, such as by asking them questions that are very unlikely to happen, or by giving them rewards for good answers. However, there is still no sure way to make sure that people will answer truthfully.
+
+### Intro
+
+Practitioners have defined several systematic behaviors which potentially lead to low-quality data in online data collection [^1], [^2]. Namely, cross-cultural factors, untruthfulness, speeding, question format, and sample quality have been identified to have a negative impact on data quality, thus, causing noise in the data rather than variance.
+
+[^1]: 2012 Dimensions of online survey data quality. What really matters?
+
+[^2]: 2012 Rules of Engagement The war against poorly engaged respondents guidelines for elimination
+
+One of the major limitations of online opinion taking, and in particular preference measurement is the lack of motivation by respondents [^3], which can result in reduced respondents engagement, hence untruthful answers. For the purpose of this paper, I will further elaborate on respondents’ untruthfulness, engagement, and motivation.
+
+[^3]: 2012 Measuring consumer preferences using conjoint poker
+
+The hypothetical nature in which typically conjoint studies are executed questions the extent to which they are able to reveal the true consumer preferences [^4]. When respondents are not incentivized to reveal their true preferences and the data is collected in hypothetical settings, weaker external validity is observed [^5]. Respondents have little or no incentive to reveal their true preference or to be mindful about their answers in hypothetical settings [^6]. Economic theory suggests that if economic agents believe their answers will have an impact on decisions made by businesses or governments for outcomes that the agents care about, they should respond in such a way as to maximize their payoffs and welfare [^7]. However, due to the hypothetical nature of the surveys, in most conjoint studies respondents may misinterpret their preferences and the study may not yield truthful answers. Though hypothetical techniques are found to perform fine in many domains [^8]; [^9]; [^10]; [^11], recent conjoint studies reveal that incentive-aligned conjoint is superior to hypothetical conjoint in out-of-sample prediction, and it is more engaging and motivating [^12]; [^13]; [^14].
+
+[^4]: 2005 Incentive-aligned conjoint analysis
+
+[^5]: 2005 Incentive-aligned conjoint analysis
+
+[^6]: 2014 tHigher Order Risk Attitudes
+
+[^7]: 2007 Incentive and informational properties of preference questions
+
+[^8]: 1992 Earnings uncertainty and precautionary saving
+
+[^9]: 2010 Flu shots, mammogram, and the perception of probabilities
+
+[^10]: 1999 Investment and demand uncertainty
+
+[^11]: 2009 Subjective probabilities in household surveys
+
+[^12]: 2005 Incentive-aligned conjoint analysis
+
+[^13]: 2007 An incentive-aligned mechanism for conjoint analysis
+
+[^14]: 2012 Measuring consumer preferences using conjoint poker
+
+Typically, practitioners apply different rules of identifying “bad quality” respondents and eliminating them when analyzing the data, such as using misdirect questions (or traps). For example, [^15] recognize untruthfulness by asking respondents several questions with an extremely low incidence rate and asking questions that have known distribution across the population. The authors argue that based on the score estimated from these questions, it is possible for researchers to screen out respondents and thus, remove respondents that do not have carefully considered answers. Speeding is also a quality measure often applied to achieve the necessary data quality. [^16] claim that 85% of the respondents are speeding at some point of the questionnaires, which makes it impossible to exclude these responses from the survey. The authors argue that speeding is an “epidemic” in the online survey world and it is a generic issue that holds the potential to cause the biggest amount of noise in the data. In their paper, the authors divided the sample into two categories, above and below the average length of the interview. The analysis of the comparison of both groups showed that respondents in the group below average times account for +/-6.2% higher variance on average. As expected, with the progression of the survey the variance increases from 4% at the beginning to 8% at the end. The authors do not bind themselves to the claim that this variance is a source of noise in the data, however, one could speculate that the consequence of speeding is low-quality data.
+
+[^15]: 2012 Rules of Engagement The war against poorly engaged respondents guidelines for elimination
+
+[^16]: 2012 Dimensions of online survey data quality. What really matters?
+
+The recent technological advancements allowed for increased accessibility to respondents [^17]. But this comes with a trade-off, as there has been decreased attentiveness and patience as respondents are easily distracted. With the aid of technology, there have been efforts to engage respondents with the task using improved interfaces, survey designs, question formats, and even game-like environments (see [^18] for discussion). Hence, practitioners have attempted to tackle the disengagement by incorporating intuitive mechanisms in their survey designs. These mechanisms indicate only “suggestive evidence” of underlying issues and determination that respondents are “behaving badly”. Despite those attempts, the biggest source of bad data is still the disengaged respondent.
+
+[^17]: 2008 Beyond conjoint analysis: Advances in preference measurement
+
+[^18]: 2008 Beyond conjoint analysis: Advances in preference measurement
+
+The academia also recognized the lack of motivation as a key limitation concerning preference measurement methods [^19]; [^20]; [^21]; [^22]. However, academia has investigated the source of these problems in order to provide solid solutions. Respondents are putting significantly less cognitive effort when making survey choices compared to real-life decisions, which leads to poor out-of-sample predictions [^23]. To increase the level of involvement, based on insights from experimental economics, some scholars approached preference measurement issues applying incentive-compatible mechanisms. Experimental economists claim that using incentive-compatible methods should induce truth-telling as monetary incentives dominate over other factors. Hence, respondents are encouraged to reveal their true preferences to maximize their final payoff [^24]. In their Induced value theory, [^25] define 5 percepts, 3 of which are sufficient conditions for incentive compatible behavior. The first principle is referred to as saliency, in other words, participants’ final monetary payoff should depend on their performance, where better performance leads to a better outcome. The saliency principle is also related to the non satiation principle, claiming that “utility is a monotone increasing function of monetary reward”, or simply put “the more the better”. The third principle is dominance. To assure control over the preference, the final payoff for the exerted cognitive efforts should dominate the subjective costs of participation. When those conditions are met, incentive-compatible methods should yield truthful answers.
+
+[^19]: 2012 Measuring consumer preferences using conjoint poker
+
+[^20]: 2005 Incentive-aligned conjoint analysis
+
+[^21]: 2008 Beyond conjoint analysis: Advances in preference measurement
+
+[^22]: 2005 Dynamic models incorporating individual heterogeneity: Utility evolution in conjoint analysis
+
+[^23]: 2012 Measuring consumer preferences using conjoint poker
+
+[^24]: 1982 Evolution and the Theory of Games
+
+[^25]: 1976 The logic of asymmetric contests
+
+Recent studies on adopting incentive-compatible mechanisms to conjoint have shown that incentive-compatible mechanisms can result in boosting respondents’ motivation leading to respondents providing truthful answers.
+
+### Incentive aligned conjoint
+
+A general concern amongst practitioners when using conjoint methodologies is that respondents are not motivated during the survey and that choices made during the conjoint exercise differ from real-life purchasing choices [^26]. [^27] compared the out-of-sample predictions for two conjoin designs; the first adopted the traditional hypothetical setting, while the second used Chinese dinner special as a context in which respondents had a positive chance of receiving a preferred alternative from each choice set at the end of the experiment. Results showed that the external validity is increased compared to a setting where respondents hypothetically provide answers for each of the choice tasks.
+
+[^26]: 2012 Measuring consumer preferences using conjoint poker
+
+[^27]: 2005 Incentive-aligned conjoint analysis
+
+The authors find the most relevant principle to conjoint analysis to be saliency. In practice, respondents are given a flat participation fee, which doesn’t induce honest responses. Hence, saliency hasn’t been satisfied as respondents are neither rewarded nor penalized based on their performance. Providing respondents with a flat participation fee cannot motivate them enough to carefully evaluate every given choice in the conjoint surveys, resulting in noise in the data. Hence, there is no reason for researchers to expect that predictions based on the survey data from non-salient responses will make valid out-of-sample predictions. In other words, respondents’ stated preference will not be consistent with their revealed preference [^28]. The main disadvantage of this experiment, however, is that the researcher should have available all alternatives from each choice set.
+
+[^28]: 2005 Incentive-aligned conjoint analysis
+
+[^29] created a mechanism that does not require changes in the existing conjoint methodologies and allows for situations in which the researcher has available a few alternatives of the product. Respondents are offered the available alternatives as potential rewards. The method incorporates BDM [^30] procedure to compare subjects’ valuations to a randomly generated price, the optimal strategy for a participant being to state his or her true WTP. If the bid is higher, the subject pays the randomly generated price and gets the item. If the bid is lower than the elicited price, the subject doesn’t pay and receives nothing. The method works in four steps. First, participants complete a standard conjoint exercise. Afterward, the experimenter shows them a real product that they could potentially purchase. By not revealing the product in hand prior to the conjoint exercise (as it is of limited availability), respondents’ preferences are not biased. After the product, if being shown, the interred WTP is calculated. Finally, using BDM it is determined whether a participant can purchase the real product or not. The drawback of this method, however, is that by using the BDM mechanism, respondents have the chance to purchase the real product with the majority of the amount of money coming from the difference between the inferred price and the randomly drawn price. Hence, there might be a difference when in real life respondents need to use their own money. Moreover, the design cannot be applied to new goods as it requires an alternative to be present when performing the study and one of the main applications of conjoint analysis is for new product development.
+
+[^29]: 2007 An incentive-aligned mechanism for conjoint analysis
+
+[^30]: 1964 Measuring utility by a single response sequential method
+
+[^31], proposed an incentive-aligned conjoint method that allows respondents to update each attribute and configure their own product. When upgrading attributes, respondents state their willingness to pay per upgrade. The BDM mechanism is adopted here as well, to ensure that the best option for respondents is to truthfully state their willingness to pay. At the end of the experiment, respondents receive their upgraded product. The authors found that the method can significantly outperform the standard conjoint study. The drawback of this study is that again, researchers need to have the product available.
+
+[^31]: 2008 Eliciting preference for complex products A web-based upgrading method
+
+[^32] argued that those methods “may not increase involvement to a level of real-life purchasing decisions”. The reasoning is that respondents may behave differently when obtaining the product requires them to use their own money instead of receiving a product as a reward at the end of the experiment. In such a case, respondents will pay more attention to certain attributes relevant to them in real life, but not to such an extent during the conjoint exercise, where there is a probability of obtaining the tested product. Hence, [^33] proposed the “conjoin poker”, which is an incentive-compatible conjoint study that collects preference data in a game setting in an attempt to increase respondents’ involvement and attention. The study design resulted in increased respondent engagement and motivation, which was measured by the time they spend in the survey and by a follow-up questionnaire. Generally, the study design was found engaging and entertaining, but also complex and time-consuming.
+
+[^32]: 2012 Measuring consumer preferences using conjoint poker
+
+[^33]: 2012 Measuring consumer preferences using conjoint poker
+
+The issue that still stands in order to comply with the saliency principle is how to evaluate respondents’ performance in an absence of objective truth. In 2004 Drazen Prelec proposed a solution which he called Bayesian truth serum. This paper’s main objective will be to test if the BTS can help motivate respondents to truthfully reveal their preferences and improve the quality of the data. The method works in hypothetical settings i.e. in a new product development context. It doesn’t alter the experimental design to an extent such as the conjoint poker. It is relatively easy for understanding by researchers and respondents. The following section described BTS intuition, assumptions, and applications.
+
+### Revealing truthful preference with BTS
+
+In his work on truth-telling incentives, [^34] recognizes another source of bias that can result in low-quality data. He suggests that in the absence of “external criteria” people can become subjects of “self-deception and false confidence even among the well-intentioned”. In order to express the notion that some experts are never subject to reality checks, Prelec compares the subjective judgment of business investors with an art critic. Both experts are making subjective judgments but the end result of the investor can be used for evaluation of his judgments (i.e. reality check) while for the art critic there are no external criteria for proper assessment.
+
+[^34]: 2004 A Bayesian truth serum for subjective data
+
+### References
+
+*The post has been originally published as part of my master thesis [Bayesian Truth Serum Fused Conjoint](https://thesis.eur.nl/pub/39589/) on 29 August 2017*
+
+Literature Reference List

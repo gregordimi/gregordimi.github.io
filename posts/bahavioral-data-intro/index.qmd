@@ -1,0 +1,55 @@
+---
+title: 'Behavioral data part - intro'
+date: '2016-08-04'
+author: 'Grigor Dimitrov'
+description: 'Behavioral data.'
+categories: 'behavioral data'
+---
+
+The importance of the Internet for the highly competitive travel industry has increased significantly in the past year. The Internet has become an established touch point within the consumer decision journey and path to purchase – from researching information up to the purchase of travel-related goods and services. Consumers use numerous digital sources and switch across multiple devices[^1]. For instance, they use a mobile app for travel inspiration, conduct extensive information search on another device, but commit to the purchase weeks later on their desktop device.
+
+[^1]: Google Analytics, U.S. data from May 2014 to May 2015
+
+Most research is conducted by only collecting opinion data that is declared in surveys – and this also applies for the travel industry. However, declared data can’t reflect the actual online behavior of consumers. Due to this complexity, fragmentation and volume of online activities, consumers are not able to recall all their ['micro-moments'](https://www.thinkwithgoogle.com/articles/travel-trends-4-mobile-moments-changing-consumer-journey.html) that occur within the travel planning process:
+
+<Image src="./travel-micro-moments.png" alt="Micro-Moments" width="800" height="800"/> *(image: [Google](https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/micro-moments-travel-customer-journey/))*
+
+This is one reason, why researchers need to consider additional data sources to capture all the events related to a purchase decision.
+
+Next to that, consumers are not loyal to a specific brand within their customer lifecycle of travel planning. Instead, they rather focus on their needs within the travel planning process[^2]. This makes a good understanding of the 'micro-moments' essential for brands, so they are able to create great customer experience and turn it into an competitive advantage.
+
+[^2]: Google/Ipsos Connect, travel playbook omnibus, n=1,063, among U.S. travelers 18+ who use a smartphone and for whom the statement is applicable, Apr. 2016.
+
+### What can we do better?
+
+One possibility to improve the research quality is to move away from self-reported, recalled and [biased information](https://blog.wakoopa.com/the-times-they-are-a-changin-for-the-questionnaire/) and move towards objective, passively measured data. A great example for this is to collect behavioral data with passive metering technology, since it is able to capture the full footprint of consumers across their devices. This data can help us to understand the time spent with travel planning as well as the amount of information researched with great accuracy and detail.
+
+On the other hand, we can’t measure personality through passive metering – this is where survey data is still important and valuable. Merging behavioral data with other data sources (e.g. declared information on demographics or personality) provides an even deeper layer of insight into the travel planning behavior of different consumer segments.
+
+### The research objective
+
+There is evidence that there is a correlation between travel online behavior and the risk and uncertainty attitude of consumers, but this has been researched with declared data alone. To get a better understanding on the relationship between the efforts (measured in domains, time, page-views and micro-moments) people make researching for travel alternatives with their personality, we decided to explore the following research question:
+
+> What is the relationship between consumer’s travel planning behavior and their personality?
+
+Our goal is to uncover, whether a risk and uncertainty averseness drives people to invest more time researching online for their travels and on the other hand, if risk and uncertainty seeking people invest less time online with researching for their travels.
+
+Based on the findings, this study aims to result in a tangible example on how behavioral data can unlock consumer reality for the travel industry and to provide insights for brands on how consumer experiences (e.g. better targeting & personalized offerings) can be improved.
+
+### The research design
+
+We decided to approach our research objective with an innovative, multi-source research design by integrating behavioral data with declared data.
+
+In the first step, we will use passive metering as a targeting tool for a survey sample. Selecting a relevant sample for your research is of crucial importance for accurately answering your research questions and gaining relevant insights.
+
+In the next phase, the selected sample will be invited to complete a survey on their demographics, trip characteristics, travel behavior and personality. The survey data will be analyzed, categorized and integrated with the full online behavior of the survey participants to uncover differences in their customer journeys.
+
+### What’s next?
+
+In the following posts we will provide more information on the data analysis, segmentation and on how the different data streams were merged together.
+
+We will elaborate on the results from the behavioral sample targeting and share the research findings as well as the generated learnings from this research approach.
+
+### References
+
+*The post has been originally published as a marketing at Wakoopa's blog [How behavioral data sheds light on real consumers' travel planning behavior – Part I](https://blog.wakoopa.com/how-behavioral-data-sheds-light-on-real-consumers-travel-planning-behavior-part-i-2/) on 4 August 2016*

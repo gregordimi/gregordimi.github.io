@@ -1,0 +1,309 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Grigor Dimitrov",
+        "label": "Senior Insights Manager",
+        "image": "",
+        "email": "g****@gmail.com",
+        "phone": "+49***",
+        "url": "https://gregordimi.com",
+        "summary": "",
+        "location": {
+            "countryCode": "DE",
+            "address": "Berlin"
+        },
+        "profiles": [
+            {
+                "network": "Github",
+                "username": "gregordimi",
+                "url": "https://github.com/gregordimi/"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "grigordimitrov",
+                "url": "https://www.linkedin.com/in/grigordimitrov/"
+            },
+            {
+                "network": "Instagram",
+                "username": "gregordimi",
+                "url": "https://www.instagram.com/gregordimi/"
+            },
+            {
+                "network": "Facebook",
+                "username": "gregordimi",
+                "url": "https://www.facebook.com/grigor.dimitrov"
+            },
+            {
+                "network": "X",
+                "username": "gregordimi",
+                "url": "https://twitter.com/gr1gi"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "Zalando SE",
+            "position": "Research Manager",
+            "startDate": "2019-05-31",
+            "endDate": "2022-08-31",
+            "highlights": [
+                "Build and deployed Zalando Brand Monitor in all Zalando markets",
+                "Product management of Zalando 'zTypes' customer segmentation",
+                "Running the competitor & market intelligence project",
+                "Ad-Hoc Research - quant and qual research on diverse topics such as beauty, packaging, brand etc."
+            ],
+            "summary": "I am informing the decisions in brand, marketing & product/propositions strategies of Zalando and transforming business objectives into research questions. I informed the 2021 marketing strategy of Zalando of the target audience which holds the biggest potential for long-term value. In my toolset, I've utilized a diverse set of quantitative research, qualitative research, and advanced analytics methodologies.",
+            "url": "https://www.linkedin.com/company/698916",
+            "location": "Berlin, Germany"
+        },
+        {
+            "name": "Nielsen",
+            "position": "Research Consultant",
+            "startDate": "2017-03-31",
+            "endDate": "2019-04-30",
+            "highlights": [
+                "Consumer Journey Research",
+                "Media Planning",
+                "Brand Driver Models",
+                "Media efficiency and Marketing analytics"
+            ],
+            "summary": "I was responsible for conducting media strategy, communication, and brand research for media planning agencies, brands, and media owners. My role involved research design, project management, and coordination of multidisciplinary teams and clients into delivering several analytical products: Commspoint Influence - consumer research-based media planning software, Commspoint Journey - consumer research-based syndicated consumer journey mapping, Brandpoint - Brand drivers modeling",
+            "url": "https://www.linkedin.com/company/1714",
+            "location": "Rotterdam, The Netherlands"
+        },
+        {
+            "name": "Wakoopa",
+            "position": "Research Consultant",
+            "startDate": "2016-04-30",
+            "endDate": "2016-09-30",
+            "highlights": [],
+            "summary": "Data science project exploring the potential of passive metering technologies and behavioral data in the field of market research.",
+            "url": "https://www.linkedin.com/company/167830",
+            "location": "Amsterdam, The Netherlands"
+        },
+        {
+            "name": "GfK",
+            "position": "Research Executive",
+            "startDate": "2011-06-30",
+            "endDate": "2014-08-31",
+            "highlights": [],
+            "summary": "I was responsible for questionnaire design and programming, project management, data processing, and related technical activities. Additionally, I prepared proposals, consulted researchers and non-technical stakeholders on projects' feasibility and deadlines. I gained experience in multi-country brand tracking and ad-hoc research. My day-to-day communication was with clients, researchers, and fieldwork agencies. Recognized for attracting and maintaining a big client to the Bulgaria offshore center.",
+            "url": "https://www.linkedin.com/company/4371",
+            "location": "Sofia, Bulgaria"
+        },
+        {
+            "name": "GMI | MAP Marketing Research",
+            "position": "Technical Research Consultant",
+            "startDate": "2007-07-31",
+            "endDate": "2010-09-30",
+            "highlights": [],
+            "summary": "I was a technical consultant of GMI's data collection platform \"Net-Mr\". I was responsible for providing my expertise regarding the overall market research survey cycle. I was in direct contact with end clients and other agencies using the platform,  consulting them on questionnaire programming, fieldwork and sampling, panel management, data analysis, and quality assurance.",
+            "url": "https://www.linkedin.com/company/164013",
+            "location": "Sofia, Bulgaria"
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "Erasmus School of Economics",
+            "area": "Economics and business ",
+            "studyType": "M.Sc. Behavioral Economics",
+            "startDate": "2014-12-31",
+            "endDate": "2016-12-31",
+            "score": "Cum Laude",
+            "courses": [
+                "Advanced Behavioral Economics",
+                "Experimental Economics",
+                "Econometrics and Quantitative methods"
+            ],
+            "location": "Rotterdam, The Netherlands",
+            "url": "https://www.eur.nl/en/ese"
+        },
+        {
+            "institution": "Erasmus School of Economics",
+            "area": "Economics and business ",
+            "studyType": "M.Sc. Marketing",
+            "startDate": "2014-12-31",
+            "endDate": "2016-12-31",
+            "score": "Cum Laude",
+            "courses": [
+                "Customer Analytics",
+                "Advanced Market Research",
+                "Marketing and Branding"
+            ],
+            "location": "Rotterdam, The Netherlands",
+            "url": "https://www.eur.nl/en/ese"
+        },
+        {
+            "institution": "University of National and World Economy",
+            "area": "Economics and business.",
+            "studyType": "Bachelor's degree",
+            "startDate": "2006-12-31",
+            "endDate": "2010-12-31",
+            "score": "",
+            "courses": [],
+            "location": "Sofia, Bulgaria",
+            "url": "https://www.unwe.bg/en/"
+        },
+        {
+            "institution": "National Schools of Commerce",
+            "area": "Banking & Accounting",
+            "studyType": "Professional high school diploma",
+            "startDate": "2001-12-31",
+            "endDate": "2006-12-31",
+            "score": "",
+            "courses": [],
+            "location": "Plovdiv, Bulgaria",
+            "url": "https://www.ntg-plovdiv.net/v3/"
+        }
+    ],
+    "awards": [],
+    "certificates": [],
+    "publications": [
+        {
+            "name": "Bayesian Truth Serum Fused Conjoint",
+            "publisher": "Erasmus School of Economics",
+            "releaseDate": "2017-08-29",
+            "url": "https://thesis.eur.nl/pub/39589",
+            "type": "Publication"
+        },
+        {
+            "name": "Using behavioral data to shed light on consumers online travel planning",
+            "publisher": "Erasmus School of Economics",
+            "releaseDate": "2017-01-19",
+            "url": "https://thesis.eur.nl/pub/37131/",
+            "type": "Publication"
+        },
+        {
+            "name": "Incentives 2.0 - Using a mathematical truth serum in online surveys",
+            "publisher": "Insight Innovation Exchange (IIEX 2019)/ Amsterdam",
+            "releaseDate": "2019-02",
+            "url": "https://www.greenbook.org/events/iiex-europe/about",
+            "type": "Conference / Speaker"
+        },
+        {
+            "name": "Fashion Wallet - How Zalando measures the fashion spendings in EU",
+            "publisher": "Insight Innovation Exchange (IIEX 2020)/ Amsterdam",
+            "releaseDate": "2020-02",
+            "url": "https://www.greenbook.org/events/iiex-europe/about",
+            "type": "Conference / Speaker"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Consumer Insights",
+            "level": "Master",
+            "keywords": [
+                "Quantitative and Qualitative Research",
+                "Behavioral Data",
+                "Advanced Analytics",
+                "Segmentations",
+                "Presentations & Storytelling"
+            ]
+        },
+        {
+            "name": "Market Research Operations",
+            "level": "Master",
+            "keywords": [
+                "Project Management",
+                "Questionnaire Design",
+                "Questionnaire Programming",
+                "Data Collection",
+                "Sampling",
+                "Data Processing"
+            ]
+        },
+        {
+            "name": "Data processing & analytics",
+            "level": "Master",
+            "keywords": [
+                "R",
+                "Python",
+                "SPSS",
+                "SQL"
+            ]
+        },
+        {
+            "name": "Business Intelligence",
+            "level": "Intermediate",
+            "keywords": [
+                "MicroStrategy",
+                "Tableau"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "fluency": "Native Speaker",
+            "language": "Bulgarian"
+        },
+        {
+            "fluency": "Full Professional",
+            "language": "English"
+        },
+        {
+            "fluency": "Elementary",
+            "language": "German"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Running",
+            "keywords": [
+                "Marathon",
+                "Ultra"
+            ]
+        },
+        {
+            "name": "Behavioral Science",
+            "keywords": [
+                "Decision Making",
+                "Experiments"
+            ]
+        },
+        {
+            "name": "Coffee"
+        },
+        {
+            "name": "Bots & Robots"
+        }
+    ],
+    "references": [],
+    "projects": [
+        {
+            "name": "Merim.org",
+            "startDate": "2025-07-01",
+            "endDate": "2025-09-01",
+            "description": "Merim.org is an app that allows users to track supermarkets' prices during the period of rapid price changes because of the ongoing Eurozone accession of Bulgaria.",
+            "highlights": ["Pricing Market Research", "Mobile App Development"],
+            "keywords": ["React Native", "React", "PostgreSQL", "Supabase", "Dyno", "Expo", "Vercel", "Vite"],
+            "location": "Berlin, Germany - Sofia, Bulgaria",
+            "url": "https://merim.org/"
+        },
+        {
+            "name": "Opinify",
+            "startDate": "2024-09-01",
+            "endDate": "2025-12-01",
+            "description": "Opinify broadens the user case of \"Probah\" - And instead of focusing on fashion makes the platform industry agnostic. The platform is an analytical platform for research, analysis and reporting. Look up more at https://opnify.net/ . Under active development.",
+            "highlights": ["SaaS Platform"],
+            "keywords": ["React Native", "React", "PostgreSQL", "Supabase", "Dyno", "Expo", "Vercel", "Next.js", "Echarts Apache"],
+            "location": "Berlin, Germany - Sofia, Bulgaria",
+            "url": "https://opnify.net/"
+        },
+        {
+            "name": "Probah",
+            "startDate": "2022-09-01",
+            "endDate": "2023-12-01",
+            "description": "Analytical platform for research, analysis and reporting. The project aimed to aid companies and brands with fashion portfolio optimization problems. Look up more at https://probah.com/",
+            "highlights": ["Portfolio Optimization", "Web App Development"],
+            "keywords": ["React", "PostgreSQL", "Supabase", "Dyno", "Expo", "Vercel", "Next.js", "Echarts Apache"],
+            "location": "Berlin, Germany - Sofia, Bulgaria",
+            "url": "https://probah.com/"
+        }
+    ],
+    "meta": {
+        "version": "v1.0.0",
+        "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json",
+        "theme": "elegant"
+    }
+}

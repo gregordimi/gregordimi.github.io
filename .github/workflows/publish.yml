@@ -3,7 +3,7 @@ name: Quarto Publish
 on:
   push:
     branches:
-      - quarto
+      - main
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true

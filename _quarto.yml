@@ -4,6 +4,8 @@ project:
 execute:
   freeze: auto
 
+jupyter: gregordimicom-venv
+
 website:
   description: "A blog built with Quarto"
   site-url: https://gregordimi.com

@@ -56,8 +56,6 @@ header-includes:
 ---
 
 ::::::: resume-container
-# My Resume
-
 ## Current Projects
 
 ::: resume-list

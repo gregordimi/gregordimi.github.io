@@ -1,25 +1,29 @@
 /*-- scss:defaults --*/
-// Dark mode overrides to remove the "blue" and normalize sizes
 
-// Neutral colors (Vercel/GitHub style)
-$primary: #f8f9fa !default;
-$body-bg: #0a0a0a !default;
-$body-color: #ededed !default;
+// Colors - Dark (Zinc-based)
+$primary: #fafafa !default;
+$body-bg: #09090b !default;
+$body-color: #a1a1aa !default;
+$link-color: #fafafa !default;
 
-// Fix Navbar
-$navbar-bg: #000000 !default;
-$navbar-fg: #ffffff !default;
-$navbar-hl: #ffffff !default;
-$navbar-padding-y: 0.5rem !default; // Match Cosmo's default
-$navbar-brand-font-size: 1.25rem !default;
+$border-color: #27272a !default;
 
-// Link color
-$link-color: #3b82f6 !default; // A more subtle blue for links only
-$link-hover-color: #60a5fa !default;
+// Navbar
+$navbar-bg: #09090b !default;
+$navbar-fg: #a1a1aa !default;
+$navbar-hl: #fafafa !default;
 
 /*-- scss:rules --*/
 
-// Ensure the navbar doesn't have a border or weird shadow
 .navbar {
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid $border-color;
+  background-color: rgba(9, 9, 11, 0.8) !important;
+  backdrop-filter: blur(8px);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.quarto-title-block .quarto-title-banner {
+  background: #18181b !important;
+  border-bottom: 1px solid $border-color;
 }

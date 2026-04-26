@@ -1,1 +1,86 @@
-/* css styles */
+/* Modern UI Refinements */
+
+/* Typography & Layout */
+body {
+  font-family: "Geist Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code, pre, kbd, samp {
+  font-family: "Geist Mono", SFMono-Regular, Consolas, monospace;
+}
+
+#quarto-content {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.quarto-title-block .quarto-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.quarto-title-block .subtitle {
+  font-size: 1.25rem;
+  color: #71717a;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+/* Nicely Styled List Listing */
+.quarto-listing-default .quarto-post {
+  border-bottom: 1px solid var(--quarto-border-color);
+  padding: 2rem 0;
+  transition: opacity 0.2s ease;
+}
+
+.quarto-listing-default .quarto-post:last-child {
+  border-bottom: none;
+}
+
+.quarto-listing-default .quarto-post:hover {
+  opacity: 0.7;
+}
+
+.quarto-post .listing-title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--quarto-primary-color);
+}
+
+.quarto-post .listing-description {
+  color: #71717a;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.quarto-post .metadata {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a1a1aa;
+}
+
+/* Footer Styling */
+.nav-footer {
+  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--quarto-border-color);
+  font-size: 0.85rem;
+  color: #71717a;
+}
+
+.nav-footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}

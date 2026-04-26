@@ -8,13 +8,20 @@ execute:
 jupyter: gregordimicom-venv
 
 website:
-  description: "A blog built with Quarto"
+  description: "blog - grigor dimitrov"
   site-url: https://gregordimi.com
-  title: "gregordimicom"
+  title: "grigor dimitrov"
   navbar:
     right:
       - resume.qmd
       - about.qmd
+      - icon: github
+        href: https://github.com/gregordimi
+      - icon: linkedin
+        href: https://www.linkedin.com/in/grigordimitrov/
+  page-footer:
+    left: "© 2026 grigor dimitrov"
+    right:
       - icon: github
         href: https://github.com/gregordimi
       - icon: linkedin
@@ -25,6 +32,7 @@ format:
       light: [cosmo, theme.scss]
       dark: [cosmo, theme.scss, theme-dark.scss]
     css: styles.css
+    search: true
 
 editor: visual
 

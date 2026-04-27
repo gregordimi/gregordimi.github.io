@@ -4,6 +4,7 @@ date: '2022-08-23'
 author: 'Grigor Dimitrov'
 description: 'Wild Boar 2022'
 categories: ['ultra']
+image: "image1.jpg"
 draft: true
 ---
 

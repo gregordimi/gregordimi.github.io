@@ -32,6 +32,7 @@ format:
       light: [cosmo, theme.scss]
       dark: [cosmo, theme.scss, theme-dark.scss]
     css: styles.css
+    include-in-header: openpanel.html
     search: true
 
 editor: visual

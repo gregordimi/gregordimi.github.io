@@ -14,7 +14,7 @@
 <item>
   <title>Социология парламентарни избори 2026</title>
   <dc:creator>Григор Димитров</dc:creator>
-  <link>https://gregordimi.com/posts/election-sociology-analysis-2026/</link>
+  <link>https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/</link>
   <description><![CDATA[ 
 
 
@@ -22,7 +22,27 @@
 
 
 
-<div id="cell-1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="e101cb43-5030-47f6-d748-b3d0a68c3c74" data-execution_count="2">
+<section id="анализ-на-точността-на-социологическите-проучвания" class="level1">
+<h1>Анализ на точността на социологическите проучвания</h1>
+<p>Този бележник анализира разликите в електоралните нагласи, отчетени от различните социологически агенции, и реалните изборни резултати.</p>
+<ul>
+<li><strong>Зареждане на данни:</strong> Данните се хостват публично в GitHub с цел да бъдат достъпни и проверими. Ако не сте съгласни с части от данните или анализа, можете да го модифицирате.</li>
+<li><strong>Технически параметри:</strong> Преглед на данните, публикувани към проучванията (период, метод, извадка).</li>
+<li><strong>Резултатна матрица:</strong> Сравнителна таблица с всички резултати (хоризонтално — партиите, вертикално — проучванията).</li>
+<li><strong>Матрица на отклоненията:</strong> Изчисляване на разликите между нагласите в проучванията и крайните изборни резултати.</li>
+<li><strong>Ранкинг по средна абсолютна грешка (MAE):</strong> Класиране на проучванията според тяхното средно линейно отклонение.</li>
+<li><strong>Ранкинг по средноквадратична грешка (RMSE):</strong> Класиране според корен квадратен от средната стойност на квадратите на разликите (методът наказва по-тежко големите отклонения).</li>
+<li><strong>Регресионен анализ (OLS):</strong> Изследване на влиянието на фактори като оставащо време до изборите, методология (хибридна или офлайн) и големина на извадката върху точността на прогнозите.</li>
+</ul>
+<p><strong>Забележки:</strong> Анализът е мотивиран от любопитство и има за цел да постави основи за по-сериозна работа по темата. Сегашният му статус е на ниво „чернова“. Данните не трябва да се използват за вземане на решения, преди да бъдат вложени допълнителни усилия в сравняването на входящите данни с резултатите от изследванията и валидиране на качеството на кода. В допълнение, има няколко теста, препоръчителни при валидацията на регресионния анализ, които не са направени. Чувствайте се свободни да копирате, възпроизвеждате и модифицирате кода.</p>
+<p><strong>Последващи интересни анализи биха били:</strong></p>
+<ul>
+<li>Съставяне на база данни с всички социологически проучвания от последните 8 избора.</li>
+<li>Използване на други видове индикатори, които измерват процентното отклонение (например <strong>MAPE</strong> или <strong>wMAPE</strong>).</li>
+<li>Анализиране на данните с <strong>MDS (Multi-dimensional Scaling)</strong> или подобни методи, за да се проверят съмненията за връзка между конкретна агенция (или поръчител) и системно надценяване или подценяване на определени партии.</li>
+<li>Добавяне на допълнителни атрибути в регресионния анализ — например източник на извадката или подизпълнител на проекта.</li>
+</ul>
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="e101cb43-5030-47f6-d748-b3d0a68c3c74" data-execution_count="15">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -172,10 +192,11 @@ font-style: inherit;"># df.head()</span></span></code></pre></div></div>
 https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/raw/311a84fb7ce48c8bc47d61b359405d602b2aabd6/results2026.json</code></pre>
 </div>
 </div>
+</section>
 <section id="паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026" class="level1">
 <h1>Паспорти на публичните социологически изследвания за парламентарни избори 2026</h1>
 <p>Техническите данни за изследванията</p>
-<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:553}}" data-outputid="97220484-136b-4e89-8b68-8e1501957131" data-execution_count="3">
+<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:553}}" data-outputid="97220484-136b-4e89-8b68-8e1501957131" data-execution_count="16">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
@@ -276,6 +297,21 @@ background-color: null;
 font-style: inherit;">&lt;/div&gt;</span></span>
 <span id="cb3-20"><span class="ss" style="color: #20794D;
 background-color: null;
+font-style: inherit;">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Поръчител:&lt;/b&gt; </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>m<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>get(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'purchaser'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'N/A'</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/div&gt;</span></span>
+<span id="cb3-21"><span class="ss" style="color: #20794D;
+background-color: null;
 font-style: inherit;">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Извадка:&lt;/b&gt; </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">{</span>m<span class="sc" style="color: #5E5E5E;
@@ -289,7 +325,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/div&gt;</span></span>
-<span id="cb3-21"><span class="ss" style="color: #20794D;
+<span id="cb3-22"><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Метод:&lt;/b&gt; </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -304,10 +340,10 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/div&gt;</span></span>
-<span id="cb3-22"><span class="ss" style="color: #20794D;
+<span id="cb3-23"><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">            &lt;div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;"&gt;</span></span>
-<span id="cb3-23"><span class="ss" style="color: #20794D;
+<span id="cb3-24"><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">                Грешка: </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -320,46 +356,46 @@ background-color: null;
 font-style: inherit;">'N/A'</span>)<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span>
-<span id="cb3-24"><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            &lt;/div&gt;</span></span>
 <span id="cb3-25"><span class="ss" style="color: #20794D;
 background-color: null;
-font-style: inherit;">        &lt;/div&gt;</span></span>
+font-style: inherit;">            &lt;/div&gt;</span></span>
 <span id="cb3-26"><span class="ss" style="color: #20794D;
 background-color: null;
+font-style: inherit;">        &lt;/div&gt;</span></span>
+<span id="cb3-27"><span class="ss" style="color: #20794D;
+background-color: null;
 font-style: inherit;">        """</span></span>
-<span id="cb3-27">        all_cards <span class="op" style="color: #5E5E5E;
+<span id="cb3-28">        all_cards <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+=</span> card_html</span>
-<span id="cb3-28"></span>
-<span id="cb3-29">    <span class="co" style="color: #5E5E5E;
+<span id="cb3-29"></span>
+<span id="cb3-30">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Display wrapper with Flexbox</span></span>
-<span id="cb3-30">    display(HTML(<span class="ss" style="color: #20794D;
+<span id="cb3-31">    display(HTML(<span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">f"""</span></span>
-<span id="cb3-31"><span class="ss" style="color: #20794D;
+<span id="cb3-32"><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">    &lt;div style="display: flex; flex-wrap: wrap; gap: 15px; background: #f4f4f4; padding: 20px; border-radius: 12px;"&gt;</span></span>
-<span id="cb3-32"><span class="ss" style="color: #20794D;
+<span id="cb3-33"><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">        </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">{</span>all_cards<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span>
-<span id="cb3-33"><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    &lt;/div&gt;</span></span>
 <span id="cb3-34"><span class="ss" style="color: #20794D;
 background-color: null;
+font-style: inherit;">    &lt;/div&gt;</span></span>
+<span id="cb3-35"><span class="ss" style="color: #20794D;
+background-color: null;
 font-style: inherit;">    """</span>))</span>
-<span id="cb3-35"></span>
-<span id="cb3-36"><span class="co" style="color: #5E5E5E;
+<span id="cb3-36"></span>
+<span id="cb3-37"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Execute to render all 19 cards</span></span>
-<span id="cb3-37">render_facet_row(data)</span></code></pre></div></div>
+<span id="cb3-38">render_facet_row(data)</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -373,6 +409,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Маркет Линкс (16/02)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 07 - 13 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> бТВ и Маркет Линкс</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1019 лица над 18 г. в страната</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко-лично интервю и онлайн анкета</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -388,6 +425,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Мяра (17/02)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 9-15 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Независима ежемесечна изследователска програма на социологическата агенция „Мяра“</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 812 пълнолетни български граждани</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> “Лице в лице” с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -403,6 +441,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Тренд (23/02)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 12-18 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> 24 часа</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1002 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано интервю „лице в лице“</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -418,6 +457,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Център за анализи и маркетинг (26/02)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 17 - 24 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Център за анализи и маркетинг</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1010 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -433,6 +473,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Алфа Рисърч (05/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 23 февруари – 2 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Реализирано със собствени средства</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -448,6 +489,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Галъп (09/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 10 - 28 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Независима изследователска програма (собствени средства)</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 800 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано персонално интервю тип face-to-face с таблети (TAPI)</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -463,6 +505,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Сова Харис (16/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 7 - 12 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Вестник „Труд”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано интервю „лице в лице” в дома на респондента</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -478,6 +521,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Маркет Линкс (18/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 7 - 15 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> бТВ и „Маркет линкс”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1006 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко-лично интервю и онлайн анкета</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -493,6 +537,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Мяра (20/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 7 - 16 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Редовна изследователска програма на „Мяра”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 809 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> “Лице в лице” с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -508,6 +553,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Тренд (23/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 13-19 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> “24 часа”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1001 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко полустандартизирано интервю „лице в лице” с таблет</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -523,6 +569,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Маркет Линкс (23/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 17 - 21 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> бТВ и „Маркет линкс”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1008 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко-лично интервю и онлайн анкета</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -538,6 +585,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Алфа Рисърч (23/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 12-20 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> бТВ</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -553,6 +601,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Алфа Рисърч (29/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 19-26 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> БНР</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -568,6 +617,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Галъп (03/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 20 - 30 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Независима изследователска програма (собствени средства)</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 820 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано персонално интервю тип face-to-face с таблети (TAPI)</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -583,6 +633,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Сова Харис (09/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 2 - 6 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Вестник „Труд”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 800 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано интервю „лице в лице” в дома на респондента</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -598,6 +649,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Маркет Линкс (16/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 7-14 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> bTV и Маркет Линкс</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1003 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко-лично интервю и онлайн анкета</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -613,6 +665,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Алфа Рисърч (17/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 13 - 15 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Реализирано със собствени средства</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -628,6 +681,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Тренд (17/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 13 - 16 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> “24 часа”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1004 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю „лице в лице” с таблет</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -643,6 +697,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Галъп (17/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 08 - 16 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Реализирано със собствени средства</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 803 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано персонално интервю тип face-to-face</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -658,6 +713,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
                 Мяра (17/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 4 - 13 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> БНР</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1002 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Лице в лице с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -672,7 +728,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
 <section id="данните" class="level2">
 <h2 class="anchored" data-anchor-id="данните">Данните</h2>
 <p>Тази графика показва всички публикувани данни на горните проучвания които са анализирани в това мета изследване.</p>
-<div id="cell-5" class="cell" data-execution_count="4">
+<div id="cell-6" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
@@ -825,7 +881,7 @@ font-style: inherit;">'right'</span>)</span>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -834,7 +890,7 @@ font-style: inherit;">'right'</span>)</span>
 <section id="отклоненията-residual-heatmap" class="level2">
 <h2 class="anchored" data-anchor-id="отклоненията-residual-heatmap">Отклоненията (Residual Heatmap)</h2>
 <p>Тази графика показва отклоненията на публукуваните електорални нагласи в различните проучвания от реалния изборен резултат</p>
-<div id="cell-7" class="cell" data-execution_count="5">
+<div id="cell-8" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
@@ -995,7 +1051,7 @@ font-style: inherit;">'right'</span>)</span>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1005,7 +1061,7 @@ font-style: inherit;">'right'</span>)</span>
 <h2 class="anchored" data-anchor-id="средна-абсолютна-грешка-mae">Средна Абсолютна Грешка (MAE)</h2>
 <p>Средна абсолютна грешка. Измерва средната големина на отклоненията в набор от прогнози, без да отчита тяхната посока (дали е надценено или подценено). Всички грешки се третират с еднаква тежест.</p>
 <p>Колкото по-ниска е стойността, толкова по-точни са били данните спрямо официално регистрирания вот в деня на изборите.</p>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="66d641b2-e5e5-4e04-f545-665102301dd5" data-execution_count="5">
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="66d641b2-e5e5-4e04-f545-665102301dd5" data-execution_count="19">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
@@ -1233,7 +1289,7 @@ font-style: inherit;">%)"</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1246,7 +1302,7 @@ font-style: inherit;">%)"</span>)</span></code></pre></div></div>
 <h2 class="anchored" data-anchor-id="средноквадратична-грешка.-rmse">Средноквадратична грешка. (RMSE)</h2>
 <p>Изчислява се като корен квадратен от средната стойност на квадратите на разликите. Тъй като грешките се вдигат на квадрат преди да се усреднят, тази метрика дава много по-голяма тежест на големите отклонения.</p>
 <p>Колкото по-ниска е стойността, толкова по-точни са били данните спрямо официално регистрирания вот в деня на изборите.</p>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="fe2fe112-9ebb-4d99-da9c-ffe52e11ab35" data-execution_count="6">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="fe2fe112-9ebb-4d99-da9c-ffe52e11ab35" data-execution_count="20">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
@@ -1465,7 +1521,7 @@ font-style: inherit;">)"</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1473,10 +1529,11 @@ font-style: inherit;">)"</span>)</span></code></pre></div></div>
 <pre><code>🏆 НАЙ-ТОЧНА ПРОГНОЗА (RMSE): Мяра (17/04) (Грешка: 3.33)</code></pre>
 </div>
 </div>
-<section id="tренд" class="level3">
-<h3 class="anchored" data-anchor-id="tренд">Tренд</h3>
+</section>
+<section id="tренд" class="level2">
+<h2 class="anchored" data-anchor-id="tренд">Tренд</h2>
 <p>Тук проследяваме как прогнозите за основните партии са се променяли във времето спрямо крайния резултат.</p>
-<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="c0ab7a85-4892-42aa-fc85-713c0c905886" data-execution_count="7">
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="c0ab7a85-4892-42aa-fc85-713c0c905886" data-execution_count="21">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
@@ -1691,42 +1748,42 @@ font-style: inherit;">' не беше намерена в данните."</span
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-8-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-8-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-8-output-3.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-8-output-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-8-output-4.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-8-output-4.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-8-output-5.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-8-output-5.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid" class="level3">
-<h3 class="anchored" data-anchor-id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid"><strong>Анализ на ефекта от методологията (Offline vs.&nbsp;Hybrid)</strong></h3>
+<section id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid" class="level2">
+<h2 class="anchored" data-anchor-id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid"><strong>Анализ на ефекта от методологията (Offline vs.&nbsp;Hybrid)</strong></h2>
 <p>Статистическият модел (<strong>OLS</strong>) изолира „чистия“ ефект на изследователския метод върху точността на прогнозите. Вместо просто да гледаме крайната грешка, ние измерваме колко точно методологията <strong>„натежава“</strong> върху резултата, като контролираме за фактори кога е правено проучването или колко голяма е била извадката.</p>
 <p>Трябва да се отбележи, че в текущата извадка хибридният метод се припокрива значително с една от конкретните агенции и не може категорично да се изолира дали източникът на влияние е самата агенция, или методологията. Както при много статистически изследвания, основна препоръка е: „further research needed, need more data“.</p>
 <section id="основни-изводи-за-коефициентите" class="level4">
@@ -1738,7 +1795,6 @@ font-style: inherit;">' не беше намерена в данните."</span
 <p>Нека разгледаме проучване, проведено на <strong>17 април (2 дни преди изборите)</strong> с извадка от <strong>1000 души</strong>, за да видим как изборът на метод променя очакваната точност:</p>
 <p><strong>Пример 1: Средно отклонение (MAE)</strong> Ако заложите на традиционното проучване „лице в лице“, моделът предвижда средна грешка от около <strong>2.35%</strong>. Ако при абсолютно същите условия използвате <strong>хибриден подход</strong>, очакваното средно отклонение от истината скача на <strong>3.41%</strong> (допълнителни +1.06 пункта).</p>
 <p><strong>Пример 2: Риск от сериозно разминаване (RMSE)</strong> Тук разликата е драстична. При офлайн проучване очакваната квадратична грешка е <strong>4.03</strong>. При <strong>хибридния подход</strong> обаче тя скача до <strong>6.85</strong>. Това нарастване (с над 2.8 пункта) означава, че хибридната методология е <strong>по-несигурна</strong>. В реалността това често се изразява в „наказване“ на конкретна партия — например, докато офлайн методът би хванал вълната за <em>Прогресивна България</em> с малка разлика, хибридната методология може да я подцени с десетки проценти, фаворизирайки погрешно статуквото.</p>
-</section>
 </section>
 </section>
 <section id="относно-разликата-в-mae-и-rmse-в-двете-графики" class="level2">
@@ -1764,7 +1820,7 @@ font-style: inherit;">' не беше намерена в данните."</span
 <li><em>Затова в OLS анализа хибридните методи изглеждат по-зле:</em> Те често познават малките партии, но допускат голямо разминаване при големите играчи. RMSE улавя именно този риск.</li>
 </ul></li>
 </ul>
-<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="2f7d75dd-3c28-4bfc-f463-3e2832825fc7" data-execution_count="30">
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="2f7d75dd-3c28-4bfc-f463-3e2832825fc7" data-execution_count="22">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;
@@ -2458,14 +2514,14 @@ font-style: inherit;">60</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gregordimi.com/posts/election-sociology-analysis-2026/index_files/figure-html/cell-9-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/index_files/figure-html/cell-9-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2507,602 +2563,6 @@ Days_To_Election    0.0051       0.1617     0.0056        0.4806
 <li>Най-належащата задача би била ръчното преглеждане (QA) и коригиране на входящите данни.</li>
 </ul></li>
 </ul>
-<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:34}}" data-outputid="97f0b48a-50e5-4610-aa21-cb6be0a68ae7" data-execution_count="10">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># '%pip install qrcode[pil] -q'</span></span>
-<span id="cb13-2"></span>
-<span id="cb13-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># import qrcode</span></span>
-<span id="cb13-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># import matplotlib.pyplot as plt</span></span>
-<span id="cb13-5"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># import seaborn as sns</span></span>
-<span id="cb13-6"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># import numpy as np</span></span>
-<span id="cb13-7"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># import pandas as pd</span></span>
-<span id="cb13-8"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># import statsmodels.api as sm</span></span>
-<span id="cb13-9"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># from matplotlib.backends.backend_pdf import PdfPages</span></span>
-<span id="cb13-10"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># from google.colab import files</span></span>
-<span id="cb13-11"></span>
-<span id="cb13-12"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># # --- 1. КОНФИГУРАЦИЯ ---</span></span>
-<span id="cb13-13"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># pdf_filename = "Election_Analysis_2026_Final_Report.pdf"</span></span>
-<span id="cb13-14"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># gist_url = "https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/raw/311a84fb7ce48c8bc47d61b359405d602b2aabd6/results2026.json"</span></span>
-<span id="cb13-15"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># notebook_url = "https://colab.research.google.com/drive/1Zu_q3iuHCEs0OmtctdoCo3ef7LvgTeru?usp=sharing"</span></span>
-<span id="cb13-16"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># author_url = "https://linkedin.com/in/grigordimitrov"</span></span>
-<span id="cb13-17"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># election_date = pd.to_datetime('2026-04-19')</span></span>
-<span id="cb13-18"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># PAGE_SIZE = (11, 8.5)</span></span>
-<span id="cb13-19"></span>
-<span id="cb13-20"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># def get_qr_image(url):</span></span>
-<span id="cb13-21"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     qr = qrcode.QRCode(box_size=10, border=2)</span></span>
-<span id="cb13-22"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     qr.add_data(url)</span></span>
-<span id="cb13-23"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     qr.make(fit=True)</span></span>
-<span id="cb13-24"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     return qr.make_image(fill_color="black", back_color="white")</span></span>
-<span id="cb13-25"></span>
-<span id="cb13-26"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># def add_footer(fig, page_num, total_pages):</span></span>
-<span id="cb13-27"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     footer_text = f"Източник: Публични данни - Сайтове на агенции / Медии | Стр. {page_num} от {total_pages} | Забележка: Данните са събирани чрез бот, възможни са неточности"</span></span>
-<span id="cb13-28"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig.text(0.5, 0.04, footer_text, ha='center', fontsize=8, color='grey', alpha=0.7)</span></span>
-<span id="cb13-29"></span>
-<span id="cb13-30"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># # --- 2. ПОДГОТОВКА НА ДАННИ ---</span></span>
-<span id="cb13-31"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># party_cols = [c for c in df.columns if c in actual.index]</span></span>
-<span id="cb13-32"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># cols = [c for c in df.columns if c not in ['Agency', 'Date', 'metadata', 'Не съм решил']]</span></span>
-<span id="cb13-33"></span>
-<span id="cb13-34"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># def calculate_metrics(row):</span></span>
-<span id="cb13-35"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     diffs = row[party_cols] - actual[party_cols]</span></span>
-<span id="cb13-36"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     return pd.Series({'MAE': np.abs(diffs).mean(), 'RMSE': np.sqrt((diffs**2).mean())})</span></span>
-<span id="cb13-37"></span>
-<span id="cb13-38"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># metrics_all_df = df.apply(calculate_metrics, axis=1)</span></span>
-<span id="cb13-39"></span>
-<span id="cb13-40"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># ols_list = []</span></span>
-<span id="cb13-41"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># for idx, row in df.iterrows():</span></span>
-<span id="cb13-42"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     enc = row['metadata'].get('encoded', {})</span></span>
-<span id="cb13-43"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     if not enc: continue</span></span>
-<span id="cb13-44"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ols_list.append({</span></span>
-<span id="cb13-45"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         'Label': idx,</span></span>
-<span id="cb13-46"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         'MAE': metrics_all_df.loc[idx, 'MAE'],</span></span>
-<span id="cb13-47"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         'RMSE': metrics_all_df.loc[idx, 'RMSE'],</span></span>
-<span id="cb13-48"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         'Is_Hybrid': 1 if enc.get('methodology') == 'hybrid' else 0,</span></span>
-<span id="cb13-49"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         'Days_To_Election': (election_date - pd.to_datetime(enc.get('date'))).days,</span></span>
-<span id="cb13-50"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         'Sample_Size': enc.get('sample_size', 0)</span></span>
-<span id="cb13-51"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     })</span></span>
-<span id="cb13-52"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># reg_df = pd.DataFrame(ols_list).dropna()</span></span>
-<span id="cb13-53"></span>
-<span id="cb13-54"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># X_reg = sm.add_constant(reg_df[['Is_Hybrid', 'Days_To_Election', 'Sample_Size']])</span></span>
-<span id="cb13-55"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># model_mae = sm.OLS(reg_df['MAE'], X_reg).fit()</span></span>
-<span id="cb13-56"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># model_rmse = sm.OLS(reg_df['RMSE'], X_reg).fit()</span></span>
-<span id="cb13-57"></span>
-<span id="cb13-58"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># target_parties = ['Прогресивна България', 'ГЕРБ', 'ПП-ДБ', 'ДПС', 'Възраждане']</span></span>
-<span id="cb13-59"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># sorted_parties = actual[cols].sort_values(ascending=False).index</span></span>
-<span id="cb13-60"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># total_p = 7 + len(target_parties)</span></span>
-<span id="cb13-61"></span>
-<span id="cb13-62"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># with PdfPages(pdf_filename) as pdf:</span></span>
-<span id="cb13-63"></span>
-<span id="cb13-64"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># # --- СТРАНИЦА 1: ЗАГЛАВИЕ (ADJUSTED) ---</span></span>
-<span id="cb13-65"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-66"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.axis('off')</span></span>
-<span id="cb13-67"></span>
-<span id="cb13-68"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # DRAFT воден знак</span></span>
-<span id="cb13-69"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.5, 0.96, 'DRAFT V2', ha='center', va='center', fontsize=40, fontweight='bold', color='red', alpha=0.7)</span></span>
-<span id="cb13-70"></span>
-<span id="cb13-71"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # Заглавие и Подзаглавие</span></span>
-<span id="cb13-72"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.5, 0.88, 'Анализ на социологическата точност: Избори 2026', ha='center', fontsize=24, fontweight='bold', color='#003366')</span></span>
-<span id="cb13-73"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.5, 0.80, 'Статистически анализ на факторите, влияещи върху грешката', ha='center', fontsize=14, style='italic', color='#444')</span></span>
-<span id="cb13-74"></span>
-<span id="cb13-75"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # Секция АВТОР И ЛИНКОВЕ</span></span>
-<span id="cb13-76"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # Използваме url= параметър за кликаемост в PDF</span></span>
-<span id="cb13-77"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.1, 0.70, f'Автор: Г. Д.', fontsize=12, fontweight='bold', color='#003366')</span></span>
-<span id="cb13-78"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.1, 0.67, 'LinkedIn Профил', fontsize=11, color='blue', url=author_url, bbox=dict(facecolor='none', edgecolor='none', pad=0))</span></span>
-<span id="cb13-79"></span>
-<span id="cb13-80"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.1, 0.63, 'Източник на данни', fontsize=11, color='blue', url=gist_url)</span></span>
-<span id="cb13-81"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.1, 0.59, 'Код на анализа', fontsize=11, color='blue', url=notebook_url)</span></span>
-<span id="cb13-82"></span>
-<span id="cb13-83"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.1, 0.54, f'Дата на анализ: {pd.Timestamp.now().strftime("%d.%m.%Y")}', fontsize=10, color='#666')</span></span>
-<span id="cb13-84"></span>
-<span id="cb13-85"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # Блок с метрики</span></span>
-<span id="cb13-86"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     metrics_note = ("• MAE (Средна абсолютна грешка): Линейно отклонение на прогнозата.\n"</span></span>
-<span id="cb13-87"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#                     "• RMSE (Средноквадратична грешка): Подчертава големите индивидуални пропуски.\n"</span></span>
-<span id="cb13-88"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#                     "• OLS Regression: Идентифицира кои фактори (метод, време, извадка) са статистически значими.")</span></span>
-<span id="cb13-89"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.1, 0.40, metrics_note, fontsize=10, bbox=dict(facecolor='#f0f0f0', alpha=0.5, edgecolor='none', pad=5))</span></span>
-<span id="cb13-90"></span>
-<span id="cb13-91"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # QR Кодове (Запазваме ги като визуален елемент)</span></span>
-<span id="cb13-92"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax_qr0 = fig.add_axes([0.20, 0.12, 0.15, 0.15]); ax_qr0.imshow(get_qr_image(author_url), cmap='gray'); ax_qr0.axis('off'); ax_qr0.set_title("Автор", fontsize=8)</span></span>
-<span id="cb13-93"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax_qr1 = fig.add_axes([0.42, 0.12, 0.15, 0.15]); ax_qr1.imshow(get_qr_image(notebook_url), cmap='gray'); ax_qr1.axis('off'); ax_qr1.set_title("Код", fontsize=8)</span></span>
-<span id="cb13-94"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax_qr2 = fig.add_axes([0.64, 0.12, 0.15, 0.15]); ax_qr2.imshow(get_qr_image(gist_url), cmap='gray'); ax_qr2.axis('off'); ax_qr2.set_title("Данни", fontsize=8)</span></span>
-<span id="cb13-95"></span>
-<span id="cb13-96"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     add_footer(fig, 1, total_p)</span></span>
-<span id="cb13-97"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     pdf.savefig(fig, dpi=300, bbox_inches='tight'); plt.close()</span></span>
-<span id="cb13-98"></span>
-<span id="cb13-99"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # --- СТРАНИЦА 6: МАТРИЦА НА ДАННИ ---</span></span>
-<span id="cb13-100"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-101"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     sns.heatmap(df[sorted_parties], annot=True, fmt='.1f', cmap='YlGnBu', annot_kws={"size": 8}, cbar_kws={'shrink': 0.8})</span></span>
-<span id="cb13-102"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.title('Матрица на данните: Всички прогнози (%)', fontsize=16, fontweight='bold')</span></span>
-<span id="cb13-103"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.xticks(rotation=45, ha='right', fontsize=9); plt.yticks(fontsize=8)</span></span>
-<span id="cb13-104"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.tight_layout(rect=[0.05, 0.08, 0.95, 0.95])</span></span>
-<span id="cb13-105"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     add_footer(fig, 6, total_p)</span></span>
-<span id="cb13-106"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-107"></span>
-<span id="cb13-108"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # --- СТРАНИЦА 2: RMSE СРЕЩУ MAE ---</span></span>
-<span id="cb13-109"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     metrics_summary = metrics_all_df.sort_values('RMSE')</span></span>
-<span id="cb13-110"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig, ax = plt.subplots(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-111"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     y_indices = np.arange(len(metrics_summary))</span></span>
-<span id="cb13-112"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax.barh(y_indices - 0.17, metrics_summary['MAE'], 0.35, label='MAE', color='#3498db', alpha=0.8, edgecolor='black')</span></span>
-<span id="cb13-113"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax.barh(y_indices + 0.17, metrics_summary['RMSE'], 0.35, label='RMSE', color='#e74c3c', alpha=0.8, edgecolor='black')</span></span>
-<span id="cb13-114"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax.set_yticks(y_indices); ax.set_yticklabels(metrics_summary.index); ax.invert_yaxis()</span></span>
-<span id="cb13-115"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax.set_title('Сравнение на точността по агенции\n', fontsize=16, fontweight='bold')</span></span>
-<span id="cb13-116"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax.text(0.5, 1.02, 'Агрегирани стойности на MAE и RMSE спрямо официалния резултат', transform=ax.transAxes, ha='center', fontsize=11, color='#555')</span></span>
-<span id="cb13-117"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax.legend(); ax.grid(axis='x', linestyle='--', alpha=0.3)</span></span>
-<span id="cb13-118"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.tight_layout(rect=[0.05, 0.08, 0.95, 0.92])</span></span>
-<span id="cb13-119"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     add_footer(fig, 2, total_p)</span></span>
-<span id="cb13-120"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-121"></span>
-<span id="cb13-122"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # --- СТРАНИЦА 3: OLS КОЕФИЦИЕНТИ (С ТИТЛИ И ПОДЗАГЛАВИЯ) ---</span></span>
-<span id="cb13-123"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=PAGE_SIZE, sharey=True)</span></span>
-<span id="cb13-124"></span>
-<span id="cb13-125"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     model_mae.params[1:].plot(kind='barh', xerr=model_mae.bse[1:], color='#3498db', ax=ax1, alpha=0.8, edgecolor='black')</span></span>
-<span id="cb13-126"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax1.axvline(0, color='red', linestyle='--', linewidth=1)</span></span>
-<span id="cb13-127"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax1.set_title('Въздействие върху MAE\n', fontsize=13, fontweight='bold')</span></span>
-<span id="cb13-128"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax1.text(0.5, 1.02, 'Как факторите променят линейната грешка (%)', transform=ax1.transAxes, ha='center', fontsize=9, color='#555')</span></span>
-<span id="cb13-129"></span>
-<span id="cb13-130"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     model_rmse.params[1:].plot(kind='barh', xerr=model_rmse.bse[1:], color='#e74c3c', ax=ax2, alpha=0.8, edgecolor='black')</span></span>
-<span id="cb13-131"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax2.axvline(0, color='red', linestyle='--', linewidth=1)</span></span>
-<span id="cb13-132"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax2.set_title('Въздействие върху RMSE\n', fontsize=13, fontweight='bold')</span></span>
-<span id="cb13-133"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ax2.text(0.5, 1.02, 'Тежест на факторите при големи отклонения', transform=ax2.transAxes, ha='center', fontsize=9, color='#555')</span></span>
-<span id="cb13-134"></span>
-<span id="cb13-135"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.suptitle('СТАТИСТИЧЕСКА ЗНАЧИМОСТ НА ФАКТОРИТЕ (OLS)', fontsize=16, fontweight='bold', y=0.96)</span></span>
-<span id="cb13-136"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # Свиване на графиките надолу чрез rect [left, bottom, right, top]</span></span>
-<span id="cb13-137"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.tight_layout(rect=[0.05, 0.12, 0.95, 0.88])</span></span>
-<span id="cb13-138"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     add_footer(fig, 3, total_p)</span></span>
-<span id="cb13-139"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-140"></span>
-<span id="cb13-141"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # --- СТРАНИЦА 4: SIDE-BY-SIDE ДИНАМИКА (С ТИТЛИ И ПОДЗАГЛАВИЯ) ---</span></span>
-<span id="cb13-142"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig, (ax3, ax4) = plt.subplots(1, 2, figsize=PAGE_SIZE)</span></span>
-<span id="cb13-143"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     titles = ['MAE Dynamics', 'RMSE Dynamics']</span></span>
-<span id="cb13-144"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     subtitles = ['Линейно отклонение във времето', 'Квадратично наказание за големи грешки']</span></span>
-<span id="cb13-145"></span>
-<span id="cb13-146"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     for ax, metric, color, title, sub in zip([ax3, ax4], ['MAE', 'RMSE'], ['#3498db', '#e74c3c'], titles, subtitles):</span></span>
-<span id="cb13-147"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         sns.scatterplot(data=reg_df, x='Days_To_Election', y=metric, hue='Is_Hybrid', size='Sample_Size',</span></span>
-<span id="cb13-148"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#                         sizes=(100, 700), palette={0: '#3498db', 1: '#e74c3c'}, alpha=0.6, edgecolor='black', ax=ax)</span></span>
-<span id="cb13-149"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         for _, row in reg_df.iterrows():</span></span>
-<span id="cb13-150"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             ax.text(row['Days_To_Election'], row[metric], s=row['Label'], fontsize=7, rotation=45, ha='left', va='bottom')</span></span>
-<span id="cb13-151"></span>
-<span id="cb13-152"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ax.invert_xaxis(); ax.grid(True, linestyle=':', alpha=0.6)</span></span>
-<span id="cb13-153"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ax.set_title(f'{title}\n', fontsize=13, fontweight='bold')</span></span>
-<span id="cb13-154"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ax.text(0.5, 1.02, sub, transform=ax.transAxes, ha='center', fontsize=9, color='#555')</span></span>
-<span id="cb13-155"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ax.get_legend().remove()</span></span>
-<span id="cb13-156"></span>
-<span id="cb13-157"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     handles, labels = ax4.get_legend_handles_labels()</span></span>
-<span id="cb13-158"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig.legend(handles, labels, title='Метод (0=F2F, 1=Hybrid)', loc='center right', bbox_to_anchor=(0.98, 0.5))</span></span>
-<span id="cb13-159"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.suptitle('ХРОНОЛОГИЧНО РАЗПРЕДЕЛЕНИЕ НА ТОЧНОСТТА', fontsize=16, fontweight='bold', y=0.96)</span></span>
-<span id="cb13-160"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # Свиване на графиките надолу</span></span>
-<span id="cb13-161"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.tight_layout(rect=[0.05, 0.1, 0.88, 0.88])</span></span>
-<span id="cb13-162"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     add_footer(fig, 4, total_p)</span></span>
-<span id="cb13-163"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-164"></span>
-<span id="cb13-165"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # --- СТРАНИЦА 5: МАТРИЦА НА ОТКЛОНЕНИЯТА ---</span></span>
-<span id="cb13-166"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     residuals = df[cols].sub(actual[cols], axis=1)</span></span>
-<span id="cb13-167"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-168"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     sns.heatmap(residuals[sorted_parties], annot=True, fmt='.1f', cmap='RdBu_r', center=0, annot_kws={"size": 8}, cbar_kws={'shrink': 0.8})</span></span>
-<span id="cb13-169"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.title('Матрица на отклоненията (Прогноза - Реалност)', fontsize=16, fontweight='bold')</span></span>
-<span id="cb13-170"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.xticks(rotation=45, ha='right', fontsize=9); plt.yticks(fontsize=8)</span></span>
-<span id="cb13-171"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.tight_layout(rect=[0.05, 0.08, 0.95, 0.95])</span></span>
-<span id="cb13-172"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     add_footer(fig, 5, total_p)</span></span>
-<span id="cb13-173"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-174"></span>
-<span id="cb13-175"></span>
-<span id="cb13-176"></span>
-<span id="cb13-177"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # --- СТРАНИЦИ 7-N: ТРЕНДОВЕ ---</span></span>
-<span id="cb13-178"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     curr_p = 7</span></span>
-<span id="cb13-179"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     trend_df = df.sort_values('Date')</span></span>
-<span id="cb13-180"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     for party in target_parties:</span></span>
-<span id="cb13-181"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         if party in trend_df.columns:</span></span>
-<span id="cb13-182"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-183"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             plt.plot(trend_df.index, trend_df[party], marker='o', color='#1f77b4', linewidth=2)</span></span>
-<span id="cb13-184"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             plt.axhline(y=actual[party], color='#d62728', linestyle='--', linewidth=3, label=f'Реалност ({actual[party]}%)')</span></span>
-<span id="cb13-185"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             plt.title(f'Тренд на прогнозите: {party}', fontsize=16, fontweight='bold')</span></span>
-<span id="cb13-186"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             plt.xticks(rotation=45, ha='right', fontsize=8); plt.legend(); plt.grid(alpha=0.3)</span></span>
-<span id="cb13-187"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             plt.tight_layout(rect=[0.05, 0.08, 0.95, 0.95])</span></span>
-<span id="cb13-188"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             add_footer(fig, curr_p, total_p)</span></span>
-<span id="cb13-189"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-190"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#             curr_p += 1</span></span>
-<span id="cb13-191"></span>
-<span id="cb13-192"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     # --- ФИНАЛНА СТРАНИЦА: ЗАКЛЮЧЕНИЯ ---</span></span>
-<span id="cb13-193"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-194"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.axis('off')</span></span>
-<span id="cb13-195"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     plt.text(0.05, 0.92, 'Заключение и изводи от анализа', fontsize=20, fontweight='bold', color='#003366')</span></span>
-<span id="cb13-196"></span>
-<span id="cb13-197"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     y_pos = 0.82</span></span>
-<span id="cb13-198"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     conclusion_blocks = [</span></span>
-<span id="cb13-199"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("• Системен пропуск:", "Всички агенции подцениха победителя (Прогресивна България) с над 10% средно отклонение.", True),</span></span>
-<span id="cb13-200"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("", "Всички агенции надцениха установените играчи (ГЕРБ, ДПС, Възраждане) в различна степен.", True),</span></span>
-<span id="cb13-201"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("• Методология:", "Необходима е ревизия на моделите за разпределение на гласовете на нерешилите избиратели.", False),</span></span>
-<span id="cb13-202"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("", "Необходима е критична ревизия на източниците и структурирането на извадката.", True),</span></span>
-<span id="cb13-203"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("• Информационна хигиена:", "Ефирът е пълен с демографски, психографски и поведенчески разпределения на вота, към които", False),</span></span>
-<span id="cb13-204"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("", "трябва да се подходи със скептицизъм, имайки предвид мащаба на анализираните отклонения.", False),</span></span>
-<span id="cb13-205"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("", "Анализи на по-малки кохорти (напр. от типа коя партия е донор на гласоподаватели)", False),</span></span>
-<span id="cb13-206"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("", "носят риск да са значително по-неточни.", False),</span></span>
-<span id="cb13-207"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("• Забележка:", "Нормализирането на толкова голям набор от изследвания изисква задълбочена работа.", False),</span></span>
-<span id="cb13-208"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("", "Този анализ е по-скоро отправна точка за по-задълбочени бъдещи мета-анализи, целящи повишаване на прогнозната сила.", False),</span></span>
-<span id="cb13-209"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         ("", "Най-належащата задача би била ръчното преглеждане и коригиране на входящите данни.", False),</span></span>
-<span id="cb13-210"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     ]</span></span>
-<span id="cb13-211"></span>
-<span id="cb13-212"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     for header, detail, add_space in conclusion_blocks:</span></span>
-<span id="cb13-213"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         if header: plt.text(0.05, y_pos, header, fontsize=13, fontweight='bold', color='#003366'); y_pos -= 0.05</span></span>
-<span id="cb13-214"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         plt.text(0.07, y_pos, detail, fontsize=12, color='#333333'); y_pos -= 0.05</span></span>
-<span id="cb13-215"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#         if add_space: y_pos -= 0.02</span></span>
-<span id="cb13-216"></span>
-<span id="cb13-217"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     rect = plt.Rectangle((0.03, 0.15), 0.94, 0.80, linewidth=1, edgecolor='#cccccc', facecolor='#f9f9f9', alpha=0.3, zorder=-1)</span></span>
-<span id="cb13-218"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     fig.patches.append(rect)</span></span>
-<span id="cb13-219"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     add_footer(fig, total_p, total_p)</span></span>
-<span id="cb13-220"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     pdf.savefig(fig, dpi=300, bbox_inches='tight'); plt.close()</span></span>
-<span id="cb13-221"></span>
-<span id="cb13-222"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># print(f"✅ Докладът е генериран успешно: {pdf_filename}")</span></span>
-<span id="cb13-223"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre></div></div>
-</details>
-</div>
 
 
 </section>
@@ -3111,11 +2571,11 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
 
  ]]></description>
   <category>sociology</category>
-  <guid>https://gregordimi.com/posts/election-sociology-analysis-2026/</guid>
+  <guid>https://gregordimi.com/posts/20260423-election-sociology-analysis-2026/</guid>
   <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>ДОКЛАД ЗА Март 2026</title>
+  <title>Доклад за месец Март 2026</title>
   <dc:creator>Григор Димитров</dc:creator>
   <link>https://gregordimi.com/posts/20260401-march/</link>
   <description><![CDATA[ 
@@ -3126,7 +2586,7 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
 
 
 <blockquote class="blockquote">
-<p>Оригинално публикувано в: <strong><a href="https://merim.bg/blog/20260401-march">merim.bg/blog/20260401-march</a></strong></p>
+<p>Оригинално публикувано в: <a href="https://merim.bg/blog/20260401-march"><strong>merim.bg/blog/20260401-march</strong></a></p>
 </blockquote>
 <section id="резюме-март-2026-г." class="level1">
 <h1>Резюме: Март 2026 г.</h1>
@@ -3192,6 +2652,46 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
   <category>Цени</category>
   <guid>https://gregordimi.com/posts/20260317-war/</guid>
   <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://merim.bg/og-image.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Доклад за месец Февруари 2026</title>
+  <dc:creator>Григор Димитров</dc:creator>
+  <link>https://gregordimi.com/posts/20260301-february/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p>Оригинално публикувано в: <a href="https://merim.bg/blog/20260312-february"><strong>merim.bg/blog/20260312-february</strong></a></p>
+
+
+
+ ]]></description>
+  <guid>https://gregordimi.com/posts/20260301-february/</guid>
+  <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://merim.bg/og-image.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Доклад за месец Януари 2026</title>
+  <dc:creator>Григор Димитров</dc:creator>
+  <link>https://gregordimi.com/posts/20260204-january/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p>Оригинално публикувано в: <a href="https://merim.bg/blog/20260131-january"><strong>merim.bg/blog/20260312-february</strong></a></p>
+
+
+
+ ]]></description>
+  <guid>https://gregordimi.com/posts/20260204-january/</guid>
+  <pubDate>Sat, 31 Jan 2026 00:00:00 GMT</pubDate>
   <media:content url="https://merim.bg/og-image.png" medium="image" type="image/png"/>
 </item>
 <item>
@@ -3836,12 +3336,12 @@ font-style: inherit;"># files.download(pdf_filename)</span></span></code></pre><
 <p>The sample of the research consists of Dutch panelists, equally distributed across gender and slightly more dominated by senior people with a median income between 39K and 66K Euro. 61% percent of the sample indicated they are the main decision makers concerning their household’s travel decisions.</p>
 <p>The most visited destinations were in Europe accounting for 79% of the visits, followed by North America and Asia with 7% of visits each. Among all countries, Spain is the most popular destination with 20.5%. The domestic travel in the Netherlands accounted for 16% followed by Germany, Italy and France with approximately 10% each.</p>
 <p>Based on the survey, the spread across the different segments of risk and uncertainty attitudes is as follows:</p>
-<div id="3d5dd839" class="cell" data-message="false" data-execution_count="1">
+<div id="b614f545" class="cell" data-message="false" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="31c4df6d-1fb4-4c43-91bf-f597e34d3616" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("31c4df6d-1fb4-4c43-91bf-f597e34d3616")) {                    Plotly.newPlot(                        "31c4df6d-1fb4-4c43-91bf-f597e34d3616",                        [{"hole":0.4,"labels":["Risk averse, uncertainty averse","Risk seeking, uncertainty averse","Risk averse, uncertainty seeking","Risk seeking, uncertainty seeking"],"marker":{"colors":["#FF6384","#36A2EB","#FFCE56","#4BC0C0"]},"textinfo":"percent","values":[139,127,168,13],"type":"pie"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"legend":{"orientation":"h","yanchor":"bottom","y":-0.2,"xanchor":"center","x":0.5},"margin":{"t":20,"b":20,"l":20,"r":20},"showlegend":true},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="aee0b1fc-1747-4ddb-8d14-91ddac77d36d" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("aee0b1fc-1747-4ddb-8d14-91ddac77d36d")) {                    Plotly.newPlot(                        "aee0b1fc-1747-4ddb-8d14-91ddac77d36d",                        [{"hole":0.4,"labels":["Risk averse, uncertainty averse","Risk seeking, uncertainty averse","Risk averse, uncertainty seeking","Risk seeking, uncertainty seeking"],"marker":{"colors":["#FF6384","#36A2EB","#FFCE56","#4BC0C0"]},"textinfo":"percent","values":[139,127,168,13],"type":"pie"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"legend":{"orientation":"h","yanchor":"bottom","y":-0.2,"xanchor":"center","x":0.5},"margin":{"t":20,"b":20,"l":20,"r":20},"showlegend":true},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('31c4df6d-1fb4-4c43-91bf-f597e34d3616');
+var gd = document.getElementById('aee0b1fc-1747-4ddb-8d14-91ddac77d36d');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -4008,12 +3508,12 @@ Based on the results we can confirm the following hypotheses:
 <p>In order to present to you how the risk and uncertainty impacts the online travel behavior we will introduce two real people from the data. The names have been changed to protect the persons’ personalities.</p>
 <p><strong>Meet Marilou.</strong> She is a 34 year-old woman from Limburg. She earns above average income and she is highly active online in comparison to her peers. Marilou is an open-minded person with an outgoing personality. She is a social person with a lot of friends. She is curious and open to new experiences, however she holds a strong opinion about her beliefs and she tends to be suspicious. Marilou is both averse towards risk and uncertainty. She spends a big proportion of her time deciding on her travel activities, including searching for and comparing hotels. Apart from this, she also uses travel magazines in order to support her decisions. Marilou went on a leisure trip to the US with her significant other. She spent more than half a year on the planning her 18 nights stay even though she has been there twice before. She ordered everything online including flights, transportation, accommodations and entertainment. They spent approximately 3,000 EUR per person on the whole trip including transport and hotels.</p>
 <p><strong>Here is Marilou’s activity on travel related websites as a proportion from her total online activity, both on mobile and desktop.</strong></p>
-<div id="50475d02" class="cell" data-message="false" data-execution_count="2">
+<div id="5cd1016a" class="cell" data-message="false" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="c17e9377-1619-4c9f-841c-a9dda0f60fdd" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("c17e9377-1619-4c9f-841c-a9dda0f60fdd")) {                    Plotly.newPlot(                        "c17e9377-1619-4c9f-841c-a9dda0f60fdd",                        [{"line":{"color":"#DC143C","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Micro-moments","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,60,33.33,15.79,35.29,46.15,50,30.77,21.43,15.38,15.79,42.86,0,38.46,50,60,20,10,11.54,50,25,31.58,0,20,0,0,100,33.33,0,0],"type":"scatter"},{"line":{"color":"#1E90FF","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Pageviews","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,29.49,16.48,1.48,28.32,27.04,6.63,5.16,6.23,2.82,2.07,39.87,0,8.91,8.97,12.22,10.69,4.81,1.78,12.23,33.27,3.67,0,25.92,0,0,20.25,27.98,0,0],"type":"scatter"},{"line":{"color":"#228B22","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Time","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,33.83,15.88,0.73,23.78,22.37,8.39,4.92,5.76,2.63,2.99,52.71,0,7.68,9.65,9.13,11.04,4.91,2.96,9.6,39.14,4.89,0,22.86,0,0,22.72,45.57,0,0],"type":"scatter"},{"line":{"color":"#FFD700","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Domains","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,35.12,15.77,4.2,22.37,16,11.59,8.23,5.85,2.49,2.39,13,0,10.79,7.64,12.28,9.43,4.69,1.86,14.52,12.14,6.72,0,16.18,0,0,30.19,12.5,0,0],"type":"scatter"},{"line":{"color":"#00BFFF","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Micro-moments","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[28.57,25.71,14.39,11.54,20.39,23.81,17.82,8.63,10.26,20.49,12.28,5.93,22.34,16,24.3,21.43,18.4,28.04,13.71,16.39,16.51,22.54,3.23,22.14,27.71,29.5,36.73,16.39,13.89,0],"type":"scatter"},{"line":{"color":"#D2691E","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Pageviews","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[4.91,9.85,14.57,1.87,9.63,5.31,5.88,3.94,3.44,5.15,2.41,1.83,6,5,4.79,4.83,8.82,9.52,2.95,6.34,6.4,5.81,0.71,4.57,3.87,13.07,21.41,4.58,3.52,0],"type":"scatter"},{"line":{"color":"#BA55D3","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Time","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[1.39,6.77,6.82,1.4,5.89,4.01,2.77,3.89,1.14,2.75,1.88,0.79,7.45,1.64,5.06,5.58,7.92,9.89,2.24,3.56,4.7,5.52,0.23,2.17,2.87,7.32,20.07,3.55,2.92,0],"type":"scatter"},{"line":{"color":"#FF6347","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Domains & Apps","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[3.12,7.73,8.65,3.12,5.56,4.33,3.6,2.06,3.42,5.92,3.25,2.01,6.1,3.61,5.95,4.38,6.2,8.19,2.88,3.26,4.88,4.7,0.87,6.24,5.11,12.32,12.49,5.72,3.9,0],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"legend":{"orientation":"h","yanchor":"bottom","y":-0.5,"xanchor":"center","x":0.5},"margin":{"l":40,"r":40,"t":20,"b":100},"xaxis":{"title":{"text":"Week"}},"yaxis":{"title":{"text":"Percentage of travel-related activity (%)"}},"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="bedac934-ffa3-49fb-8d53-02dc8538cc9e" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("bedac934-ffa3-49fb-8d53-02dc8538cc9e")) {                    Plotly.newPlot(                        "bedac934-ffa3-49fb-8d53-02dc8538cc9e",                        [{"line":{"color":"#DC143C","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Micro-moments","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,60,33.33,15.79,35.29,46.15,50,30.77,21.43,15.38,15.79,42.86,0,38.46,50,60,20,10,11.54,50,25,31.58,0,20,0,0,100,33.33,0,0],"type":"scatter"},{"line":{"color":"#1E90FF","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Pageviews","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,29.49,16.48,1.48,28.32,27.04,6.63,5.16,6.23,2.82,2.07,39.87,0,8.91,8.97,12.22,10.69,4.81,1.78,12.23,33.27,3.67,0,25.92,0,0,20.25,27.98,0,0],"type":"scatter"},{"line":{"color":"#228B22","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Time","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,33.83,15.88,0.73,23.78,22.37,8.39,4.92,5.76,2.63,2.99,52.71,0,7.68,9.65,9.13,11.04,4.91,2.96,9.6,39.14,4.89,0,22.86,0,0,22.72,45.57,0,0],"type":"scatter"},{"line":{"color":"#FFD700","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Domains","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,35.12,15.77,4.2,22.37,16,11.59,8.23,5.85,2.49,2.39,13,0,10.79,7.64,12.28,9.43,4.69,1.86,14.52,12.14,6.72,0,16.18,0,0,30.19,12.5,0,0],"type":"scatter"},{"line":{"color":"#00BFFF","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Micro-moments","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[28.57,25.71,14.39,11.54,20.39,23.81,17.82,8.63,10.26,20.49,12.28,5.93,22.34,16,24.3,21.43,18.4,28.04,13.71,16.39,16.51,22.54,3.23,22.14,27.71,29.5,36.73,16.39,13.89,0],"type":"scatter"},{"line":{"color":"#D2691E","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Pageviews","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[4.91,9.85,14.57,1.87,9.63,5.31,5.88,3.94,3.44,5.15,2.41,1.83,6,5,4.79,4.83,8.82,9.52,2.95,6.34,6.4,5.81,0.71,4.57,3.87,13.07,21.41,4.58,3.52,0],"type":"scatter"},{"line":{"color":"#BA55D3","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Time","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[1.39,6.77,6.82,1.4,5.89,4.01,2.77,3.89,1.14,2.75,1.88,0.79,7.45,1.64,5.06,5.58,7.92,9.89,2.24,3.56,4.7,5.52,0.23,2.17,2.87,7.32,20.07,3.55,2.92,0],"type":"scatter"},{"line":{"color":"#FF6347","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Domains & Apps","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[3.12,7.73,8.65,3.12,5.56,4.33,3.6,2.06,3.42,5.92,3.25,2.01,6.1,3.61,5.95,4.38,6.2,8.19,2.88,3.26,4.88,4.7,0.87,6.24,5.11,12.32,12.49,5.72,3.9,0],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"legend":{"orientation":"h","yanchor":"bottom","y":-0.5,"xanchor":"center","x":0.5},"margin":{"l":40,"r":40,"t":20,"b":100},"xaxis":{"title":{"text":"Week"}},"yaxis":{"title":{"text":"Percentage of travel-related activity (%)"}},"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('c17e9377-1619-4c9f-841c-a9dda0f60fdd');
+var gd = document.getElementById('bedac934-ffa3-49fb-8d53-02dc8538cc9e');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -4040,12 +3540,12 @@ if (outputEl) {{
 </div>
 <p><strong>Meet Sophie.</strong> She is a 27 year-old woman from South Holland. She earns above average income and she is not very active on the internet compared to the rest of the sample, however, she uses a lot of different sources of information. Sophie is very kind and trustworthy, perhaps a bit naive, sometimes a bit spontaneous, yet she is a stable individual. Sophie is averse towards risk, but uncertainty seeking. Although she was the main decision maker regarding her trip and she uses only internet for planning, she didn’t spend that big of a proportion of her time to decide on her travel activities comparing to Marilou. Sophie went on a short trip to the US with one more person. She spent only a week to plan her trip. She ordered accommodations and entertainment online. They spent approximately 900 EUR per person on the whole trip including transportation and accommodations.</p>
 <p><strong>Here is Sophie’s activity on travel related websites as a proportion from her total online activity, both on mobile and desktop.</strong></p>
-<div id="84c78eb2" class="cell" data-message="false" data-execution_count="3">
+<div id="a2f93a0d" class="cell" data-message="false" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="4b92c8a2-dc18-4bf4-a0fc-8cfb0e192a19" class="plotly-graph-div" style="height:500px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("4b92c8a2-dc18-4bf4-a0fc-8cfb0e192a19")) {                    Plotly.newPlot(                        "4b92c8a2-dc18-4bf4-a0fc-8cfb0e192a19",                        [{"line":{"color":"#DC143C","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Micro-moments","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[66.67,100,83.33,52.38,36,58.33,62.5,43.75,57.14,43.75,25.81,33.33,28.57,40,75,31.25,45.45,55.56,55.56,37.5,100,38.46,50,53.85,70,100,50,38.1,80,0],"type":"scatter"},{"line":{"color":"#1E90FF","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Pageviews","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[5.1,7.11,1.43,10.71,8.14,4.11,2,2.43,6.8,6.84,3.36,1.17,1.46,9.72,5.3,1.13,0.48,1.43,2.16,0.25,1.96,1.22,0.78,5.19,13.36,5.96,6.69,9.96,1.9,0],"type":"scatter"},{"line":{"color":"#228B22","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Time","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[24.44,6.13,0.94,12.92,4.77,3,1.79,1.9,9.7,4.63,0.94,1.91,1.63,10.06,7.1,0.42,0.26,1.17,0.62,1.16,2.27,1.01,0.33,3.04,15.58,5.95,8.96,5.42,1.87,0],"type":"scatter"},{"line":{"color":"#FFD700","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Domains","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[18.52,9.62,11.9,11.11,11.21,10.26,12.07,10.31,14.12,13.25,9.89,9.3,5.56,14.88,14.52,8.7,4.9,5.49,7.27,3,8.79,5.11,5,13.56,17.82,9.09,10.31,8.21,8.51,0],"type":"scatter"},{"line":{"color":"#00BFFF","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Micro-moments","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,7.14,9.09,0,8.7,0,0,3.23,14.29,0,13.33,13.04,0,22.58,0,0,0,0,5.56,3.57,5.26,0,10,25,11.54,0,0,4,0,33.33],"type":"scatter"},{"line":{"color":"#D2691E","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Pageviews","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,5.71,17.39,0,34.38,0,0,0.75,6.67,0,3.45,21.21,0,15.44,0,0,0,0,4,47.83,0.97,0,4.55,26.25,22.09,0,0,4,0,27.78],"type":"scatter"},{"line":{"color":"#BA55D3","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Time","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,11.55,7.71,0,17.8,0,0,2.02,3.34,0,2.12,20.34,0,11.97,0,0,0,0,0.94,14.5,0.45,0,0.27,10.32,13.1,0,0,1.41,0,21.23],"type":"scatter"},{"line":{"color":"#FF6347","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Domains & Apps","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,4,13.33,0,12.5,0,0,2.17,22.22,0,10.53,12.5,0,17.07,0,0,0,0,6.25,7.69,12.5,0,12.5,22.22,12.12,0,0,3.7,0,40],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"legend":{"orientation":"h","yanchor":"bottom","y":-0.5,"xanchor":"center","x":0.5},"margin":{"l":40,"r":40,"t":20,"b":100},"xaxis":{"title":{"text":"Week"}},"yaxis":{"title":{"text":"Percentage of travel-related activity (%)"}},"hovermode":"x unified","height":500},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="5d2058b4-19fe-4134-a957-08a312fb3b90" class="plotly-graph-div" style="height:500px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("5d2058b4-19fe-4134-a957-08a312fb3b90")) {                    Plotly.newPlot(                        "5d2058b4-19fe-4134-a957-08a312fb3b90",                        [{"line":{"color":"#DC143C","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Micro-moments","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[66.67,100,83.33,52.38,36,58.33,62.5,43.75,57.14,43.75,25.81,33.33,28.57,40,75,31.25,45.45,55.56,55.56,37.5,100,38.46,50,53.85,70,100,50,38.1,80,0],"type":"scatter"},{"line":{"color":"#1E90FF","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Pageviews","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[5.1,7.11,1.43,10.71,8.14,4.11,2,2.43,6.8,6.84,3.36,1.17,1.46,9.72,5.3,1.13,0.48,1.43,2.16,0.25,1.96,1.22,0.78,5.19,13.36,5.96,6.69,9.96,1.9,0],"type":"scatter"},{"line":{"color":"#228B22","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Time","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[24.44,6.13,0.94,12.92,4.77,3,1.79,1.9,9.7,4.63,0.94,1.91,1.63,10.06,7.1,0.42,0.26,1.17,0.62,1.16,2.27,1.01,0.33,3.04,15.58,5.95,8.96,5.42,1.87,0],"type":"scatter"},{"line":{"color":"#FFD700","dash":"solid","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Desktop, Travel Domains","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[18.52,9.62,11.9,11.11,11.21,10.26,12.07,10.31,14.12,13.25,9.89,9.3,5.56,14.88,14.52,8.7,4.9,5.49,7.27,3,8.79,5.11,5,13.56,17.82,9.09,10.31,8.21,8.51,0],"type":"scatter"},{"line":{"color":"#00BFFF","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Micro-moments","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,7.14,9.09,0,8.7,0,0,3.23,14.29,0,13.33,13.04,0,22.58,0,0,0,0,5.56,3.57,5.26,0,10,25,11.54,0,0,4,0,33.33],"type":"scatter"},{"line":{"color":"#D2691E","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Pageviews","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,5.71,17.39,0,34.38,0,0,0.75,6.67,0,3.45,21.21,0,15.44,0,0,0,0,4,47.83,0.97,0,4.55,26.25,22.09,0,0,4,0,27.78],"type":"scatter"},{"line":{"color":"#BA55D3","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Time","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,11.55,7.71,0,17.8,0,0,2.02,3.34,0,2.12,20.34,0,11.97,0,0,0,0,0.94,14.5,0.45,0,0.27,10.32,13.1,0,0,1.41,0,21.23],"type":"scatter"},{"line":{"color":"#FF6347","dash":"dash","width":2},"marker":{"size":4},"mode":"lines+markers","name":"Mobile, Travel Domains & Apps","visible":"legendonly","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0,4,13.33,0,12.5,0,0,2.17,22.22,0,10.53,12.5,0,17.07,0,0,0,0,6.25,7.69,12.5,0,12.5,22.22,12.12,0,0,3.7,0,40],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"legend":{"orientation":"h","yanchor":"bottom","y":-0.5,"xanchor":"center","x":0.5},"margin":{"l":40,"r":40,"t":20,"b":100},"xaxis":{"title":{"text":"Week"}},"yaxis":{"title":{"text":"Percentage of travel-related activity (%)"}},"hovermode":"x unified","height":500},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('4b92c8a2-dc18-4bf4-a0fc-8cfb0e192a19');
+var gd = document.getElementById('5d2058b4-19fe-4134-a957-08a312fb3b90');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{

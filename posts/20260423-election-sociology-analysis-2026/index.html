@@ -413,16 +413,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026" id="toc-паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026" class="nav-link active" data-scroll-target="#паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026">Паспорти на публичните социологически изследвания за парламентарни избори 2026</a>
+  <li><a href="#анализ-на-точността-на-социологическите-проучвания" id="toc-анализ-на-точността-на-социологическите-проучвания" class="nav-link active" data-scroll-target="#анализ-на-точността-на-социологическите-проучвания">Анализ на точността на социологическите проучвания</a></li>
+  <li><a href="#паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026" id="toc-паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026" class="nav-link" data-scroll-target="#паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026">Паспорти на публичните социологически изследвания за парламентарни избори 2026</a>
   <ul class="collapse">
   <li><a href="#данните" id="toc-данните" class="nav-link" data-scroll-target="#данните">Данните</a></li>
   <li><a href="#отклоненията-residual-heatmap" id="toc-отклоненията-residual-heatmap" class="nav-link" data-scroll-target="#отклоненията-residual-heatmap">Отклоненията (Residual Heatmap)</a></li>
   <li><a href="#средна-абсолютна-грешка-mae" id="toc-средна-абсолютна-грешка-mae" class="nav-link" data-scroll-target="#средна-абсолютна-грешка-mae">Средна Абсолютна Грешка (MAE)</a></li>
-  <li><a href="#средноквадратична-грешка.-rmse" id="toc-средноквадратична-грешка.-rmse" class="nav-link" data-scroll-target="#средноквадратична-грешка.-rmse">Средноквадратична грешка. (RMSE)</a>
-  <ul class="collapse">
+  <li><a href="#средноквадратична-грешка.-rmse" id="toc-средноквадратична-грешка.-rmse" class="nav-link" data-scroll-target="#средноквадратична-грешка.-rmse">Средноквадратична грешка. (RMSE)</a></li>
   <li><a href="#tренд" id="toc-tренд" class="nav-link" data-scroll-target="#tренд">Tренд</a></li>
   <li><a href="#анализ-на-ефекта-от-методологията-offline-vs.-hybrid" id="toc-анализ-на-ефекта-от-методологията-offline-vs.-hybrid" class="nav-link" data-scroll-target="#анализ-на-ефекта-от-методологията-offline-vs.-hybrid"><strong>Анализ на ефекта от методологията (Offline vs.&nbsp;Hybrid)</strong></a></li>
-  </ul></li>
   <li><a href="#относно-разликата-в-mae-и-rmse-в-двете-графики" id="toc-относно-разликата-в-mae-и-rmse-в-двете-графики" class="nav-link" data-scroll-target="#относно-разликата-в-mae-и-rmse-в-двете-графики">Относно разликата в MAE и RMSE в двете графики</a>
   <ul class="collapse">
   <li><a href="#защо" id="toc-защо" class="nav-link" data-scroll-target="#защо">Защо?</a></li>
@@ -441,7 +440,27 @@ window.Quarto = {
 
 
 
-<div id="cell-1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="e101cb43-5030-47f6-d748-b3d0a68c3c74" data-execution_count="2">
+<section id="анализ-на-точността-на-социологическите-проучвания" class="level1">
+<h1>Анализ на точността на социологическите проучвания</h1>
+<p>Този бележник анализира разликите в електоралните нагласи, отчетени от различните социологически агенции, и реалните изборни резултати.</p>
+<ul>
+<li><strong>Зареждане на данни:</strong> Данните се хостват публично в GitHub с цел да бъдат достъпни и проверими. Ако не сте съгласни с части от данните или анализа, можете да го модифицирате.</li>
+<li><strong>Технически параметри:</strong> Преглед на данните, публикувани към проучванията (период, метод, извадка).</li>
+<li><strong>Резултатна матрица:</strong> Сравнителна таблица с всички резултати (хоризонтално — партиите, вертикално — проучванията).</li>
+<li><strong>Матрица на отклоненията:</strong> Изчисляване на разликите между нагласите в проучванията и крайните изборни резултати.</li>
+<li><strong>Ранкинг по средна абсолютна грешка (MAE):</strong> Класиране на проучванията според тяхното средно линейно отклонение.</li>
+<li><strong>Ранкинг по средноквадратична грешка (RMSE):</strong> Класиране според корен квадратен от средната стойност на квадратите на разликите (методът наказва по-тежко големите отклонения).</li>
+<li><strong>Регресионен анализ (OLS):</strong> Изследване на влиянието на фактори като оставащо време до изборите, методология (хибридна или офлайн) и големина на извадката върху точността на прогнозите.</li>
+</ul>
+<p><strong>Забележки:</strong> Анализът е мотивиран от любопитство и има за цел да постави основи за по-сериозна работа по темата. Сегашният му статус е на ниво „чернова“. Данните не трябва да се използват за вземане на решения, преди да бъдат вложени допълнителни усилия в сравняването на входящите данни с резултатите от изследванията и валидиране на качеството на кода. В допълнение, има няколко теста, препоръчителни при валидацията на регресионния анализ, които не са направени. Чувствайте се свободни да копирате, възпроизвеждате и модифицирате кода.</p>
+<p><strong>Последващи интересни анализи биха били:</strong></p>
+<ul>
+<li>Съставяне на база данни с всички социологически проучвания от последните 8 избора.</li>
+<li>Използване на други видове индикатори, които измерват процентното отклонение (например <strong>MAPE</strong> или <strong>wMAPE</strong>).</li>
+<li>Анализиране на данните с <strong>MDS (Multi-dimensional Scaling)</strong> или подобни методи, за да се проверят съмненията за връзка между конкретна агенция (или поръчител) и системно надценяване или подценяване на определени партии.</li>
+<li>Добавяне на допълнителни атрибути в регресионния анализ — например източник на извадката или подизпълнител на проекта.</li>
+</ul>
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="e101cb43-5030-47f6-d748-b3d0a68c3c74" data-execution_count="15">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -481,10 +500,11 @@ window.Quarto = {
 https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/raw/311a84fb7ce48c8bc47d61b359405d602b2aabd6/results2026.json</code></pre>
 </div>
 </div>
+</section>
 <section id="паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026" class="level1">
 <h1>Паспорти на публичните социологически изследвания за парламентарни избори 2026</h1>
 <p>Техническите данни за изследванията</p>
-<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:553}}" data-outputid="97220484-136b-4e89-8b68-8e1501957131" data-execution_count="3">
+<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:553}}" data-outputid="97220484-136b-4e89-8b68-8e1501957131" data-execution_count="16">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> HTML, display</span>
@@ -506,24 +526,25 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ss">                </span><span class="sc">{</span>s[<span class="st">'agency'</span>]<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>s[<span class="st">'date_label'</span>]<span class="sc">}</span><span class="ss">)</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;/div&gt;</span></span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Период:&lt;/b&gt; </span><span class="sc">{</span>m<span class="sc">.</span>get(<span class="st">'date'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span><span class="ss">&lt;/div&gt;</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Извадка:&lt;/b&gt; </span><span class="sc">{</span>m<span class="sc">.</span>get(<span class="st">'sample_size'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span><span class="ss">&lt;/div&gt;</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Метод:&lt;/b&gt; </span><span class="sc">{</span>m<span class="sc">.</span>get(<span class="st">'methodology'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span><span class="ss">&lt;/div&gt;</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;"&gt;</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="ss">                Грешка: </span><span class="sc">{</span>o<span class="sc">.</span>get(<span class="st">'margin_of_error'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;/div&gt;</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="ss">        &lt;/div&gt;</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="ss">        """</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        all_cards <span class="op">+=</span> card_html</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Display wrapper with Flexbox</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    display(HTML(<span class="ss">f"""</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="ss">    &lt;div style="display: flex; flex-wrap: wrap; gap: 15px; background: #f4f4f4; padding: 20px; border-radius: 12px;"&gt;</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="ss">        </span><span class="sc">{</span>all_cards<span class="sc">}</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="ss">    &lt;/div&gt;</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="ss">    """</span>))</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute to render all 19 cards</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>render_facet_row(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Поръчител:&lt;/b&gt; </span><span class="sc">{</span>m<span class="sc">.</span>get(<span class="st">'purchaser'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span><span class="ss">&lt;/div&gt;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Извадка:&lt;/b&gt; </span><span class="sc">{</span>m<span class="sc">.</span>get(<span class="st">'sample_size'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span><span class="ss">&lt;/div&gt;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;div style="color: #777; margin-bottom: 4px;"&gt;&lt;b&gt;Метод:&lt;/b&gt; </span><span class="sc">{</span>m<span class="sc">.</span>get(<span class="st">'methodology'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span><span class="ss">&lt;/div&gt;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;"&gt;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ss">                Грешка: </span><span class="sc">{</span>o<span class="sc">.</span>get(<span class="st">'margin_of_error'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="ss">            &lt;/div&gt;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="ss">        &lt;/div&gt;</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="ss">        """</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        all_cards <span class="op">+=</span> card_html</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Display wrapper with Flexbox</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    display(HTML(<span class="ss">f"""</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="ss">    &lt;div style="display: flex; flex-wrap: wrap; gap: 15px; background: #f4f4f4; padding: 20px; border-radius: 12px;"&gt;</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="ss">        </span><span class="sc">{</span>all_cards<span class="sc">}</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="ss">    &lt;/div&gt;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="ss">    """</span>))</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute to render all 19 cards</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>render_facet_row(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -537,6 +558,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Маркет Линкс (16/02)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 07 - 13 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> бТВ и Маркет Линкс</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1019 лица над 18 г. в страната</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко-лично интервю и онлайн анкета</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -552,6 +574,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Мяра (17/02)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 9-15 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Независима ежемесечна изследователска програма на социологическата агенция „Мяра“</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 812 пълнолетни български граждани</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> “Лице в лице” с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -567,6 +590,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Тренд (23/02)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 12-18 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> 24 часа</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1002 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано интервю „лице в лице“</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -582,6 +606,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Център за анализи и маркетинг (26/02)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 17 - 24 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Център за анализи и маркетинг</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1010 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -597,6 +622,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Алфа Рисърч (05/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 23 февруари – 2 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Реализирано със собствени средства</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -612,6 +638,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Галъп (09/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 10 - 28 февруари 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Независима изследователска програма (собствени средства)</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 800 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано персонално интервю тип face-to-face с таблети (TAPI)</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -627,6 +654,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Сова Харис (16/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 7 - 12 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Вестник „Труд”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано интервю „лице в лице” в дома на респондента</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -642,6 +670,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Маркет Линкс (18/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 7 - 15 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> бТВ и „Маркет линкс”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1006 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко-лично интервю и онлайн анкета</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -657,6 +686,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Мяра (20/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 7 - 16 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Редовна изследователска програма на „Мяра”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 809 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> “Лице в лице” с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -672,6 +702,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Тренд (23/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 13-19 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> “24 часа”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1001 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко полустандартизирано интервю „лице в лице” с таблет</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -687,6 +718,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Маркет Линкс (23/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 17 - 21 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> бТВ и „Маркет линкс”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1008 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко-лично интервю и онлайн анкета</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -702,6 +734,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Алфа Рисърч (23/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 12-20 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> бТВ</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -717,6 +750,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Алфа Рисърч (29/03)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 19-26 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> БНР</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -732,6 +766,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Галъп (03/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 20 - 30 март 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Независима изследователска програма (собствени средства)</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 820 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано персонално интервю тип face-to-face с таблети (TAPI)</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -747,6 +782,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Сова Харис (09/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 2 - 6 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Вестник „Труд”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 800 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано интервю „лице в лице” в дома на респондента</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -762,6 +798,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Маркет Линкс (16/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 7-14 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> bTV и Маркет Линкс</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1003 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко-лично интервю и онлайн анкета</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -777,6 +814,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Алфа Рисърч (17/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 13 - 15 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Реализирано със собствени средства</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1000 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю по домовете с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -792,6 +830,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Тренд (17/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 13 - 16 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> “24 часа”</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1004 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Пряко стандартизирано интервю „лице в лице” с таблет</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -807,6 +846,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Галъп (17/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 08 - 16 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> Реализирано със собствени средства</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 803 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Стандартизирано персонално интервю тип face-to-face</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -822,6 +862,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
                 Мяра (17/04)
             </div>
             <div style="color: #777; margin-bottom: 4px;"><b>Период:</b> 4 - 13 април 2026 г.</div>
+            <div style="color: #777; margin-bottom: 4px;"><b>Поръчител:</b> БНР</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Извадка:</b> 1002 души</div>
             <div style="color: #777; margin-bottom: 4px;"><b>Метод:</b> Лице в лице с таблети</div>
             <div style="color: #777; font-size: 11px; margin-top: 8px; font-style: italic;">
@@ -836,7 +877,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <section id="данните" class="level2">
 <h2 class="anchored" data-anchor-id="данните">Данните</h2>
 <p>Тази графика показва всички публикувани данни на горните проучвания които са анализирани в това мета изследване.</p>
-<div id="cell-5" class="cell" data-execution_count="4">
+<div id="cell-6" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -883,7 +924,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <section id="отклоненията-residual-heatmap" class="level2">
 <h2 class="anchored" data-anchor-id="отклоненията-residual-heatmap">Отклоненията (Residual Heatmap)</h2>
 <p>Тази графика показва отклоненията на публукуваните електорални нагласи в различните проучвания от реалния изборен резултат</p>
-<div id="cell-7" class="cell" data-execution_count="5">
+<div id="cell-8" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -931,7 +972,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <h2 class="anchored" data-anchor-id="средна-абсолютна-грешка-mae">Средна Абсолютна Грешка (MAE)</h2>
 <p>Средна абсолютна грешка. Измерва средната големина на отклоненията в набор от прогнози, без да отчита тяхната посока (дали е надценено или подценено). Всички грешки се третират с еднаква тежест.</p>
 <p>Колкото по-ниска е стойността, толкова по-точни са били данните спрямо официално регистрирания вот в деня на изборите.</p>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="66d641b2-e5e5-4e04-f545-665102301dd5" data-execution_count="5">
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="66d641b2-e5e5-4e04-f545-665102301dd5" data-execution_count="19">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -984,7 +1025,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <h2 class="anchored" data-anchor-id="средноквадратична-грешка.-rmse">Средноквадратична грешка. (RMSE)</h2>
 <p>Изчислява се като корен квадратен от средната стойност на квадратите на разликите. Тъй като грешките се вдигат на квадрат преди да се усреднят, тази метрика дава много по-голяма тежест на големите отклонения.</p>
 <p>Колкото по-ниска е стойността, толкова по-точни са били данните спрямо официално регистрирания вот в деня на изборите.</p>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="fe2fe112-9ebb-4d99-da9c-ffe52e11ab35" data-execution_count="6">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="fe2fe112-9ebb-4d99-da9c-ffe52e11ab35" data-execution_count="20">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1029,10 +1070,11 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <pre><code>🏆 НАЙ-ТОЧНА ПРОГНОЗА (RMSE): Мяра (17/04) (Грешка: 3.33)</code></pre>
 </div>
 </div>
-<section id="tренд" class="level3">
-<h3 class="anchored" data-anchor-id="tренд">Tренд</h3>
+</section>
+<section id="tренд" class="level2">
+<h2 class="anchored" data-anchor-id="tренд">Tренд</h2>
 <p>Тук проследяваме как прогнозите за основните партии са се променяли във времето спрямо крайния резултат.</p>
-<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="c0ab7a85-4892-42aa-fc85-713c0c905886" data-execution_count="7">
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="c0ab7a85-4892-42aa-fc85-713c0c905886" data-execution_count="21">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1108,8 +1150,8 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 </div>
 </div>
 </section>
-<section id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid" class="level3">
-<h3 class="anchored" data-anchor-id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid"><strong>Анализ на ефекта от методологията (Offline vs.&nbsp;Hybrid)</strong></h3>
+<section id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid" class="level2">
+<h2 class="anchored" data-anchor-id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid"><strong>Анализ на ефекта от методологията (Offline vs.&nbsp;Hybrid)</strong></h2>
 <p>Статистическият модел (<strong>OLS</strong>) изолира „чистия“ ефект на изследователския метод върху точността на прогнозите. Вместо просто да гледаме крайната грешка, ние измерваме колко точно методологията <strong>„натежава“</strong> върху резултата, като контролираме за фактори кога е правено проучването или колко голяма е била извадката.</p>
 <p>Трябва да се отбележи, че в текущата извадка хибридният метод се припокрива значително с една от конкретните агенции и не може категорично да се изолира дали източникът на влияние е самата агенция, или методологията. Както при много статистически изследвания, основна препоръка е: „further research needed, need more data“.</p>
 <section id="основни-изводи-за-коефициентите" class="level4">
@@ -1121,7 +1163,6 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <p>Нека разгледаме проучване, проведено на <strong>17 април (2 дни преди изборите)</strong> с извадка от <strong>1000 души</strong>, за да видим как изборът на метод променя очакваната точност:</p>
 <p><strong>Пример 1: Средно отклонение (MAE)</strong> Ако заложите на традиционното проучване „лице в лице“, моделът предвижда средна грешка от около <strong>2.35%</strong>. Ако при абсолютно същите условия използвате <strong>хибриден подход</strong>, очакваното средно отклонение от истината скача на <strong>3.41%</strong> (допълнителни +1.06 пункта).</p>
 <p><strong>Пример 2: Риск от сериозно разминаване (RMSE)</strong> Тук разликата е драстична. При офлайн проучване очакваната квадратична грешка е <strong>4.03</strong>. При <strong>хибридния подход</strong> обаче тя скача до <strong>6.85</strong>. Това нарастване (с над 2.8 пункта) означава, че хибридната методология е <strong>по-несигурна</strong>. В реалността това често се изразява в „наказване“ на конкретна партия — например, докато офлайн методът би хванал вълната за <em>Прогресивна България</em> с малка разлика, хибридната методология може да я подцени с десетки проценти, фаворизирайки погрешно статуквото.</p>
-</section>
 </section>
 </section>
 <section id="относно-разликата-в-mae-и-rmse-в-двете-графики" class="level2">
@@ -1147,7 +1188,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <li><em>Затова в OLS анализа хибридните методи изглеждат по-зле:</em> Те често познават малките партии, но допускат голямо разминаване при големите играчи. RMSE улавя именно този риск.</li>
 </ul></li>
 </ul>
-<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="2f7d75dd-3c28-4bfc-f463-3e2832825fc7" data-execution_count="30">
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="2f7d75dd-3c28-4bfc-f463-3e2832825fc7" data-execution_count="22">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
@@ -1313,234 +1354,6 @@ Days_To_Election    0.0051       0.1617     0.0056        0.4806
 <li>Най-належащата задача би била ръчното преглеждане (QA) и коригиране на входящите данни.</li>
 </ul></li>
 </ul>
-<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:34}}" data-outputid="97f0b48a-50e5-4610-aa21-cb6be0a68ae7" data-execution_count="10">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># '%pip install qrcode[pil] -q'</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># import qrcode</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># import matplotlib.pyplot as plt</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># import seaborn as sns</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># import numpy as np</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># import pandas as pd</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># import statsmodels.api as sm</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># from matplotlib.backends.backend_pdf import PdfPages</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># from google.colab import files</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># # --- 1. КОНФИГУРАЦИЯ ---</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># pdf_filename = "Election_Analysis_2026_Final_Report.pdf"</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># gist_url = "https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/raw/311a84fb7ce48c8bc47d61b359405d602b2aabd6/results2026.json"</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># notebook_url = "https://colab.research.google.com/drive/1Zu_q3iuHCEs0OmtctdoCo3ef7LvgTeru?usp=sharing"</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co"># author_url = "https://linkedin.com/in/grigordimitrov"</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># election_date = pd.to_datetime('2026-04-19')</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># PAGE_SIZE = (11, 8.5)</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co"># def get_qr_image(url):</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     qr = qrcode.QRCode(box_size=10, border=2)</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     qr.add_data(url)</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co">#     qr.make(fit=True)</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co">#     return qr.make_image(fill_color="black", back_color="white")</span></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co"># def add_footer(fig, page_num, total_pages):</span></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="co">#     footer_text = f"Източник: Публични данни - Сайтове на агенции / Медии | Стр. {page_num} от {total_pages} | Забележка: Данните са събирани чрез бот, възможни са неточности"</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig.text(0.5, 0.04, footer_text, ha='center', fontsize=8, color='grey', alpha=0.7)</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co"># # --- 2. ПОДГОТОВКА НА ДАННИ ---</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co"># party_cols = [c for c in df.columns if c in actual.index]</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="co"># cols = [c for c in df.columns if c not in ['Agency', 'Date', 'metadata', 'Не съм решил']]</span></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co"># def calculate_metrics(row):</span></span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co">#     diffs = row[party_cols] - actual[party_cols]</span></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="co">#     return pd.Series({'MAE': np.abs(diffs).mean(), 'RMSE': np.sqrt((diffs**2).mean())})</span></span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="co"># metrics_all_df = df.apply(calculate_metrics, axis=1)</span></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co"># ols_list = []</span></span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="co"># for idx, row in df.iterrows():</span></span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="co">#     enc = row['metadata'].get('encoded', {})</span></span>
-<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="co">#     if not enc: continue</span></span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="co">#     ols_list.append({</span></span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="co">#         'Label': idx,</span></span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="co">#         'MAE': metrics_all_df.loc[idx, 'MAE'],</span></span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a><span class="co">#         'RMSE': metrics_all_df.loc[idx, 'RMSE'],</span></span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="co">#         'Is_Hybrid': 1 if enc.get('methodology') == 'hybrid' else 0,</span></span>
-<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="co">#         'Days_To_Election': (election_date - pd.to_datetime(enc.get('date'))).days,</span></span>
-<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="co">#         'Sample_Size': enc.get('sample_size', 0)</span></span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co">#     })</span></span>
-<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="co"># reg_df = pd.DataFrame(ols_list).dropna()</span></span>
-<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="co"># X_reg = sm.add_constant(reg_df[['Is_Hybrid', 'Days_To_Election', 'Sample_Size']])</span></span>
-<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="co"># model_mae = sm.OLS(reg_df['MAE'], X_reg).fit()</span></span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="co"># model_rmse = sm.OLS(reg_df['RMSE'], X_reg).fit()</span></span>
-<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="co"># target_parties = ['Прогресивна България', 'ГЕРБ', 'ПП-ДБ', 'ДПС', 'Възраждане']</span></span>
-<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a><span class="co"># sorted_parties = actual[cols].sort_values(ascending=False).index</span></span>
-<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a><span class="co"># total_p = 7 + len(target_parties)</span></span>
-<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="co"># with PdfPages(pdf_filename) as pdf:</span></span>
-<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a><span class="co"># # --- СТРАНИЦА 1: ЗАГЛАВИЕ (ADJUSTED) ---</span></span>
-<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.axis('off')</span></span>
-<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a><span class="co">#     # DRAFT воден знак</span></span>
-<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.5, 0.96, 'DRAFT V2', ha='center', va='center', fontsize=40, fontweight='bold', color='red', alpha=0.7)</span></span>
-<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Заглавие и Подзаглавие</span></span>
-<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.5, 0.88, 'Анализ на социологическата точност: Избори 2026', ha='center', fontsize=24, fontweight='bold', color='#003366')</span></span>
-<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.5, 0.80, 'Статистически анализ на факторите, влияещи върху грешката', ha='center', fontsize=14, style='italic', color='#444')</span></span>
-<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Секция АВТОР И ЛИНКОВЕ</span></span>
-<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Използваме url= параметър за кликаемост в PDF</span></span>
-<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.1, 0.70, f'Автор: Г. Д.', fontsize=12, fontweight='bold', color='#003366')</span></span>
-<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.1, 0.67, 'LinkedIn Профил', fontsize=11, color='blue', url=author_url, bbox=dict(facecolor='none', edgecolor='none', pad=0))</span></span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.1, 0.63, 'Източник на данни', fontsize=11, color='blue', url=gist_url)</span></span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.1, 0.59, 'Код на анализа', fontsize=11, color='blue', url=notebook_url)</span></span>
-<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.1, 0.54, f'Дата на анализ: {pd.Timestamp.now().strftime("%d.%m.%Y")}', fontsize=10, color='#666')</span></span>
-<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Блок с метрики</span></span>
-<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="co">#     metrics_note = ("• MAE (Средна абсолютна грешка): Линейно отклонение на прогнозата.\n"</span></span>
-<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a><span class="co">#                     "• RMSE (Средноквадратична грешка): Подчертава големите индивидуални пропуски.\n"</span></span>
-<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a><span class="co">#                     "• OLS Regression: Идентифицира кои фактори (метод, време, извадка) са статистически значими.")</span></span>
-<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.1, 0.40, metrics_note, fontsize=10, bbox=dict(facecolor='#f0f0f0', alpha=0.5, edgecolor='none', pad=5))</span></span>
-<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a><span class="co">#     # QR Кодове (Запазваме ги като визуален елемент)</span></span>
-<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax_qr0 = fig.add_axes([0.20, 0.12, 0.15, 0.15]); ax_qr0.imshow(get_qr_image(author_url), cmap='gray'); ax_qr0.axis('off'); ax_qr0.set_title("Автор", fontsize=8)</span></span>
-<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax_qr1 = fig.add_axes([0.42, 0.12, 0.15, 0.15]); ax_qr1.imshow(get_qr_image(notebook_url), cmap='gray'); ax_qr1.axis('off'); ax_qr1.set_title("Код", fontsize=8)</span></span>
-<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax_qr2 = fig.add_axes([0.64, 0.12, 0.15, 0.15]); ax_qr2.imshow(get_qr_image(gist_url), cmap='gray'); ax_qr2.axis('off'); ax_qr2.set_title("Данни", fontsize=8)</span></span>
-<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a><span class="co">#     add_footer(fig, 1, total_p)</span></span>
-<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a><span class="co">#     pdf.savefig(fig, dpi=300, bbox_inches='tight'); plt.close()</span></span>
-<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a><span class="co">#     # --- СТРАНИЦА 6: МАТРИЦА НА ДАННИ ---</span></span>
-<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a><span class="co">#     sns.heatmap(df[sorted_parties], annot=True, fmt='.1f', cmap='YlGnBu', annot_kws={"size": 8}, cbar_kws={'shrink': 0.8})</span></span>
-<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.title('Матрица на данните: Всички прогнози (%)', fontsize=16, fontweight='bold')</span></span>
-<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.xticks(rotation=45, ha='right', fontsize=9); plt.yticks(fontsize=8)</span></span>
-<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.tight_layout(rect=[0.05, 0.08, 0.95, 0.95])</span></span>
-<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a><span class="co">#     add_footer(fig, 6, total_p)</span></span>
-<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a><span class="co">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a><span class="co">#     # --- СТРАНИЦА 2: RMSE СРЕЩУ MAE ---</span></span>
-<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a><span class="co">#     metrics_summary = metrics_all_df.sort_values('RMSE')</span></span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig, ax = plt.subplots(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a><span class="co">#     y_indices = np.arange(len(metrics_summary))</span></span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax.barh(y_indices - 0.17, metrics_summary['MAE'], 0.35, label='MAE', color='#3498db', alpha=0.8, edgecolor='black')</span></span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax.barh(y_indices + 0.17, metrics_summary['RMSE'], 0.35, label='RMSE', color='#e74c3c', alpha=0.8, edgecolor='black')</span></span>
-<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax.set_yticks(y_indices); ax.set_yticklabels(metrics_summary.index); ax.invert_yaxis()</span></span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax.set_title('Сравнение на точността по агенции\n', fontsize=16, fontweight='bold')</span></span>
-<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax.text(0.5, 1.02, 'Агрегирани стойности на MAE и RMSE спрямо официалния резултат', transform=ax.transAxes, ha='center', fontsize=11, color='#555')</span></span>
-<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax.legend(); ax.grid(axis='x', linestyle='--', alpha=0.3)</span></span>
-<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.tight_layout(rect=[0.05, 0.08, 0.95, 0.92])</span></span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a><span class="co">#     add_footer(fig, 2, total_p)</span></span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a><span class="co">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a><span class="co">#     # --- СТРАНИЦА 3: OLS КОЕФИЦИЕНТИ (С ТИТЛИ И ПОДЗАГЛАВИЯ) ---</span></span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=PAGE_SIZE, sharey=True)</span></span>
-<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a><span class="co">#     model_mae.params[1:].plot(kind='barh', xerr=model_mae.bse[1:], color='#3498db', ax=ax1, alpha=0.8, edgecolor='black')</span></span>
-<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax1.axvline(0, color='red', linestyle='--', linewidth=1)</span></span>
-<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax1.set_title('Въздействие върху MAE\n', fontsize=13, fontweight='bold')</span></span>
-<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax1.text(0.5, 1.02, 'Как факторите променят линейната грешка (%)', transform=ax1.transAxes, ha='center', fontsize=9, color='#555')</span></span>
-<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a><span class="co">#     model_rmse.params[1:].plot(kind='barh', xerr=model_rmse.bse[1:], color='#e74c3c', ax=ax2, alpha=0.8, edgecolor='black')</span></span>
-<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax2.axvline(0, color='red', linestyle='--', linewidth=1)</span></span>
-<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax2.set_title('Въздействие върху RMSE\n', fontsize=13, fontweight='bold')</span></span>
-<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a><span class="co">#     ax2.text(0.5, 1.02, 'Тежест на факторите при големи отклонения', transform=ax2.transAxes, ha='center', fontsize=9, color='#555')</span></span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.suptitle('СТАТИСТИЧЕСКА ЗНАЧИМОСТ НА ФАКТОРИТЕ (OLS)', fontsize=16, fontweight='bold', y=0.96)</span></span>
-<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Свиване на графиките надолу чрез rect [left, bottom, right, top]</span></span>
-<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.tight_layout(rect=[0.05, 0.12, 0.95, 0.88])</span></span>
-<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a><span class="co">#     add_footer(fig, 3, total_p)</span></span>
-<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a><span class="co">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a><span class="co">#     # --- СТРАНИЦА 4: SIDE-BY-SIDE ДИНАМИКА (С ТИТЛИ И ПОДЗАГЛАВИЯ) ---</span></span>
-<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig, (ax3, ax4) = plt.subplots(1, 2, figsize=PAGE_SIZE)</span></span>
-<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="co">#     titles = ['MAE Dynamics', 'RMSE Dynamics']</span></span>
-<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a><span class="co">#     subtitles = ['Линейно отклонение във времето', 'Квадратично наказание за големи грешки']</span></span>
-<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a><span class="co">#     for ax, metric, color, title, sub in zip([ax3, ax4], ['MAE', 'RMSE'], ['#3498db', '#e74c3c'], titles, subtitles):</span></span>
-<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a><span class="co">#         sns.scatterplot(data=reg_df, x='Days_To_Election', y=metric, hue='Is_Hybrid', size='Sample_Size',</span></span>
-<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a><span class="co">#                         sizes=(100, 700), palette={0: '#3498db', 1: '#e74c3c'}, alpha=0.6, edgecolor='black', ax=ax)</span></span>
-<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a><span class="co">#         for _, row in reg_df.iterrows():</span></span>
-<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a><span class="co">#             ax.text(row['Days_To_Election'], row[metric], s=row['Label'], fontsize=7, rotation=45, ha='left', va='bottom')</span></span>
-<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a><span class="co">#         ax.invert_xaxis(); ax.grid(True, linestyle=':', alpha=0.6)</span></span>
-<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a><span class="co">#         ax.set_title(f'{title}\n', fontsize=13, fontweight='bold')</span></span>
-<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a><span class="co">#         ax.text(0.5, 1.02, sub, transform=ax.transAxes, ha='center', fontsize=9, color='#555')</span></span>
-<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a><span class="co">#         ax.get_legend().remove()</span></span>
-<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a><span class="co">#     handles, labels = ax4.get_legend_handles_labels()</span></span>
-<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig.legend(handles, labels, title='Метод (0=F2F, 1=Hybrid)', loc='center right', bbox_to_anchor=(0.98, 0.5))</span></span>
-<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.suptitle('ХРОНОЛОГИЧНО РАЗПРЕДЕЛЕНИЕ НА ТОЧНОСТТА', fontsize=16, fontweight='bold', y=0.96)</span></span>
-<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Свиване на графиките надолу</span></span>
-<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.tight_layout(rect=[0.05, 0.1, 0.88, 0.88])</span></span>
-<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a><span class="co">#     add_footer(fig, 4, total_p)</span></span>
-<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a><span class="co">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a><span class="co">#     # --- СТРАНИЦА 5: МАТРИЦА НА ОТКЛОНЕНИЯТА ---</span></span>
-<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a><span class="co">#     residuals = df[cols].sub(actual[cols], axis=1)</span></span>
-<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a><span class="co">#     sns.heatmap(residuals[sorted_parties], annot=True, fmt='.1f', cmap='RdBu_r', center=0, annot_kws={"size": 8}, cbar_kws={'shrink': 0.8})</span></span>
-<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.title('Матрица на отклоненията (Прогноза - Реалност)', fontsize=16, fontweight='bold')</span></span>
-<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.xticks(rotation=45, ha='right', fontsize=9); plt.yticks(fontsize=8)</span></span>
-<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.tight_layout(rect=[0.05, 0.08, 0.95, 0.95])</span></span>
-<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a><span class="co">#     add_footer(fig, 5, total_p)</span></span>
-<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a><span class="co">#     pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a><span class="co">#     # --- СТРАНИЦИ 7-N: ТРЕНДОВЕ ---</span></span>
-<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a><span class="co">#     curr_p = 7</span></span>
-<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a><span class="co">#     trend_df = df.sort_values('Date')</span></span>
-<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a><span class="co">#     for party in target_parties:</span></span>
-<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a><span class="co">#         if party in trend_df.columns:</span></span>
-<span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a><span class="co">#             fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a><span class="co">#             plt.plot(trend_df.index, trend_df[party], marker='o', color='#1f77b4', linewidth=2)</span></span>
-<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a><span class="co">#             plt.axhline(y=actual[party], color='#d62728', linestyle='--', linewidth=3, label=f'Реалност ({actual[party]}%)')</span></span>
-<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a><span class="co">#             plt.title(f'Тренд на прогнозите: {party}', fontsize=16, fontweight='bold')</span></span>
-<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a><span class="co">#             plt.xticks(rotation=45, ha='right', fontsize=8); plt.legend(); plt.grid(alpha=0.3)</span></span>
-<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a><span class="co">#             plt.tight_layout(rect=[0.05, 0.08, 0.95, 0.95])</span></span>
-<span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a><span class="co">#             add_footer(fig, curr_p, total_p)</span></span>
-<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a><span class="co">#             pdf.savefig(fig, dpi=300); plt.close()</span></span>
-<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a><span class="co">#             curr_p += 1</span></span>
-<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-192"><a href="#cb13-192" aria-hidden="true" tabindex="-1"></a><span class="co">#     # --- ФИНАЛНА СТРАНИЦА: ЗАКЛЮЧЕНИЯ ---</span></span>
-<span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig = plt.figure(figsize=PAGE_SIZE)</span></span>
-<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.axis('off')</span></span>
-<span id="cb13-195"><a href="#cb13-195" aria-hidden="true" tabindex="-1"></a><span class="co">#     plt.text(0.05, 0.92, 'Заключение и изводи от анализа', fontsize=20, fontweight='bold', color='#003366')</span></span>
-<span id="cb13-196"><a href="#cb13-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-197"><a href="#cb13-197" aria-hidden="true" tabindex="-1"></a><span class="co">#     y_pos = 0.82</span></span>
-<span id="cb13-198"><a href="#cb13-198" aria-hidden="true" tabindex="-1"></a><span class="co">#     conclusion_blocks = [</span></span>
-<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("• Системен пропуск:", "Всички агенции подцениха победителя (Прогресивна България) с над 10% средно отклонение.", True),</span></span>
-<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("", "Всички агенции надцениха установените играчи (ГЕРБ, ДПС, Възраждане) в различна степен.", True),</span></span>
-<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("• Методология:", "Необходима е ревизия на моделите за разпределение на гласовете на нерешилите избиратели.", False),</span></span>
-<span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("", "Необходима е критична ревизия на източниците и структурирането на извадката.", True),</span></span>
-<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("• Информационна хигиена:", "Ефирът е пълен с демографски, психографски и поведенчески разпределения на вота, към които", False),</span></span>
-<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("", "трябва да се подходи със скептицизъм, имайки предвид мащаба на анализираните отклонения.", False),</span></span>
-<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("", "Анализи на по-малки кохорти (напр. от типа коя партия е донор на гласоподаватели)", False),</span></span>
-<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("", "носят риск да са значително по-неточни.", False),</span></span>
-<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("• Забележка:", "Нормализирането на толкова голям набор от изследвания изисква задълбочена работа.", False),</span></span>
-<span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("", "Този анализ е по-скоро отправна точка за по-задълбочени бъдещи мета-анализи, целящи повишаване на прогнозната сила.", False),</span></span>
-<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a><span class="co">#         ("", "Най-належащата задача би била ръчното преглеждане и коригиране на входящите данни.", False),</span></span>
-<span id="cb13-210"><a href="#cb13-210" aria-hidden="true" tabindex="-1"></a><span class="co">#     ]</span></span>
-<span id="cb13-211"><a href="#cb13-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-212"><a href="#cb13-212" aria-hidden="true" tabindex="-1"></a><span class="co">#     for header, detail, add_space in conclusion_blocks:</span></span>
-<span id="cb13-213"><a href="#cb13-213" aria-hidden="true" tabindex="-1"></a><span class="co">#         if header: plt.text(0.05, y_pos, header, fontsize=13, fontweight='bold', color='#003366'); y_pos -= 0.05</span></span>
-<span id="cb13-214"><a href="#cb13-214" aria-hidden="true" tabindex="-1"></a><span class="co">#         plt.text(0.07, y_pos, detail, fontsize=12, color='#333333'); y_pos -= 0.05</span></span>
-<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a><span class="co">#         if add_space: y_pos -= 0.02</span></span>
-<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-217"><a href="#cb13-217" aria-hidden="true" tabindex="-1"></a><span class="co">#     rect = plt.Rectangle((0.03, 0.15), 0.94, 0.80, linewidth=1, edgecolor='#cccccc', facecolor='#f9f9f9', alpha=0.3, zorder=-1)</span></span>
-<span id="cb13-218"><a href="#cb13-218" aria-hidden="true" tabindex="-1"></a><span class="co">#     fig.patches.append(rect)</span></span>
-<span id="cb13-219"><a href="#cb13-219" aria-hidden="true" tabindex="-1"></a><span class="co">#     add_footer(fig, total_p, total_p)</span></span>
-<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a><span class="co">#     pdf.savefig(fig, dpi=300, bbox_inches='tight'); plt.close()</span></span>
-<span id="cb13-221"><a href="#cb13-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-222"><a href="#cb13-222" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"✅ Докладът е генериран успешно: {pdf_filename}")</span></span>
-<span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a><span class="co"># files.download(pdf_filename)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 
 
 </section>

@@ -1,6 +1,6 @@
 ---
 title: "grigor dimitrov"
-subtitle: "Exploring topics I am curious about. From expertise to quick random thought. Made public for whatever reason."
+subtitle: "Exploring topics I am curious about. From expertise to quick random thoughts. Made public for whatever reason."
 listing:
   contents: posts
   sort: "date desc"

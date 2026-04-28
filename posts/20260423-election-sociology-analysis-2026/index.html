@@ -427,10 +427,8 @@ window.Quarto = {
   <li><a href="#средноквадратична-грешка.-rmse" id="toc-средноквадратична-грешка.-rmse" class="nav-link" data-scroll-target="#средноквадратична-грешка.-rmse">Средноквадратична грешка. (RMSE)</a></li>
   <li><a href="#tренд" id="toc-tренд" class="nav-link" data-scroll-target="#tренд">Tренд</a></li>
   <li><a href="#анализ-на-ефекта-от-методологията-offline-vs.-hybrid" id="toc-анализ-на-ефекта-от-методологията-offline-vs.-hybrid" class="nav-link" data-scroll-target="#анализ-на-ефекта-от-методологията-offline-vs.-hybrid"><strong>Анализ на ефекта от методологията (Offline vs.&nbsp;Hybrid)</strong></a></li>
-  <li><a href="#относно-разликата-в-mae-и-rmse-в-двете-графики" id="toc-относно-разликата-в-mae-и-rmse-в-двете-графики" class="nav-link" data-scroll-target="#относно-разликата-в-mae-и-rmse-в-двете-графики">Относно разликата в MAE и RMSE в двете графики</a>
+  <li><a href="#относно-разликата-в-mae-и-rmse-в-долната-и-горните-графики" id="toc-относно-разликата-в-mae-и-rmse-в-долната-и-горните-графики" class="nav-link" data-scroll-target="#относно-разликата-в-mae-и-rmse-в-долната-и-горните-графики">Относно разликата в MAE и RMSE в долната и горните графики</a>
   <ul class="collapse">
-  <li><a href="#защо" id="toc-защо" class="nav-link" data-scroll-target="#защо">Защо?</a></li>
-  <li><a href="#защо-mae-и-rmse-дават-различни-резултати" id="toc-защо-mae-и-rmse-дават-различни-резултати" class="nav-link" data-scroll-target="#защо-mae-и-rmse-дават-различни-резултати">Защо MAE и RMSE дават различни резултати?</a></li>
   <li><a href="#заключение-и-изводи-от-анализа" id="toc-заключение-и-изводи-от-анализа" class="nav-link" data-scroll-target="#заключение-и-изводи-от-анализа">Заключение и изводи от анализа</a></li>
   </ul></li>
   </ul></li>
@@ -465,7 +463,7 @@ window.Quarto = {
 <li>Анализиране на данните с <strong>MDS (Multi-dimensional Scaling)</strong> или подобни методи, за да се проверят съмненията за връзка между конкретна агенция (или поръчител) и системно надценяване или подценяване на определени партии.</li>
 <li>Добавяне на допълнителни атрибути в регресионния анализ — например източник на извадката или подизпълнител на проекта.</li>
 </ul>
-<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="e101cb43-5030-47f6-d748-b3d0a68c3c74" data-execution_count="1">
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="e101cb43-5030-47f6-d748-b3d0a68c3c74" data-execution_count="36">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -509,7 +507,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <section id="паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026" class="level1">
 <h1>Паспорти на публичните социологически изследвания за парламентарни избори 2026</h1>
 <p>Техническите данни за изследванията</p>
-<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:553}}" data-outputid="97220484-136b-4e89-8b68-8e1501957131" data-execution_count="2">
+<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:553}}" data-outputid="97220484-136b-4e89-8b68-8e1501957131" data-execution_count="37">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> HTML, display</span>
@@ -882,7 +880,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <section id="данните" class="level2">
 <h2 class="anchored" data-anchor-id="данните">Данните</h2>
 <p>Тази графика показва всички публикувани данни на горните проучвания които са анализирани в това мета изследване.</p>
-<div id="cell-6" class="cell" data-execution_count="3">
+<div id="cell-6" class="cell" data-execution_count="38">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -929,7 +927,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <section id="отклоненията-residual-heatmap" class="level2">
 <h2 class="anchored" data-anchor-id="отклоненията-residual-heatmap">Отклоненията (Residual Heatmap)</h2>
 <p>Тази графика показва отклоненията на публукуваните електорални нагласи в различните проучвания от реалния изборен резултат</p>
-<div id="cell-8" class="cell" data-execution_count="4">
+<div id="cell-8" class="cell" data-execution_count="39">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -977,7 +975,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <h2 class="anchored" data-anchor-id="средна-абсолютна-грешка-mae">Средна Абсолютна Грешка (MAE)</h2>
 <p>Средна абсолютна грешка. Измерва средната големина на отклоненията в набор от прогнози, без да отчита тяхната посока (дали е надценено или подценено). Всички грешки се третират с еднаква тежест.</p>
 <p>Колкото по-ниска е стойността, толкова по-точни са били данните спрямо официално регистрирания вот в деня на изборите.</p>
-<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="66d641b2-e5e5-4e04-f545-665102301dd5" data-execution_count="5">
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="66d641b2-e5e5-4e04-f545-665102301dd5" data-execution_count="40">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1030,7 +1028,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <h2 class="anchored" data-anchor-id="средноквадратична-грешка.-rmse">Средноквадратична грешка. (RMSE)</h2>
 <p>Изчислява се като корен квадратен от средната стойност на квадратите на разликите. Тъй като грешките се вдигат на квадрат преди да се усреднят, тази метрика дава много по-голяма тежест на големите отклонения.</p>
 <p>Колкото по-ниска е стойността, толкова по-точни са били данните спрямо официално регистрирания вот в деня на изборите.</p>
-<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="fe2fe112-9ebb-4d99-da9c-ffe52e11ab35" data-execution_count="6">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="fe2fe112-9ebb-4d99-da9c-ffe52e11ab35" data-execution_count="41">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1079,7 +1077,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <section id="tренд" class="level2">
 <h2 class="anchored" data-anchor-id="tренд">Tренд</h2>
 <p>Тук проследяваме как прогнозите за основните партии са се променяли във времето спрямо крайния резултат.</p>
-<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="c0ab7a85-4892-42aa-fc85-713c0c905886" data-execution_count="7">
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="c0ab7a85-4892-42aa-fc85-713c0c905886" data-execution_count="42">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1157,43 +1155,23 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 </section>
 <section id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid" class="level2">
 <h2 class="anchored" data-anchor-id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid"><strong>Анализ на ефекта от методологията (Offline vs.&nbsp;Hybrid)</strong></h2>
-<p>Статистическият модел (<strong>OLS</strong>) изолира „чистия“ ефект на изследователския метод върху точността на прогнозите. Вместо просто да гледаме крайната грешка, ние измерваме колко точно методологията <strong>„натежава“</strong> върху резултата, като контролираме за фактори кога е правено проучването или колко голяма е била извадката.</p>
+<p>Статистическият модел (<strong>OLS</strong>) изолира ефекта на изследователския метод върху точността на прогнозите. Вместо просто да гледаме крайната грешка, ние измерваме колко точно методологията тежи върху резултата, като контролираме за фактори кога е правено проучването или колко голяма е била извадката.</p>
 <p>Трябва да се отбележи, че в текущата извадка хибридният метод се припокрива с една от конкретните агенции и не може категорично да се изолира дали източникът на влияние е самата агенция, или методологията т.е. наличе е мултиколинеарити. Както при много статистически изследвания, основна препоръка е: „further research needed, need more data“.</p>
-<section id="основни-изводи-за-коефициентите" class="level4">
-<h4 class="anchored" data-anchor-id="основни-изводи-за-коефициентите"><strong>Основни изводи за коефициентите:</strong></h4>
-<ul>
-<li><strong>Линеен шум (+1.06):</strong> Използването на хибриден метод (онлайн + офлайн) автоматично вкарва малко над 1 процентен пункт допълнително отклонение в средната грешка (<strong>MAE</strong>) спрямо чисто офлайн проучванията.</li>
-<li><strong>Квадратна грешка (+2.82):</strong> При квадратичната грешка (<strong>RMSE</strong>), наказанието за хибридния метод е близо три пъти по-високо. Това показва, че онлайн панелите са склонни да генерират „изненади“ - те не просто бъркат малко, а саклонни да генерират и по-големи пропуски.</li>
-</ul>
-<p>Нека разгледаме проучване, проведено на <strong>17 април (2 дни преди изборите)</strong> с извадка от <strong>1000 души</strong>, за да видим как изборът на метод променя очакваната точност:</p>
-<p><strong>Пример 1: Средно отклонение (MAE)</strong> Ако заложите на традиционното проучване „лице в лице“, моделът предвижда средна грешка от около <strong>2.35%</strong>. Ако при абсолютно същите условия използвате <strong>хибриден подход</strong>, очакваното средно отклонение от истината скача на <strong>3.41%</strong> (допълнителни +1.06 пункта).</p>
-<p><strong>Пример 2: Риск от сериозно разминаване (RMSE)</strong> Тук разликата е драстична. При офлайн проучване очакваната квадратична грешка е <strong>4.03</strong>. При <strong>хибридния подход</strong> обаче тя скача до <strong>6.85</strong>. Това нарастване (с над 2.8 пункта) означава, че хибридната методология е <strong>по-несигурна</strong>. В реалността това често се изразява в „наказване“ на конкретна партия — например, докато офлайн методът би хванал вълната за <em>Прогресивна България</em> с малка разлика, хибридната методология може да я подцени с десетки проценти, фаворизирайки погрешно статуквото.</p>
 </section>
-</section>
-<section id="относно-разликата-в-mae-и-rmse-в-двете-графики" class="level2">
-<h2 class="anchored" data-anchor-id="относно-разликата-в-mae-и-rmse-в-двете-графики">Относно разликата в MAE и RMSE в двете графики</h2>
-<p>Има разминаване между предходните графики и графиките на OLS модела за двата индикатора (MAE и RMSE), тъй като те са изчислени на различна база.</p>
-<section id="защо" class="level3">
-<h3 class="anchored" data-anchor-id="защо">Защо?</h3>
+<section id="относно-разликата-в-mae-и-rmse-в-долната-и-горните-графики" class="level2">
+<h2 class="anchored" data-anchor-id="относно-разликата-в-mae-и-rmse-в-долната-и-горните-графики">Относно разликата в MAE и RMSE в долната и горните графики</h2>
+<p>Има разминаване между предходните графики и графиките на OLS модела за двата индикатора (MAE и RMSE), тъй като те са изчислени на различна база. В горните графики индикаторите са изчислени на база на всички данни докато регресионния анализ е излислен само на база парламентарно представен партии.</p>
 <ul>
-<li><strong>Знаменателят (<span class="math inline">\(n\)</span>):</strong> MAE (Средна абсолютна грешка) се пресмята, като сумата от грешките се раздели на броя на категориите (<span class="math inline">\(n\)</span>).</li>
-<li>Когато включваме категории с традиционно малка грешка (като „Други“ или „Не подкрепям никого“), делим общата сума на по-голямо число (напр. 12). Това изкуствено намалява средната стойност (в случая до <strong>2.4%</strong>).</li>
-<li>С регресионния анализ съм филтрирал само важните политически субекти (8 партии) и сумата от грешките се дели на по-малко число, което логично повишава MAE до <strong>3.1%</strong>.</li>
+<li>[‘Не подкрепям никого’, ‘Не съм решил’, ‘Други’, ‘Величие’, ‘MEЧ’, ‘АПС’, ‘Има такъв народ’, ‘Сияние’, ‘БСП’, ‘Възраждане’, ‘ДПС’ ‘ПП-ДБ’, ‘ГЕРБ’, ‘Прогресивна България’]</li>
+<li>[‘Прогресивна България’, ‘ГЕРБ’, ‘ПП-ДБ’, ‘ДПС’, ‘Възраждане’]</li>
 </ul>
-<p>Налице са две различни стойности за MAE и RMSE за едно и също проучване, което може да изглежда объркващо: 1. <strong>2.4% (в началните бар чартове):</strong> Изчислена върху <strong>всички категории</strong> (вкл. „Други“, „Не подкрепям никого“ + малки партии). 2. <strong>3.1% (в OLS модела):</strong> Изчислена само върху <strong>реалните парламентарно представени партии</strong>.</p>
-<hr>
-</section>
-<section id="защо-mae-и-rmse-дават-различни-резултати" class="level3">
-<h3 class="anchored" data-anchor-id="защо-mae-и-rmse-дават-различни-резултати">Защо MAE и RMSE дават различни резултати?</h3>
-<p>Разликата в поведението на двата индикатора в графиките се дължи на начина, по който те „наказват“ отклоненията:</p>
+<p>Резултати:</p>
+<p>Методология (Is_Hybrid)</p>
 <ul>
-<li><strong>MAE (Mean Absolute Error):</strong> Това е линеен показател. Ако сгрешиш с 10% при една партия, това добавя точно 10 единици към общата сума. MAE е по-усреднен и третира всички отклонения еднакво.</li>
-<li><strong>RMSE (Root Mean Square Error):</strong> Това е квадратичен показател. Тук всяка грешка се повдига на квадрат, преди да се изчисли средното. Това означава, че голяма грешка (например при победителя) тежи прогресивно повече от много малки грешки.
-<ul>
-<li><em>Затова в OLS анализа хибридните методи изглеждат по-зле:</em> Те често познават малките партии, но допускат голямо разминаване при големите играчи. RMSE улавя именно този риск.</li>
-</ul></li>
+<li>MAE (0.0874, P &gt; 0.05): Методологията не влияе на средното линейно отклонение.</li>
+<li>RMSE (2.1713, P &lt; 0.01): Хибридните методи имат висока вариативност. Те не бъркат по малко за всичко, а допускат големи отклонения (outliers) при конкретни партии. Статистически значимо е (<span class="math inline">\(P=0.0063\)</span>), че хибридният метод носи риск от подобен тип грешки.</li>
 </ul>
-<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="2f7d75dd-3c28-4bfc-f463-3e2832825fc7" data-execution_count="8">
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="2f7d75dd-3c28-4bfc-f463-3e2832825fc7" data-execution_count="43">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
@@ -1203,121 +1181,144 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 1. ПРЕЦИЗНО ИЗЧИСЛЯВАНЕ НА МЕТРИКИТЕ ---</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>party_cols <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> df.columns <span class="cf">if</span> c <span class="kw">in</span> actual.index]</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_metrics(row):</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    diffs <span class="op">=</span> row[party_cols] <span class="op">-</span> actual[party_cols]</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.Series({</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'MAE'</span>: np.<span class="bu">abs</span>(diffs).mean(),</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'RMSE'</span>: np.sqrt((diffs<span class="op">**</span><span class="dv">2</span>).mean())</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>metrics_df <span class="op">=</span> df.<span class="bu">apply</span>(calculate_metrics, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 2. ПОДГОТОВКА НА ДАННИТЕ ЗА РЕГРЕСИЯ ---</span></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>election_date <span class="op">=</span> pd.to_datetime(<span class="st">'2026-04-19'</span>)</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>ols_data <span class="op">=</span> []</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># party_cols = [c for c in df.columns if c in actual.index]</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>party_cols <span class="op">=</span> [<span class="st">'Прогресивна България'</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>              <span class="st">'ГЕРБ'</span>, </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>              <span class="st">'ПП-ДБ'</span>, </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>              <span class="st">'ДПС'</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>              <span class="st">'Възраждане'</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>              <span class="co">#'БСП', </span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>              <span class="co">#'MEЧ', </span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>              <span class="co">#'Има такъв народ', </span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>              <span class="co">#'Величие',</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>              <span class="co">#'Не подкрепям никого', </span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>              <span class="co">#'Сияние', </span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>              <span class="co">#'АПС'</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>              ]</span>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, row <span class="kw">in</span> df.iterrows():</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    enc <span class="op">=</span> row[<span class="st">'metadata'</span>].get(<span class="st">'encoded'</span>, {})</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> enc: <span class="cf">continue</span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    ols_data.append({</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Label'</span>: idx,</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">'MAE'</span>: metrics_df.loc[idx, <span class="st">'MAE'</span>],</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">'RMSE'</span>: metrics_df.loc[idx, <span class="st">'RMSE'</span>],</span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Is_Hybrid'</span>: <span class="dv">1</span> <span class="cf">if</span> enc.get(<span class="st">'methodology'</span>) <span class="op">==</span> <span class="st">'hybrid'</span> <span class="cf">else</span> <span class="dv">0</span>,</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Days_To_Election'</span>: (election_date <span class="op">-</span> pd.to_datetime(enc.get(<span class="st">'date'</span>))).days,</span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Sample_Size'</span>: enc.get(<span class="st">'sample_size'</span>, <span class="dv">0</span>)</span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>reg_df <span class="op">=</span> pd.DataFrame(ols_data).set_index(<span class="st">'Label'</span>).dropna()</span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 3. ИЗПЪЛНЕНИЕ НА РЕГРЕСИИТЕ ---</span></span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(reg_df[[<span class="st">'Is_Hybrid'</span>, <span class="st">'Days_To_Election'</span>, <span class="st">'Sample_Size'</span>]])</span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>model_mae <span class="op">=</span> sm.OLS(reg_df[<span class="st">'MAE'</span>], X).fit()</span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>model_rmse <span class="op">=</span> sm.OLS(reg_df[<span class="st">'RMSE'</span>], X).fit()</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(party_cols)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_metrics(row):</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    diffs <span class="op">=</span> row[party_cols] <span class="op">-</span> actual[party_cols]</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.Series({</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">'MAE'</span>: np.<span class="bu">abs</span>(diffs).mean(),</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">'RMSE'</span>: np.sqrt((diffs<span class="op">**</span><span class="dv">2</span>).mean())</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>metrics_df <span class="op">=</span> df.<span class="bu">apply</span>(calculate_metrics, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 2. ПОДГОТОВКА НА ДАННИТЕ ЗА РЕГРЕСИЯ ---</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>election_date <span class="op">=</span> pd.to_datetime(<span class="st">'2026-04-19'</span>)</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>ols_data <span class="op">=</span> []</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    enc <span class="op">=</span> row[<span class="st">'metadata'</span>].get(<span class="st">'encoded'</span>, {})</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> enc: <span class="cf">continue</span></span>
 <span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 4. ВИЗУАЛИЗАЦИЯ 1: ВЛИЯНИЕ НА ФАКТОРИТЕ (КОЕФИЦИЕНТИ) ---</span></span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>fig1, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">4</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(wspace<span class="op">=</span><span class="fl">0.1</span>)</span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a><span class="co"># MAE Coefs</span></span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>model_mae.params[<span class="dv">1</span>:].plot(kind<span class="op">=</span><span class="st">'barh'</span>, xerr<span class="op">=</span>model_mae.bse[<span class="dv">1</span>:], color<span class="op">=</span><span class="st">'#3498db'</span>, ax<span class="op">=</span>ax1, alpha<span class="op">=</span><span class="fl">0.8</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>ax1.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'Въздействие върху MAE</span><span class="ch">\n</span><span class="st">(Линейна средна грешка)'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
-<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Промяна в % пунктове'</span>)</span>
-<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a><span class="co"># RMSE Coefs</span></span>
-<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>model_rmse.params[<span class="dv">1</span>:].plot(kind<span class="op">=</span><span class="st">'barh'</span>, xerr<span class="op">=</span>model_rmse.bse[<span class="dv">1</span>:], color<span class="op">=</span><span class="st">'#e74c3c'</span>, ax<span class="op">=</span>ax2, alpha<span class="op">=</span><span class="fl">0.8</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>ax2.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'Въздействие върху RMSE</span><span class="ch">\n</span><span class="st">(Наказание за големи грешки)'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'Промяна в % пунктове'</span>)</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>    ols_data.append({</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Label'</span>: idx,</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">'MAE'</span>: metrics_df.loc[idx, <span class="st">'MAE'</span>],</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">'RMSE'</span>: metrics_df.loc[idx, <span class="st">'RMSE'</span>],</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Is_Hybrid'</span>: <span class="dv">1</span> <span class="cf">if</span> enc.get(<span class="st">'methodology'</span>) <span class="op">==</span> <span class="st">'hybrid'</span> <span class="cf">else</span> <span class="dv">0</span>,</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Days_To_Election'</span>: (election_date <span class="op">-</span> pd.to_datetime(enc.get(<span class="st">'date'</span>))).days,</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Sample_Size'</span>: enc.get(<span class="st">'sample_size'</span>, <span class="dv">0</span>)</span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>reg_df <span class="op">=</span> pd.DataFrame(ols_data).set_index(<span class="st">'Label'</span>).dropna()</span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 3. ИЗПЪЛНЕНИЕ НА РЕГРЕСИИТЕ ---</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(reg_df[[<span class="st">'Is_Hybrid'</span>, <span class="st">'Days_To_Election'</span>, <span class="st">'Sample_Size'</span>]])</span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>model_mae <span class="op">=</span> sm.OLS(reg_df[<span class="st">'MAE'</span>], X).fit()</span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>model_rmse <span class="op">=</span> sm.OLS(reg_df[<span class="st">'RMSE'</span>], X).fit()</span>
 <span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'АНАЛИЗ НА ФАКТОРИТЕ ЗА ГРЕШКА (OLS REGRESSION COEF)'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, y<span class="op">=</span><span class="fl">1.05</span>)</span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 5. ВИЗУАЛИЗАЦИЯ 2: SIDE-BY-SIDE ТАГНАТА ДИНАМИКА (MAE vs RMSE) ---</span></span>
-<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>fig2, (ax3, ax4) <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">14</span>), sharex<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> [<span class="st">'#3498db'</span>, <span class="st">'#e74c3c'</span>]</span>
-<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, metric, color, title <span class="kw">in</span> <span class="bu">zip</span>([ax3, ax4], [<span class="st">'MAE'</span>, <span class="st">'RMSE'</span>], palette, [<span class="st">'MAE (Линейна)'</span>, <span class="st">'RMSE (Квадратична)'</span>]):</span>
-<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Scatter plot</span></span>
-<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a>    sns.scatterplot(</span>
-<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a>        data<span class="op">=</span>reg_df, x<span class="op">=</span><span class="st">'Days_To_Election'</span>, y<span class="op">=</span>metric,</span>
-<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>        hue<span class="op">=</span><span class="st">'Is_Hybrid'</span>, size<span class="op">=</span><span class="st">'Sample_Size'</span>, sizes<span class="op">=</span>(<span class="dv">150</span>, <span class="dv">800</span>),</span>
-<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>        palette<span class="op">=</span>palette, alpha<span class="op">=</span><span class="fl">0.6</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, ax<span class="op">=</span>ax</span>
-<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Тагване на всяка точка</span></span>
-<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> label, row <span class="kw">in</span> reg_df.iterrows():</span>
-<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>        ax.text(</span>
-<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span>row[<span class="st">'Days_To_Election'</span>],</span>
-<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span>row[metric] <span class="op">+</span> (row[metric] <span class="op">*</span> <span class="fl">0.02</span>), <span class="co"># динамично отместване нагоре</span></span>
-<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>            s<span class="op">=</span>label, fontsize<span class="op">=</span><span class="dv">8</span>, fontweight<span class="op">=</span><span class="st">'semibold'</span>, ha<span class="op">=</span><span class="st">'center'</span>,</span>
-<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>            bbox<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, edgecolor<span class="op">=</span><span class="st">'none'</span>, pad<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>    ax.invert_xaxis()</span>
-<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'Динамика на </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> грешката'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
-<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Дни до изборния ден'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Стойност на грешката'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>    ax.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
-<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a>    ax.get_legend().remove() <span class="co"># премахваме индивидуалните легенди за по-чист вид</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 4. ВИЗУАЛИЗАЦИЯ 1: ВЛИЯНИЕ НА ФАКТОРИТЕ (КОЕФИЦИЕНТИ) ---</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>fig1, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">4</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(wspace<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="co"># MAE Coefs</span></span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>model_mae.params[<span class="dv">1</span>:].plot(kind<span class="op">=</span><span class="st">'barh'</span>, xerr<span class="op">=</span>model_mae.bse[<span class="dv">1</span>:], color<span class="op">=</span><span class="st">'#3498db'</span>, ax<span class="op">=</span>ax1, alpha<span class="op">=</span><span class="fl">0.8</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>ax1.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'Въздействие върху MAE</span><span class="ch">\n</span><span class="st">(Линейна средна грешка)'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Промяна в % пунктове'</span>)</span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="co"># RMSE Coefs</span></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>model_rmse.params[<span class="dv">1</span>:].plot(kind<span class="op">=</span><span class="st">'barh'</span>, xerr<span class="op">=</span>model_rmse.bse[<span class="dv">1</span>:], color<span class="op">=</span><span class="st">'#e74c3c'</span>, ax<span class="op">=</span>ax2, alpha<span class="op">=</span><span class="fl">0.8</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>ax2.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'Въздействие върху RMSE</span><span class="ch">\n</span><span class="st">(Наказание за големи грешки)'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'Промяна в % пунктове'</span>)</span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'АНАЛИЗ НА ФАКТОРИТЕ ЗА ГРЕШКА (OLS REGRESSION COEF)'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, y<span class="op">=</span><span class="fl">1.05</span>)</span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 5. ВИЗУАЛИЗАЦИЯ 2: SIDE-BY-SIDE ТАГНАТА ДИНАМИКА (MAE vs RMSE) ---</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>fig2, (ax3, ax4) <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">14</span>), sharex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> [<span class="st">'#3498db'</span>, <span class="st">'#e74c3c'</span>]</span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, metric, color, title <span class="kw">in</span> <span class="bu">zip</span>([ax3, ax4], [<span class="st">'MAE'</span>, <span class="st">'RMSE'</span>], palette, [<span class="st">'MAE (Линейна)'</span>, <span class="st">'RMSE (Квадратична)'</span>]):</span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Scatter plot</span></span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>    sns.scatterplot(</span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a>        data<span class="op">=</span>reg_df, x<span class="op">=</span><span class="st">'Days_To_Election'</span>, y<span class="op">=</span>metric,</span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>        hue<span class="op">=</span><span class="st">'Is_Hybrid'</span>, size<span class="op">=</span><span class="st">'Sample_Size'</span>, sizes<span class="op">=</span>(<span class="dv">150</span>, <span class="dv">800</span>),</span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>        palette<span class="op">=</span>palette, alpha<span class="op">=</span><span class="fl">0.6</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, ax<span class="op">=</span>ax</span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a><span class="co"># Единна легенда за целия плот</span></span>
-<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a>handles, labels <span class="op">=</span> ax4.get_legend_handles_labels()</span>
-<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a>fig2.legend(handles, labels, title<span class="op">=</span><span class="st">'Метод (0=Offline, 1=Hybrid) &amp; Извадка'</span>, loc<span class="op">=</span><span class="st">'center right'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.1</span>, <span class="fl">0.5</span>))</span>
-<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'СРАВНИТЕЛНА ХРОНОЛОГИЯ НА КАЧЕСТВОТО (ТАГНАТИ НАБЛЮДЕНИЯ)'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, y<span class="op">=</span><span class="fl">0.98</span>)</span>
-<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 6. СТРУКТУРИРАН ТЕКСТОВ АУТПУТ ---</span></span>
-<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span><span class="op">*</span><span class="dv">60</span>)</span>
-<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">" СРАВНИТЕЛЕН АНАЛИЗ НА КОЕФИЦИЕНТИТЕ (MAE vs RMSE)"</span>)</span>
-<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">60</span>)</span>
-<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>summary_table <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Metric'</span>: [<span class="st">'Is_Hybrid'</span>, <span class="st">'Days_To_Election'</span>, <span class="st">'Sample_Size'</span>],</span>
-<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>    <span class="st">'MAE Coef'</span>: model_mae.params[<span class="dv">1</span>:].values,</span>
-<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a>    <span class="st">'MAE P-value'</span>: model_mae.pvalues[<span class="dv">1</span>:].values,</span>
-<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a>    <span class="st">'RMSE Coef'</span>: model_rmse.params[<span class="dv">1</span>:].values,</span>
-<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a>    <span class="st">'RMSE P-value'</span>: model_rmse.pvalues[<span class="dv">1</span>:].values</span>
-<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>}).<span class="bu">round</span>(<span class="dv">4</span>)</span>
-<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_table.to_string(index<span class="op">=</span><span class="va">False</span>))</span>
-<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">60</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Тагване на всяка точка</span></span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> label, row <span class="kw">in</span> reg_df.iterrows():</span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a>        ax.text(</span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span>row[<span class="st">'Days_To_Election'</span>],</span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span>row[metric] <span class="op">+</span> (row[metric] <span class="op">*</span> <span class="fl">0.02</span>), <span class="co"># динамично отместване нагоре</span></span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a>            s<span class="op">=</span>label, fontsize<span class="op">=</span><span class="dv">8</span>, fontweight<span class="op">=</span><span class="st">'semibold'</span>, ha<span class="op">=</span><span class="st">'center'</span>,</span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>            bbox<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, edgecolor<span class="op">=</span><span class="st">'none'</span>, pad<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a>    ax.invert_xaxis()</span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'Динамика на </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> грешката'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Дни до изборния ден'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Стойност на грешката'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>    ax.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>    ax.get_legend().remove() <span class="co"># премахваме индивидуалните легенди за по-чист вид</span></span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a><span class="co"># Единна легенда за целия плот</span></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a>handles, labels <span class="op">=</span> ax4.get_legend_handles_labels()</span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>fig2.legend(handles, labels, title<span class="op">=</span><span class="st">'Метод (0=Offline, 1=Hybrid) &amp; Извадка'</span>, loc<span class="op">=</span><span class="st">'center right'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.1</span>, <span class="fl">0.5</span>))</span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'СРАВНИТЕЛНА ХРОНОЛОГИЯ НА КАЧЕСТВОТО (ТАГНАТИ НАБЛЮДЕНИЯ)'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, y<span class="op">=</span><span class="fl">0.98</span>)</span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 6. СТРУКТУРИРАН ТЕКСТОВ АУТПУТ ---</span></span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span><span class="op">*</span><span class="dv">60</span>)</span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">" СРАВНИТЕЛЕН АНАЛИЗ НА КОЕФИЦИЕНТИТЕ (MAE vs RMSE)"</span>)</span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">60</span>)</span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a>summary_table <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Metric'</span>: [<span class="st">'Is_Hybrid'</span>, <span class="st">'Days_To_Election'</span>, <span class="st">'Sample_Size'</span>],</span>
+<span id="cb11-120"><a href="#cb11-120" aria-hidden="true" tabindex="-1"></a>    <span class="st">'MAE Coef'</span>: model_mae.params[<span class="dv">1</span>:].values,</span>
+<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a>    <span class="st">'MAE P-value'</span>: model_mae.pvalues[<span class="dv">1</span>:].values,</span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a>    <span class="st">'RMSE Coef'</span>: model_rmse.params[<span class="dv">1</span>:].values,</span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a>    <span class="st">'RMSE P-value'</span>: model_rmse.pvalues[<span class="dv">1</span>:].values</span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a>}).<span class="bu">round</span>(<span class="dv">4</span>)</span>
+<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_table.to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">60</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Index(['Не подкрепям никого', 'Не съм решил', 'Други', 'Величие', 'MEЧ', 'АПС',
+       'Има такъв народ', 'Сияние', 'БСП', 'Възраждане', 'ДПС', 'ПП-ДБ',
+       'ГЕРБ', 'Прогресивна България', 'Agency', 'Date', 'metadata'],
+      dtype='str')
+['Прогресивна България', 'ГЕРБ', 'ПП-ДБ', 'ДПС', 'Възраждане']</code></pre>
+</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-9-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-9-output-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1327,13 +1328,12 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
  СРАВНИТЕЛЕН АНАЛИЗ НА КОЕФИЦИЕНТИТЕ (MAE vs RMSE)
 ============================================================
           Metric  MAE Coef  MAE P-value  RMSE Coef  RMSE P-value
-       Is_Hybrid    1.0574       0.0000     2.8161        0.0000
-Days_To_Election    0.0051       0.1617     0.0056        0.4806
-     Sample_Size   -0.0005       0.5626    -0.0010        0.5954
+       Is_Hybrid    0.0874       0.8408     2.1713        0.0063
+Days_To_Election   -0.0018       0.8178     0.0025        0.8432
+     Sample_Size   -0.0017       0.3791    -0.0020        0.5215
 ============================================================</code></pre>
 </div>
 </div>
-</section>
 <section id="заключение-и-изводи-от-анализа" class="level3">
 <h3 class="anchored" data-anchor-id="заключение-и-изводи-от-анализа">Заключение и изводи от анализа</h3>
 <ul>

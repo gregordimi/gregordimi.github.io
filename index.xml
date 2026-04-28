@@ -42,7 +42,7 @@
 <li>Анализиране на данните с <strong>MDS (Multi-dimensional Scaling)</strong> или подобни методи, за да се проверят съмненията за връзка между конкретна агенция (или поръчител) и системно надценяване или подценяване на определени партии.</li>
 <li>Добавяне на допълнителни атрибути в регресионния анализ — например източник на извадката или подизпълнител на проекта.</li>
 </ul>
-<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="e101cb43-5030-47f6-d748-b3d0a68c3c74" data-execution_count="15">
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="e101cb43-5030-47f6-d748-b3d0a68c3c74" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -196,7 +196,7 @@ https://gist.githubusercontent.com/gregordimi/e0d3fe30e4f898c84ad25c38b39f6e44/r
 <section id="паспорти-на-публичните-социологически-изследвания-за-парламентарни-избори-2026" class="level1">
 <h1>Паспорти на публичните социологически изследвания за парламентарни избори 2026</h1>
 <p>Техническите данни за изследванията</p>
-<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:553}}" data-outputid="97220484-136b-4e89-8b68-8e1501957131" data-execution_count="16">
+<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:553}}" data-outputid="97220484-136b-4e89-8b68-8e1501957131" data-execution_count="2">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
@@ -728,7 +728,7 @@ font-style: inherit;"># Execute to render all 19 cards</span></span>
 <section id="данните" class="level2">
 <h2 class="anchored" data-anchor-id="данните">Данните</h2>
 <p>Тази графика показва всички публикувани данни на горните проучвания които са анализирани в това мета изследване.</p>
-<div id="cell-6" class="cell" data-execution_count="17">
+<div id="cell-6" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
@@ -890,7 +890,7 @@ font-style: inherit;">'right'</span>)</span>
 <section id="отклоненията-residual-heatmap" class="level2">
 <h2 class="anchored" data-anchor-id="отклоненията-residual-heatmap">Отклоненията (Residual Heatmap)</h2>
 <p>Тази графика показва отклоненията на публукуваните електорални нагласи в различните проучвания от реалния изборен резултат</p>
-<div id="cell-8" class="cell" data-execution_count="18">
+<div id="cell-8" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
@@ -1061,7 +1061,7 @@ font-style: inherit;">'right'</span>)</span>
 <h2 class="anchored" data-anchor-id="средна-абсолютна-грешка-mae">Средна Абсолютна Грешка (MAE)</h2>
 <p>Средна абсолютна грешка. Измерва средната големина на отклоненията в набор от прогнози, без да отчита тяхната посока (дали е надценено или подценено). Всички грешки се третират с еднаква тежест.</p>
 <p>Колкото по-ниска е стойността, толкова по-точни са били данните спрямо официално регистрирания вот в деня на изборите.</p>
-<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="66d641b2-e5e5-4e04-f545-665102301dd5" data-execution_count="19">
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="66d641b2-e5e5-4e04-f545-665102301dd5" data-execution_count="5">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
@@ -1302,7 +1302,7 @@ font-style: inherit;">%)"</span>)</span></code></pre></div></div>
 <h2 class="anchored" data-anchor-id="средноквадратична-грешка.-rmse">Средноквадратична грешка. (RMSE)</h2>
 <p>Изчислява се като корен квадратен от средната стойност на квадратите на разликите. Тъй като грешките се вдигат на квадрат преди да се усреднят, тази метрика дава много по-голяма тежест на големите отклонения.</p>
 <p>Колкото по-ниска е стойността, толкова по-точни са били данните спрямо официално регистрирания вот в деня на изборите.</p>
-<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="fe2fe112-9ebb-4d99-da9c-ffe52e11ab35" data-execution_count="20">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:824}}" data-outputid="fe2fe112-9ebb-4d99-da9c-ffe52e11ab35" data-execution_count="6">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
@@ -1533,7 +1533,7 @@ font-style: inherit;">)"</span>)</span></code></pre></div></div>
 <section id="tренд" class="level2">
 <h2 class="anchored" data-anchor-id="tренд">Tренд</h2>
 <p>Тук проследяваме как прогнозите за основните партии са се променяли във времето спрямо крайния резултат.</p>
-<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="c0ab7a85-4892-42aa-fc85-713c0c905886" data-execution_count="21">
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="c0ab7a85-4892-42aa-fc85-713c0c905886" data-execution_count="7">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
@@ -1785,7 +1785,7 @@ font-style: inherit;">' не беше намерена в данните."</span
 <section id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid" class="level2">
 <h2 class="anchored" data-anchor-id="анализ-на-ефекта-от-методологията-offline-vs.-hybrid"><strong>Анализ на ефекта от методологията (Offline vs.&nbsp;Hybrid)</strong></h2>
 <p>Статистическият модел (<strong>OLS</strong>) изолира „чистия“ ефект на изследователския метод върху точността на прогнозите. Вместо просто да гледаме крайната грешка, ние измерваме колко точно методологията <strong>„натежава“</strong> върху резултата, като контролираме за фактори кога е правено проучването или колко голяма е била извадката.</p>
-<p>Трябва да се отбележи, че в текущата извадка хибридният метод се припокрива значително с една от конкретните агенции и не може категорично да се изолира дали източникът на влияние е самата агенция, или методологията. Както при много статистически изследвания, основна препоръка е: „further research needed, need more data“.</p>
+<p>Трябва да се отбележи, че в текущата извадка хибридният метод се припокрива с една от конкретните агенции и не може категорично да се изолира дали източникът на влияние е самата агенция, или методологията т.е. наличе е мултиколинеарити. Както при много статистически изследвания, основна препоръка е: „further research needed, need more data“.</p>
 <section id="основни-изводи-за-коефициентите" class="level4">
 <h4 class="anchored" data-anchor-id="основни-изводи-за-коефициентите"><strong>Основни изводи за коефициентите:</strong></h4>
 <ul>
@@ -1820,7 +1820,7 @@ font-style: inherit;">' не беше намерена в данните."</span
 <li><em>Затова в OLS анализа хибридните методи изглеждат по-зле:</em> Те често познават малките партии, но допускат голямо разминаване при големите играчи. RMSE улавя именно този риск.</li>
 </ul></li>
 </ul>
-<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="2f7d75dd-3c28-4bfc-f463-3e2832825fc7" data-execution_count="22">
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="2f7d75dd-3c28-4bfc-f463-3e2832825fc7" data-execution_count="8">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;

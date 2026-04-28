@@ -19,6 +19,8 @@ website:
         href: https://github.com/gregordimi
       - icon: linkedin
         href: https://www.linkedin.com/in/grigordimitrov/
+      - icon: rss
+        href: https://gregordimi.com/index.xml
   page-footer:
     left: "© 2026 grigor dimitrov"
     right:
@@ -26,6 +28,8 @@ website:
         href: https://github.com/gregordimi
       - icon: linkedin
         href: https://www.linkedin.com/in/grigordimitrov/
+      - icon: rss
+        href: https://gregordimi.com/index.xml
 format:
   html:
     theme:

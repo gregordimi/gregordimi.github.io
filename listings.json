@@ -2,14 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/20260515-bulgaria-retail-margin/index.html",
       "/posts/20260423-election-sociology-analysis-2026/index.html",
       "/posts/20260401-march/index.html",
       "/posts/20260317-war/index.html",
       "/posts/20260301-february/index.html",
       "/posts/20260204-january/index.html",
       "/posts/conjoint-analysis-survey-limitations/index.html",
-      "/posts/bayesian-truth-serum/index.html",
       "/posts/conjoint-analysis-review/index.html",
+      "/posts/bayesian-truth-serum/index.html",
       "/posts/conjoint-analysis-design/index.html",
       "/posts/bahavioral-data-mothers-study/index.html",
       "/posts/bahavioral-data-results/index.html",
@@ -18,15 +19,15 @@
     ]
   },
   {
-    "listing": "/posts/merim-branding/merim.bg-branding.html",
-    "items": []
-  },
-  {
     "listing": "/posts/merim-data/merim.bg-data.html",
     "items": []
   },
   {
     "listing": "/posts/merim-intro/merim.bg-intro.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/merim-branding/merim.bg-branding.html",
     "items": []
   }
 ]
